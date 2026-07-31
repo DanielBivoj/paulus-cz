@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Příběh PAULUS, kdo jsme a proč existujeme · INFO | PAULUS</title>
+<meta name="description" content="Proč vznikla škola propojující hlubinnou psychologii a védské tradice, kdo za ní stojí, u koho studovali a jak vypadá cesta od vstupu k samostatné praxi.">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W7CCFJW');</script>
+<!-- End Google Tag Manager -->
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#081E27">
+<link rel="canonical" href="https://cz.paulus.yoga/pribeh">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="PAULUS">
+<meta property="og:title" content="Příběh PAULUS, kdo jsme a proč existujeme">
+<meta property="og:description" content="Proč vznikla škola propojující hlubinnou psychologii a védské tradice, kdo za ní stojí, u koho studovali a jak vypadá cesta od vstupu k samostatné praxi.">
+<meta property="og:url" content="https://cz.paulus.yoga/pribeh">
+<meta property="og:image" content="https://cz.paulus.yoga/pribeh/assets/spolecny.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   PAULUS · /onas
+   Komponentový systém převzatý z aplikace Mapa vnitřního světa.
+   Stejné názvy proměnných, stejné panely, stejné závoje, stejné ozdobné
+   dělítko a stejné logo. Nové je jen chování při scrollu.
+   ========================================================================== */
+
+:root{
+  --deep:#081E27; --coal:#353739; --paper:#F2EFEA; --ivory:#F2EFEA;
+  --gold:#B7844E; --red:#C1272D;
+  --bg:#081E27; --panel:#0C2A35; --panel2:#0A232D;
+  --line:rgba(183,132,78,.28); --body:#C7CDCF; --muted:#7d8b90;
+  --bg-grad-1:#0d2e3b; --bg-grad-2:#081E27;
+  --veil-1:rgba(8,30,39,.14); --veil-2:rgba(8,30,39,.48); --veil-3:rgba(8,30,39,.84);
+  --ease:cubic-bezier(.4,0,.2,1);
+  --gut:clamp(20px,5vw,64px);
+  --rhythm:clamp(72px,12vw,150px);
+  --measure:37rem;
+}
+
+/* světlý pás, hodnoty převzaté z body.light v MVS aplikaci */
+.band--paper{
+  --paper:#26201A; --ivory:#1E1712; --gold:#9A6C36; --red:#A5231F;
+  --bg:#F2EFEA; --panel:#FBFAF7; --panel2:#F6F3EE;
+  --line:rgba(154,108,54,.30); --body:#3A3630; --muted:#6E6A60;
+  --veil-1:rgba(251,250,247,.10); --veil-2:rgba(251,250,247,.52); --veil-3:rgba(251,250,247,.86);
+  background:#F2EFEA; color:var(--body);
+}
+.band--paper .note{color:#5C574E;}
+.band--paper .art-spec{color:#5C574E;}
+
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+html{overflow-x:clip; scroll-behavior:smooth; background:var(--bg-grad-2);}
+body{
+  margin:0;
+  background:var(--bg-grad-2);
+  color:var(--body);
+  font-family:'Source Sans 3',sans-serif; font-weight:300;
+  font-size:clamp(16px,.45vw + 15px,18.5px); line-height:1.72;
+  overflow-x:hidden;
+ overflow-x:clip;}
+img{display:block; max-width:100%;}
+p{margin:0 0 1.4em;}
+
+/* ===== TOP BAR, převzato z MVS ===== */
+.topbar{
+  position:fixed; top:0; left:0; right:0; height:72px; z-index:60;
+  display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
+  padding:0 var(--gut);
+  background:rgba(10,35,45,.86); backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  transform:translateY(-100%); transition:transform .45s var(--ease);
+}
+.topbar.is-on{transform:none;}
+.topbar > a:first-child{justify-self:start; display:block; line-height:0;}
+  .brand-logo{height:42px; width:auto; opacity:.95; transition:opacity .2s;}
+  .topbar > a:first-child:hover .brand-logo{height:42px; width:auto; opacity:.95; transition:opacity .2s;}
+.tb-title{
+  font-family:'Playfair Display',serif; color:var(--gold); font-size:15px;
+  letter-spacing:.5px; justify-self:center; font-weight:500; white-space:nowrap;
+}
+.tb{ justify-self:end; background:transparent; border:1px solid var(--line); color:var(--gold);
+  font-family:'Source Sans 3'; font-size:11px; letter-spacing:2px; padding:6px 14px;
+  border-radius:16px; cursor:pointer; text-decoration:none; transition:.2s;
+}
+.tb:hover{border-color:var(--gold); background:rgba(183,132,78,.1);}
+@media (max-width:640px){ .tb-title{display:none} .audio{flex-wrap:wrap; border-radius:20px; gap:16px} .audio-time{width:100%; text-align:right} }
+
+.progress{position:fixed; top:0; left:0; height:2px; width:0; z-index:70; background:var(--gold);}
+
+/* ===== OZDOBNÉ DĚLÍTKO, skutečný soubor AV_delitko.png ===== */
+.accent{
+  width:100%; max-width:var(--measure); aspect-ratio:1502/108;
+  background:url('assets/delitko.png') center/contain no-repeat;
+  margin:32px auto;
+}
+/* uvnitr textoveho sloupce, sirka sloupce, zarovnano jako text */
+
+
+/* pod vycentrovanym kickerem nebo nadpisem */
+
+/* pod sirokym blokem, napriklad hero */
+/* jednotna velikost, vyjimkou je jen hero */
+.accent{max-width:300px !important; margin:40px auto !important;}
+.accent--wide{max-width:640px !important; margin:36px 0 0 !important;}
+.accent--left{margin-left:0 !important; margin-right:auto !important;}
+.band--paper .accent{filter:saturate(.85) brightness(.78);}
+
+/* ===== TYPOGRAFIE ===== */
+.kicker{font-size:11px; letter-spacing:5px; color:var(--gold); text-transform:uppercase; margin:0 0 14px; font-weight:600;}
+.kicker .dot{color:var(--muted); margin:0 .6em; letter-spacing:0;}
+h2.title{
+  font-family:'Playfair Display',serif; font-weight:500; color:var(--gold);
+  font-size:clamp(28px,4.4vw,52px); line-height:1.16; margin:0 0 24px; letter-spacing:-.5px;
+}
+h3{font-family:'Playfair Display',serif; font-weight:500; color:var(--gold); font-size:clamp(20px,2.3vw,28px); line-height:1.2; margin:0 0 10px;}
+.lead{font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(18px,2vw,22px); line-height:1.5; color:var(--paper); border-left:3px solid var(--gold); padding:6px 0 6px 20px; margin:0 0 30px;}
+.signature{font-family:'Playfair Display',serif; font-style:italic; font-size:19px; color:var(--gold); margin-top:22px;}
+.signature.k{color:var(--red);}
+.note{font-size:12.5px; color:var(--muted); font-style:italic; line-height:1.7;}
+
+/* ===== PÁSY A ŠÍŘKY ===== */
+.band{padding:var(--rhythm) var(--gut); position:relative;
+  background:linear-gradient(180deg, #0A2531 0%, #081E27 58%, #06181F 100%);}
+.band.band--paper{background:linear-gradient(180deg, #F4F1EC 0%, #EEEBE6 55%, #E8E5E1 100%); color:var(--body);}
+.band.band--deeplight{background:linear-gradient(180deg, #11313D 0%, #0C2A35 60%, #0A232D 100%);}
+.band--tight{padding-block:clamp(48px,7vw,86px);}
+.hold{max-width:var(--measure); margin:0 auto;}
+.wide{max-width:1100px; margin:0 auto;}
+.hold p:last-child, .wide p:last-child{margin-bottom:0;}
+
+/* ===== ODHALENÍ ===== */
+.ln{display:block; overflow:hidden; padding:.16em 0 .18em; margin:-.16em 0 -.18em;}
+.ln > i{display:block; font-style:inherit; transform:translateY(115%); transition:transform 1s var(--ease); transition-delay:calc(var(--i,0) * 90ms);}
+.is-in .ln > i{transform:none;}
+[data-reveal]{opacity:0; transform:translateY(24px); transition:opacity .9s var(--ease), transform .9s var(--ease);}
+[data-reveal].is-in{opacity:1; transform:none;}
+[data-delay="1"]{transition-delay:.13s;} [data-delay="2"]{transition-delay:.26s;} [data-delay="3"]{transition-delay:.39s;}
+
+/* ===== MEDIÁLNÍ SLOT, vzor z info-art v MVS ===== */
+.art{border:1px solid var(--line); border-radius:10px; overflow:hidden; background:rgba(183,132,78,.03); position:relative;}
+.art-inner{
+  width:100%; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:26px 22px; gap:8px;
+}
+.art--portrait{aspect-ratio:4/5;}
+  .art--portrait .art-img{height:100%;}
+  .art--portrait .art-inner{aspect-ratio:4/5;}
+.art--wide .art-inner{aspect-ratio:3/2;}
+.art--square .art-inner{aspect-ratio:1/1;}
+.art-img{width:100%; height:100%; object-fit:cover; display:block;}
+.optiky-plate{width:min(340px,62vw); margin:0 auto 30px; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+.optiky-plate img{width:100%; display:block;}
+.optiky-band{position:relative; width:100%; max-width:1400px; margin:0 auto 40px; border-radius:12px; overflow:hidden;}
+.optiky-band img{width:100%; display:block;}
+.optiky-band::after{content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(8,30,39,.72) 0%, rgba(8,30,39,.45) 46%, rgba(8,30,39,0) 76%);}
+.optiky-text{position:absolute; inset:0; z-index:2; display:flex; align-items:center; padding:0 clamp(20px,5vw,64px);}
+.optiky-text .title{max-width:15ch; color:var(--paper); margin:0; font-size:clamp(19px,2.6vw,42px);}
+@media (max-width:640px){ .optiky-text .title{font-size:16px; max-width:18ch} }
+.art--cinema .art-inner{aspect-ratio:3/2;}
+.art--fill{border:0; border-radius:0; height:100%;}
+.art--fill .art-inner{height:100%; aspect-ratio:auto;}
+.ph-glyph{font-family:'Playfair Display',serif; font-size:clamp(34px,4vw,52px); color:var(--gold); opacity:.5; line-height:1;}
+.art-kind{font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); font-weight:600; margin:0;}
+.art-what{font-family:'Playfair Display',serif; font-size:clamp(15px,1.7vw,19px); color:var(--paper); margin:0; max-width:30ch; line-height:1.3;}
+.art-spec{font-size:11px; color:var(--muted); letter-spacing:.6px; margin:0; line-height:1.75;}
+
+.mj-tag{width:100%; text-align:left; padding:0 14px 14px;}
+.mj-label{display:block; font-size:11px; letter-spacing:2px; color:var(--gold); font-weight:600; margin-bottom:6px; text-transform:uppercase;}
+.mj-tag code{
+  display:block; font-family:ui-monospace,Menlo,monospace; font-size:11px; line-height:1.6;
+  color:var(--body); background:rgba(0,0,0,.18); padding:10px 12px; border-radius:6px;
+  white-space:pre-wrap; word-break:break-word; user-select:all;
+}
+.band--paper .mj-tag code{background:rgba(120,100,70,.08);}
+
+/* ===== HERO ===== */
+.hero{overflow:hidden; position:relative; min-height:100svh; display:flex; flex-direction:column; justify-content:space-between; overflow:hidden;}
+.hero-bg{position:absolute; inset:0; z-index:0; overflow:hidden;}
+.hero-img{width:100%; height:100%; object-fit:cover; object-position:60% 50%; display:block; clip-path:inset(0);}
+  @media (prefers-reduced-motion:reduce){ .hero-img{display:block} video.hero-img{pointer-events:none} }
+.hero-veil{
+  position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:
+    linear-gradient(180deg, rgba(28,26,23,.30) 0%, rgba(28,26,23,.20) 34%, rgba(8,30,39,.92) 100%),
+    linear-gradient(90deg, rgba(8,30,39,.62) 0%, rgba(8,30,39,.18) 46%, rgba(8,30,39,.34) 100%);
+}
+.hero-top,.hero-mid,.hero-foot{position:relative; z-index:2; padding-inline:var(--gut);}
+.hero-top{padding-top:clamp(26px,4vw,44px);}
+.hero-foot{padding-bottom:clamp(30px,5vw,52px);}
+.hero-logo{width:clamp(160px,16vw,230px); height:auto;}
+.hero-title{
+  font-family:'Playfair Display',serif; font-weight:500; color:var(--paper);
+  font-size:clamp(38px,7.4vw,104px); line-height:1.14; letter-spacing:-2px; margin:0; max-width:16ch;
+}
+.hero-title .g{color:var(--gold);}
+.hero-foot{display:flex; flex-wrap:wrap; gap:18px 46px; align-items:flex-end; justify-content:space-between;}
+.hero-sub{font-size:14.5px; letter-spacing:.6px; line-height:1.9; color:var(--body); max-width:34ch; margin:0;}
+.hero-meta{font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin:0;}
+
+/* ===== RAIL S ČÁSTMI ===== */
+.rail{position:fixed; left:clamp(14px,2vw,26px); top:50%; transform:translateY(-50%); z-index:55; display:flex; flex-direction:column; gap:14px; align-items:center; opacity:0; transition:opacity .5s var(--ease);}
+.rail.is-on{opacity:1;}
+.rail a{font-family:'Playfair Display',serif; font-size:14px; color:var(--muted); text-decoration:none; letter-spacing:1px; transition:color .35s;}
+.rail a.is-active{color:var(--gold);}
+.rail .tick{width:1px; height:22px; background:var(--line);}
+@media (max-width:1000px){ .rail{display:none} }
+
+/* ===== SCÉNA, text přes obraz ===== */
+.scene{position:relative;}
+.scene-media{overflow:hidden; position:sticky; top:0; height:100svh; overflow:hidden; z-index:0;}
+.scene-veil{position:absolute; inset:0; z-index:2; background:linear-gradient(180deg, var(--veil-1) 0%, var(--veil-2) 48%, var(--veil-3) 100%);}
+.scene--left .scene-veil{background:linear-gradient(90deg, rgba(8,30,39,.80) 0%, rgba(8,30,39,.58) 42%, rgba(8,30,39,.10) 78%, rgba(8,30,39,.30) 100%), linear-gradient(180deg, rgba(28,26,23,.20) 0%, rgba(28,26,23,0) 40%, rgba(8,30,39,.80) 100%);}
+.scene-copy{position:relative; z-index:3; margin-top:-100svh; padding:66svh var(--gut) 26svh;}
+.parallax{will-change:transform;}
+.scene-img{width:100%; height:100%; object-fit:cover; display:block;}
+.scene--left .scene-copy .hold{margin-left:0; margin-right:auto;}
+@media (min-width:1100px){ .scene--left .scene-copy{padding-left:clamp(40px,7vw,110px);} }
+
+/* ===== CITÁT NA CELOU OBRAZOVKU ===== */
+.pin{position:relative;}
+.pin-track{height:230vh;}
+.pin{background:radial-gradient(70% 55% at 50% 45%, rgba(183,132,78,.075), transparent 72%), linear-gradient(180deg, #0A2531, #081E27 60%, #06181F);}
+  .pin-stage{position:sticky; top:0; height:100svh; overflow:hidden; display:grid; place-items:center; padding:0 var(--gut); text-align:center; --p:1; --ring:1;}
+.zaver-scena{position:relative;}
+  .zv-track{height:160vh;}
+  .zv-stage{position:sticky; top:12svh; height:min(72svh,640px); display:grid; align-items:end; overflow:hidden; --z:1;}
+  .zv-stage img{clip-path:inset(0); position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 38%; transform:scale(calc(1.07 - var(--z) * .07)); transform-origin:50% 40%;}
+  .zv-veil{position:absolute; inset:0; background:linear-gradient(180deg, rgba(6,24,31,.10) 0%, rgba(6,24,31,.34) 46%, rgba(6,24,31,.88) 100%);}
+  .zv-text{position:relative; z-index:2; text-align:center; padding:0 var(--gut) clamp(28px,5vw,54px);}
+  .zv-hlavni{font-family:'Playfair Display',serif; font-size:clamp(22px,3.6vw,46px); line-height:1.2; color:#F6F3EE; margin:0 0 16px; text-shadow:0 2px 24px rgba(6,24,31,.7); opacity:clamp(0, (var(--z) - .12) * 5, 1); transform:translateY(calc((1 - clamp(0,(var(--z) - .12)*5,1)) * .5em));}
+  .zv-note{font-size:14.5px; line-height:1.7; color:#C7CDCF; margin:0 auto; max-width:52ch; text-wrap:balance; opacity:clamp(0, (var(--z) - .42) * 5, 1); transform:translateY(calc((1 - clamp(0,(var(--z) - .42)*5,1)) * .4em));}
+  .vimeo{max-width:940px; margin:0 auto 42px;}
+  .vimeo-fasada{position:relative; display:grid; place-items:center; align-content:center; gap:10px;
+    width:100%; aspect-ratio:16/9; border:1px solid var(--line); border-radius:12px; cursor:pointer;
+    background:radial-gradient(72% 60% at 50% 45%, rgba(154,108,54,.10), transparent 72%), linear-gradient(160deg, #0C2733, #071B23);
+    color:var(--paper); padding:24px; text-align:center; transition:border-color .25s;}
+  .vimeo-fasada:hover{border-color:rgba(154,108,54,.55);}
+  .vimeo-poster{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; border-radius:11px; opacity:.55; z-index:0;}
+  .vimeo-fasada > :not(.vimeo-poster){position:relative; z-index:1;}
+  .vimeo-fasada:has(.vimeo-poster:not([hidden])){background:#071B23;}
+  .vimeo-ico{display:grid; place-items:center; width:66px; height:66px; border-radius:50%;
+    border:2px solid var(--gold); color:var(--gold); transition:background .2s, transform .2s;}
+  .vimeo-ico svg{width:26px; height:26px; fill:currentColor;}
+  .vimeo-fasada:hover .vimeo-ico{background:rgba(154,108,54,.14); transform:scale(1.05);}
+  .vimeo-kicker{font-family:'Playfair Display',serif; font-size:clamp(18px,2.2vw,26px); color:var(--paper); margin-top:6px;}
+  .vimeo-popis{font-size:13.5px; line-height:1.7; color:var(--muted); max-width:46ch;}
+  .vimeo iframe{width:100%; aspect-ratio:16/9; border:0; border-radius:12px; display:block;}
+  .pin-bg{clip-path:inset(0); position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 45%; opacity:calc(.20 + var(--p) * .26); transform:scale(calc(1.08 - var(--p) * .08)); z-index:0;}
+  .pin::after{content:""; position:absolute; inset:0; pointer-events:none; z-index:1;
+    background:radial-gradient(60% 50% at 50% 46%, rgba(6,24,31,.10), rgba(6,24,31,.88) 82%);}
+  .pin-ring{z-index:2; position:absolute; top:50%; left:50%; translate:-50% -50%; width:min(86vmin,660px); height:auto; pointer-events:none;}
+  .pin-ring circle{fill:none; stroke:var(--gold); stroke-width:1.2;
+    stroke-dasharray:1; stroke-dashoffset:calc(1 - var(--ring));
+    transform:rotate(-90deg); transform-origin:50% 50%; opacity:.85;}
+  .pin-quote .pl{display:block; white-space:nowrap; opacity:var(--o,1); transform:translateY(calc((1 - var(--o,1)) * .38em));}
+  .pin-quote .pl:nth-child(1){--o:clamp(0, (var(--p) - .05) * 7, 1);}
+  .pin-quote .pl:nth-child(2){--o:clamp(0, (var(--p) - .17) * 7, 1);}
+  .pin-quote .pl:nth-child(3),
+  .pin-quote .pl:nth-child(4){--o:clamp(0, (var(--p) - .31) * 7, 1);}
+  .pin-quote .pl--g{color:#D8A968;}
+  .pin-quote{font-family:'Playfair Display',serif; font-weight:500; font-size:clamp(19px,3.2vw,40px); line-height:1.2; color:#F6F3EE; text-shadow:0 2px 26px rgba(6,24,31,.72), 0 1px 3px rgba(6,24,31,.5); max-width:none; margin:0; position:relative; z-index:2; transform:scale(calc(.68 + var(--p) * .32)); transform-origin:50% 50%; letter-spacing:-1px;}
+.pin-quote .g{color:var(--gold); font-style:italic;}
+
+/* ===== SYMBOLON ===== */
+.sym{position:relative;}
+.sym-track{height:230vh;}
+.sym{background:radial-gradient(62% 50% at 50% 48%, rgba(183,132,78,.085), transparent 70%), linear-gradient(180deg, #06181F, #081E27 45%, #06181F);}
+  .sym-stage{position:sticky; top:0; height:100svh; display:grid; place-items:center; align-content:center; gap:26px; padding:0 var(--gut); text-align:center;}
+.sym-stage svg{width:min(66vw,430px); height:auto; overflow:visible;}
+  .sym .pul{stroke-dasharray:1; stroke-dashoffset:var(--undrawn,1);}
+  .sym .pul--l{stroke:var(--gold); transform:translateX(calc(var(--apart,1) * -105px));}
+  .sym .pul--r{stroke:var(--red);  transform:translateX(calc(var(--apart,1) *  105px));}
+  .sym .lens{opacity:calc((1 - var(--apart,1)) * (1 - var(--apart,1)));}
+  .sym .lens-srafura{stroke:rgba(242,239,234,.62);}
+  .sym .lens-obrys{fill:none; stroke:rgba(242,239,234,.75); stroke-width:0.9; vector-effect:non-scaling-stroke;}
+  .sym-dodatek{font-size:13.5px; line-height:1.8; color:var(--body); max-width:52ch; margin:20px auto 0;}
+  .sym-citat{font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(17px,2.2vw,24px); line-height:1.45; color:var(--paper); max-width:34ch; margin:14px auto 0;}
+  .sym-cap{font-size:13px; letter-spacing:.5px; line-height:1.8; color:var(--muted); max-width:40ch; margin:0 auto;}
+.sym-cap b{color:var(--paper); font-weight:600;}
+
+/* ===== PANELY, karty a mřížky ===== */
+.dvere{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; max-width:940px; margin:0 auto;}
+  @media (max-width:720px){ .dvere{grid-template-columns:1fr} }
+  .grid2{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px;}
+.slova{display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(24px,4vw,44px); max-width:700px; margin:30px auto 0;}
+  .slovo{margin:0;}
+  .slovo img{width:100%; display:block; border:1px solid var(--line); border-radius:10px;}
+  .slovo figcaption{margin-top:16px;}
+  .slovo-n{display:block; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; font-weight:600; color:var(--gold); margin-bottom:7px;}
+  .slovo-t{display:block; font-size:13.5px; line-height:1.7; color:var(--body);}
+  .slovo--pas{max-width:700px; margin:0 auto;}
+  .slovo--pas figcaption{margin-top:16px; max-width:52ch;}
+  @media (max-width:560px){ .slova{grid-template-columns:1fr} }
+  .triptych{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); max-width:900px; margin:26px auto 0; border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+.triptych img{width:100%; display:block;}
+.trislova{display:grid; grid-template-columns:repeat(3,1fr); gap:26px; max-width:900px; margin:22px auto 0;}
+.trislova dt{font-size:11px; letter-spacing:2.5px; text-transform:uppercase; font-weight:600; color:var(--gold); margin-bottom:6px;}
+.ucitele{display:flex; flex-wrap:wrap; justify-content:center; gap:26px 20px; margin:26px 0 0;}
+  .ucitel{flex:0 1 138px;}
+  .ucitel{margin:0; text-align:center;}
+  .ucitel img{width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:50%; border:1px solid var(--line); display:block;}
+  .u-n{display:block; font-family:'Playfair Display',serif; font-size:14px; color:var(--paper); margin-top:11px; line-height:1.25;}
+  .u-o{display:block; font-size:11px; line-height:1.5; color:var(--muted); margin-top:4px;}
+  .knihy{display:grid; grid-template-columns:repeat(3,1fr); gap:20px 28px; margin:0;}
+  @media (max-width:900px){ .knihy{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:560px){ .knihy{grid-template-columns:1fr} }
+  .knihy dt{font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:600; color:var(--gold); margin-bottom:5px;}
+  .knihy dd{margin:0; font-size:13px; line-height:1.6; color:var(--body);}
+  .trislova dd{margin:0; font-size:13.5px; line-height:1.65; color:var(--muted);}
+@media (max-width:640px){ .trislova{grid-template-columns:1fr; gap:16px} }
+.grid3{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px;}
+
+.card{
+  background:linear-gradient(160deg, var(--panel), var(--panel2));
+  border:1px solid var(--line); border-radius:12px; overflow:hidden;
+  transition:border-color .25s, transform .28s var(--ease), box-shadow .28s;
+}
+.card:hover{border-color:var(--gold); transform:translateY(-5px); box-shadow:0 14px 40px rgba(0,0,0,.28);}
+.card-body{padding:22px 24px 26px;}
+.card--top{border-top:3px solid var(--gold);}
+  .grid2--lide .card{opacity:0; transition:opacity .8s var(--ease), transform .9s var(--ease);}
+  .grid2--lide .card:first-child{transform:translateX(-38px);}
+  .grid2--lide .card:last-child{transform:translateX(38px);}
+  .grid2--lide.is-in .card{opacity:1; transform:translateX(0);}
+  .grid2--lide.is-in .card:last-child{transition-delay:.12s;}
+  @media (prefers-reduced-motion:reduce){ .grid2--lide .card{opacity:1; transform:none;} }
+.card--top.k{border-top-color:var(--red);}
+.card-label{font-size:11px; letter-spacing:2.5px; text-transform:uppercase; font-weight:600; color:var(--gold); margin:0 0 8px;}
+.card-label.k{color:var(--red);}
+.card dl{margin:0; font-size:14.5px; line-height:1.65;}
+.card dt{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-top:14px; font-weight:600;}
+.card dd{margin:3px 0 0; color:var(--body);}
+
+/* položka se štítkem na okraji, vzor st-item */
+.item{
+  position:relative; padding:14px 18px; background:var(--panel); border:1px solid var(--line);
+  border-radius:6px; border-left:3px solid var(--gold); margin-bottom:8px;
+}
+.item .n{font-family:'Playfair Display',serif; font-size:17px; color:var(--paper); line-height:1.2;}
+.item .r{font-size:11px; letter-spacing:1.2px; font-weight:600; text-transform:uppercase; color:var(--gold); margin-top:4px; line-height:1.5;}
+
+/* skupinový rámeček se štítkem na hraně */
+.group{position:relative; border:1.5px solid var(--line); border-radius:12px; padding:34px 22px 22px; margin-top:26px;}
+.group-label{position:absolute; top:-9px; left:50%; transform:translateX(-50%); background:var(--bg-grad-2); padding:0 12px; white-space:nowrap; font-size:11px; letter-spacing:2px; font-weight:600; color:var(--gold);}
+.band--paper .group-label{background:#F2EFEA;}
+
+/* ===== TŘI KROKY, glyf jako v MVS ===== */
+.steps{max-width:820px; margin:0 auto; position:relative; padding-left:76px;}
+.steps-line{position:absolute; left:24px; top:26px; width:2px; height:0; background:var(--gold); opacity:.35;}
+.step{position:relative; padding-bottom:44px;}
+.step:last-child{padding-bottom:0;}
+.step-glyph{
+  position:absolute; left:-76px; top:0; width:50px; height:50px; border-radius:50%;
+  border:2px solid var(--gold); display:flex; align-items:center; justify-content:center;
+  font-family:'Playfair Display',serif; font-size:20px; color:var(--gold);
+  background:rgba(183,132,78,.06); z-index:1;
+}
+.step-stage{font-size:11px; letter-spacing:2.5px; color:var(--muted); margin-bottom:5px; text-transform:uppercase; font-weight:600;}
+@media (max-width:640px){ .steps{padding-left:0} .steps-line{display:none} .step-glyph{position:static; margin-bottom:14px} }
+
+/* ===== SEZNAM ODMÍTNUTÍ ===== */
+.nots{list-style:none; padding:0; margin:0; max-width:820px; margin-inline:auto;}
+.nots li{display:grid; grid-template-columns:26px 1fr; gap:8px; padding:15px 0; border-bottom:1px solid var(--line); font-size:16.5px; line-height:1.7;}
+.nots li::before{content:"×"; color:var(--red); font-family:'Playfair Display',serif; font-size:19px; line-height:1.5;}
+
+/* ===== MANIFEST ===== */
+.manifest{max-width:41rem; margin:0 auto;}
+.manifest .claim{font-family:'Playfair Display',serif; font-weight:500; font-size:clamp(24px,3.6vw,42px); letter-spacing:1px; text-align:center; color:var(--gold); margin:0; line-height:1.2;}
+.manifest p{font-size:17px; line-height:1.8;}
+.zaver{position:relative; border-radius:12px; overflow:hidden; border:1px solid var(--line);}
+  .zaver img{width:100%; display:block;}
+  .zaver::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(8,30,39,.10) 0%, rgba(8,30,39,.30) 42%, rgba(8,30,39,.86) 100%);}
+  .zaver-text{position:absolute; left:0; right:0; bottom:0; z-index:2; padding:clamp(20px,4vw,48px); text-align:center;}
+  .zaver-text p{font-family:'Playfair Display',serif; font-size:clamp(17px,2.4vw,32px); line-height:1.28; color:#F2EFEA; margin:0;}
+  .mise{display:grid; grid-template-columns:minmax(0,1fr) 250px; gap:clamp(24px,4vw,44px); align-items:stretch; max-width:940px; margin:0 auto;}
+  .mise-text{max-width:var(--measure);}
+  .mise-text p:last-child{margin-bottom:0;}
+  .mise-foto{margin:0; border-radius:10px; overflow:hidden; border:1px solid var(--line); min-height:100%;}
+  .mise-foto img{width:100%; height:100%; object-fit:cover; display:block;}
+  @media (max-width:720px){ .mise{grid-template-columns:1fr} .mise-foto{aspect-ratio:16/10; min-height:0} }
+  .prostor{position:relative;}
+  .prostor-track{height:200vh;}
+  .prostor-stage{position:sticky; top:14svh; height:min(68svh,600px); display:grid; align-items:center; overflow:hidden; --q:1;}
+  .prostor img{clip-path:inset(0); position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:scale(calc(1.22 - var(--q) * .22)); transform-origin:50% 50%;}
+  .prostor-veil{position:absolute; inset:0; background:linear-gradient(180deg, rgba(242,239,234,.56), rgba(242,239,234,.82) 55%, rgba(242,239,234,.60)); opacity:calc(1 + (1 - var(--q)) * .0);}
+  .prostor-stage::after{content:""; position:absolute; inset:0; background:var(--bg); opacity:calc(1 - clamp(0, var(--q) * 3, 1)); pointer-events:none; z-index:1;}
+  .prostor-text{position:relative; z-index:2; max-width:40rem; margin:0 auto; padding:0 var(--gut); text-align:center;}
+  .prostor-hlavni{opacity:clamp(0, (var(--q) - .02) * 2.6, 1); transform:translateY(calc((1 - clamp(0,(var(--q) - .02)*2.6,1)) * .5em)) scale(calc(.9 + clamp(0,(var(--q) - .02)*2.6,1) * .1)); transform-origin:50% 50%;}
+  .prostor-linka{--k:clamp(0, (var(--q) - .10) * 1.25, 1); position:relative; display:block; height:1px; width:min(320px,64vw); margin:30px auto; overflow:hidden;}
+  .prostor-linka i{position:absolute; top:0; height:1px; width:50%; background:var(--gold); opacity:calc(var(--k) * var(--k) * .8);}
+  .prostor-linka i:first-child{left:0; transform:translateX(calc((1 - var(--k)) * -128%));}
+  .prostor-linka i:last-child{right:0; transform:translateX(calc((1 - var(--k)) * 128%));}
+  .prostor-doplnek{opacity:clamp(0, (var(--q) - .42) * 2.4, 1); transform:translateY(calc((1 - clamp(0,(var(--q) - .42)*2.4,1)) * .4em));}
+  .prostor-hlavni{font-family:'Playfair Display',serif; font-size:clamp(21px,3.2vw,40px); line-height:1.24; color:#26201A; margin:0 0 24px;}
+  .prostor-doplnek{font-size:15.5px; line-height:1.8; color:#3A3630; margin:0; max-width:48ch; margin-inline:auto;}
+  .citat-scena{position:relative;}
+  .cs-track{height:150vh;}
+  .cs-stage{position:sticky; top:15svh; height:min(66svh,580px); display:grid; align-items:center; overflow:hidden; --r:1;}
+  .citat-scena img{clip-path:inset(0); position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 42%; transform:scale(calc(1 + var(--r) * .07)); transform-origin:50% 45%;}
+  .citat-scena-veil{position:absolute; inset:0; background:linear-gradient(180deg, rgba(6,24,31,.60), rgba(6,24,31,.80));}
+  .citat-scena-text{position:relative; z-index:2; max-width:44rem; margin:0 auto; padding:0 var(--gut); text-align:center;}
+  .citat-hlavni{font-family:'Playfair Display',serif; font-size:clamp(24px,4vw,52px); line-height:1.22; color:#F2EFEA; margin:0;}
+  .citat-hlavni span{display:inline-block;}
+  .cs1{opacity:clamp(0, (var(--r) - .04) * 6, 1); transform:translateY(calc((1 - clamp(0,(var(--r) - .04)*6,1)) * .3em));}
+  .cs2{opacity:clamp(0, (var(--r) - .40) * 5, 1); transform:translateY(calc((1 - clamp(0,(var(--r) - .40)*5,1)) * .3em));}
+  .citat-doplnek{font-size:15.5px; line-height:1.8; color:#C7CDCF; margin:0; max-width:46ch; margin-inline:auto;}
+  .pas{border-radius:12px; overflow:hidden; border:1px solid var(--line);}
+  .pas img{width:100%; display:block;}
+  .audio{display:flex; align-items:center; gap:24px; max-width:41rem; margin:8px auto 48px; padding:22px 28px; border:1px solid var(--line); border-radius:999px; background:rgba(154,108,54,.05);}
+  .audio-btn{flex:0 0 auto; width:60px; height:60px; border-radius:50%; border:2px solid var(--gold); background:transparent; color:var(--gold); cursor:pointer; display:grid; place-items:center; padding:0; transition:background .2s, transform .2s;}
+  .audio-btn:hover{background:rgba(154,108,54,.14); transform:scale(1.04);}
+  .audio-btn .ico{width:24px; height:24px; grid-area:1/1; fill:currentColor;}
+  .audio-btn .ico-pause{display:none;}
+  .audio-btn.is-playing .ico-play{display:none;}
+  .audio-btn.is-playing .ico-pause{display:block;}
+  .audio-body{flex:1 1 auto; min-width:0;}
+  .audio-label{display:block; font-size:11px; letter-spacing:3px; text-transform:uppercase; font-weight:600; color:var(--gold); margin-bottom:12px;}
+  .audio-line{height:5px; background:rgba(154,108,54,.22); position:relative; border-radius:3px; cursor:pointer;}
+  .audio-line span{position:absolute; inset:0 auto 0 0; width:0; background:var(--gold); border-radius:2px;}
+  .audio-line i{position:absolute; top:50%; left:0; width:13px; height:13px; margin:-6.5px 0 0 -6.5px; border-radius:50%; background:var(--gold); opacity:0; transition:opacity .2s;}
+  .audio:hover .audio-line i, .audio-line:focus i{opacity:1;}
+  .audio audio[controls]{display:block; width:100%; margin-top:10px;}
+  .audio-time{flex:0 0 auto; font-size:13px; letter-spacing:.5px; color:var(--body); font-variant-numeric:tabular-nums;}
+  .manifest .sign{font-family:'Playfair Display',serif; font-style:italic; font-size:19px; text-align:center; margin-top:38px; color:var(--paper);}
+
+/* ===== ZÁVĚR ===== */
+.next{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; max-width:1000px; margin:0 auto;}
+.next a{
+  display:block; text-decoration:none; padding:26px 24px; border-radius:12px;
+  background:linear-gradient(160deg, var(--panel), var(--panel2)); border:1px solid var(--line);
+  transition:border-color .25s, transform .28s var(--ease);
+}
+.next a:hover{border-color:var(--gold); transform:translateY(-5px);}
+.next b{display:block; font-family:'Playfair Display',serif; font-weight:500; font-size:20px; color:var(--gold); margin-bottom:7px;}
+.next span{font-size:13.5px; color:var(--muted); line-height:1.6;}
+
+/* ===== TIRÁŽ ===== */
+.claim-sig{font-family:'Playfair Display',serif; font-weight:500; font-size:clamp(18px,2.4vw,30px); letter-spacing:.16em; text-transform:uppercase; color:var(--gold); margin:0;}
+  .fmenu{font-size:12.5px; line-height:1.5; color:var(--muted); margin:0 0 6px; max-width:none;}
+  .fmenu b{color:var(--paper); font-weight:600; font-size:11px; letter-spacing:2px; text-transform:uppercase; margin-right:6px;}
+  .fsoc{font-size:12.5px; line-height:1.5; margin:16px 0 12px;}
+  .ftirazka{font-size:11.5px; line-height:1.5; color:var(--muted); margin:0; opacity:.85;}
+  .colophon > a:first-child{display:block; line-height:0; margin-bottom:22px;}
+  .colophon .foot-logo{height:42px; width:auto; opacity:.95;}
+  .colophon{max-width:900px; margin:0 auto; font-size:13.5px; line-height:1.85; color:var(--muted);}
+.colophon dl{display:grid; grid-template-columns:minmax(120px,200px) 1fr; gap:14px 34px; margin:0;}
+.colophon dt{color:var(--body); letter-spacing:.8px;}
+.colophon dd{margin:0;}
+.colophon i{color:var(--body);}
+.colophon .foot-logo{height:42px; width:auto; opacity:.95;}
+@media (max-width:640px){ .colophon dl{grid-template-columns:1fr; gap:2px} .colophon dt{margin-top:16px} }
+
+a{color:var(--gold); text-decoration-thickness:1px; text-underline-offset:3px;}
+a:hover{color:var(--paper);}
+.band--paper a:hover{color:var(--coal);}
+.next a, .topbar a, .rail a{color:inherit; text-decoration:none;}
+.next a b{color:var(--gold);}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold); outline-offset:4px;}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  [data-reveal]{opacity:1; transform:none; transition:none;}
+  .ln > i{transform:none; transition:none;}
+  .pin-track,.sym-track{height:auto;}
+  .pin-stage,.sym-stage{position:static; height:auto; padding-block:var(--rhythm);}
+  .scene-media{position:static; height:auto;}
+  .scene-media .art--fill .art-inner{aspect-ratio:16/9; height:auto;}
+  .scene-copy{margin-top:0; padding-block:var(--rhythm);}
+  .sym .pul{stroke-dashoffset:0;}
+  .sym .pul--l,.sym .pul--r{transform:none;}
+  .topbar{transform:none;}
+}
+
+  /* mobil: čitelnost drobných popisků a dotykové cíle */
+  @media (pointer:coarse){
+    .fmenu, .fsoc{font-size:13.5px; line-height:2.2;}
+    .fmenu a, .fsoc a, .next a, .rail a{display:inline-block; padding-block:6px;}
+  }
+  @media (max-width:640px){
+    .kicker, .audio-label, .card-label, .group-label, .slovo-n, .fmenu b, .u-o{font-size:11.5px;}
+    .hero-meta, .ftirazka{font-size:12px;}
+    .grid2--lide .card:first-child,
+    .grid2--lide .card:last-child{transform:translateY(20px);}
+    .grid2--lide.is-in .card{transform:translateY(0);}
+  }
+
+  /* nízké okno, typicky telefon na šířku: dráhy se počítají z výšky, jinak jich je desítky */
+  @media (max-height:520px){
+    .pin-track{height:140vh;} .prostor-track{height:130vh;} .cs-track{height:110vh;}
+    .zv-track{height:110vh;} .sym-track{height:150vh;} .scene{min-height:auto;}
+    .pin-stage,.prostor-stage,.cs-stage,.zv-stage{height:100svh; top:0;}
+  }
+
+  /* mobil: kratší dráhy připnutých scén, animace doběhne dřív */
+  @media (max-width:640px){
+    .pin-track{height:180vh;}
+    .prostor-track{height:150vh;}
+    .cs-track{height:120vh;}
+    .zv-track{height:120vh;}
+    .sym-track{height:200vh;}
+    .scene{min-height:auto;}
+  }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7CCFJW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="topbar" id="topbar">
+  <a href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img class="brand-logo" src="assets/logo.png" alt="PAULUS, jóga a vědomí"></a>
+  <span class="tb-title">Příběh</span>
+  <a class="tb" href="#manifest">MANIFEST</a>
+</header>
+
+<nav class="rail" id="rail" aria-label="Části stránky">
+  <a href="#cast-i" data-rail="cast-i">I</a>
+  <span class="tick" aria-hidden="true"></span>
+  <a href="#cast-ii" data-rail="cast-ii">II</a>
+  <span class="tick" aria-hidden="true"></span>
+  <a href="#cast-iii" data-rail="cast-iii">III</a>
+</nav>
+
+<!-- ====================== HERO ====================== -->
+<section class="hero">
+  <div class="hero-bg">
+    <video class="hero-img parallax" data-parallax="0.08" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.webp">
+      <source src="assets/onas_hero_loop.webm" type="video/webm">
+      <source src="assets/onas_hero_loop.mp4" type="video/mp4">
+    </video>
+  </div>
+    
+  
+  <div class="hero-veil" aria-hidden="true"></div>
+
+  <div class="hero-top">
+    <img class="hero-logo" src="assets/logo.png" alt="PAULUS, jóga a vědomí">
+  </div>
+
+  <div class="hero-mid">
+    <h1 class="hero-title is-in">
+      <span class="ln"><i style="--i:0">Nikdy jsme neměli</i></span>
+      <span class="ln"><i style="--i:1">více informací.</i></span>
+      <span class="ln"><i style="--i:2" class="g">A přitom toho o sobě</i></span>
+      <span class="ln"><i style="--i:3" class="g">víme čím dál méně.</i></span>
+    </h1>
+    <div class="accent accent--wide accent--left"></div>
+  </div>
+
+  <div class="hero-foot">
+    <p class="hero-sub">Co je smyslem naší existence, kdo jsme a co přinášíme světu.</p>
+    <p class="hero-meta">Čtení na dvanáct minut</p>
+  </div>
+</section>
+
+<!-- ====================== STANDFIRST ====================== -->
+<section class="band band--paper">
+  <div class="hold">
+    <p class="kicker" data-reveal>PAULUS <span class="dot">·</span> O nás</p>
+    <p class="lead" data-reveal data-delay="1">Hlubinná psychologie popsala vnitřní krajinu a védská tradice učí, jak ji žít.</p>
+    <p>To první bez toho druhého je teorie. To druhé bez toho prvního je útěk.</p>
+    <div class="accent" data-reveal></div>
+  </div>
+  
+</section>
+
+<!-- ====================== ČÁST I ====================== -->
+<section class="scene scene--left" id="cast-i">
+  <div class="scene-media">
+    <img class="scene-img parallax" data-parallax="0.12" src="assets/rozpad.webp" alt="">
+    <div class="scene-veil" aria-hidden="true"></div>
+  </div>
+
+  <div class="scene-copy">
+    <div class="hold">
+      <p class="kicker" data-reveal>Část první <span class="dot">·</span> Co se rozdělilo</p>
+      <h2 class="title" data-reveal>
+        <span class="ln"><i style="--i:0">Diabolos znamená</i></span>
+        <span class="ln"><i style="--i:1">rozdělené na příliš</i></span>
+        <span class="ln"><i style="--i:2">malé kousky</i></span>
+      </h2>
+      <p>Technologie a umělá inteligence nám přinášejí čím dál více podrobností o čím dál menších detailech.</p>
+      <p>Náš svět více a více analyzujeme a rozdělujeme na menší a menší kousky, a tím méně máme kapacitu poskládat je do smysluplného celku.</p>
+      <p class="lead" data-reveal>Zaměřujeme se na vnější poznávání a ztrácí se nám vnitřní porozumění. Máme více a více horizontálního dostatku, ale méně a méně vertikálního smyslu.</p>
+      <p>Ďábel se skrývá v detailu, říká se. Diabolos, odkud máme slovo ďábel, znamená rozhozené, rozdělené na tak malé kousky, že už pro život nedávají smysl. Opakem je symbállein, to, co spojuje jednotlivosti do smysluplného celku, do symbolu.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== TŘI SLOVA ====================== -->
+<section class="band band--tight">
+  <div class="wide">
+    <p class="kicker" style="text-align:center" data-reveal>Fragmentace, nebo sjednocení?</p>
+    <div class="accent"></div>
+
+    <div class="slova" data-reveal>
+      <figure class="slovo">
+        <img src="assets/diabolos.webp" alt="Diabolos">
+        <figcaption>
+          <span class="slovo-n">Diabolos</span>
+          <span class="slovo-t">Z řeckého <i>diabállein</i>, házet napříč. Rozhozené a rozdělené na tak malé kousky, že už pro život nedávají smysl. Odtud máme slovo ďábel.</span>
+        </figcaption>
+      </figure>
+      <figure class="slovo">
+        <img src="assets/symbolon.webp" alt="Symbolon">
+        <figcaption>
+          <span class="slovo-n">Symbolon</span>
+          <span class="slovo-t">Z řeckého <i>symbállein</i>, házet dohromady. Rozlomená destička, kterou dva lidé přiložili k sobě a poznali se. Odtud máme slovo symbol.</span>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="accent" style="margin-block:46px 40px"></div>
+
+    <figure class="slovo slovo--pas" data-reveal>
+      <img src="assets/juga.webp" alt="Jóga a religio">
+      <figcaption>
+        <span class="slovo-n">Jóga a religio</span>
+        <span class="slovo-t">Sanskrtské <i>judž</i> znamená spřáhnout. Latinské <i>religare</i> znamená znovu svázat. Obě slova říkají totéž, tedy spojit to, co bylo rozděleno.</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ====================== VIDEO, SYMBOL ====================== -->
+<section class="band band--tight">
+  <div class="wide">
+    <div class="vimeo" data-reveal>
+        <button class="vimeo-fasada" type="button" data-vimeo="1214647698" aria-label="Přehrát video, Symbol a sjednocení">
+          <img class="vimeo-poster" src="" alt="" aria-hidden="true" hidden>
+          <span class="vimeo-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M9.5 6 L18.5 12 L9.5 18 Z"/></svg>
+          </span>
+          <span class="vimeo-kicker">Symbol a sjednocení</span>
+          <span class="vimeo-popis">Proč nevědomí mluví obrazy a co se ztrácí, když se svět rozebere na součástky.</span>
+        </button>
+      </div>
+  </div>
+</section>
+
+<!-- ====================== CITÁT ====================== -->
+<section class="pin" aria-label="Klíčová věta">
+  <div class="pin-track">
+    <div class="pin-stage" id="pinStage">
+      <img class="pin-bg" src="assets/spolecny.webp" alt="">
+      <svg class="pin-ring" viewBox="0 0 600 600" aria-hidden="true">
+        <circle cx="300" cy="300" r="230" pathLength="1"/>
+      </svg>
+      <blockquote class="pin-quote">
+        <span class="pl">Slovo jóga i religio</span>
+        <span class="pl">znamenají totéž.</span>
+        <span class="pl pl--g">Spojit to,</span>
+        <span class="pl pl--g">co bylo rozděleno.</span>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="prostor">
+  <div class="prostor-track">
+    <div class="prostor-stage" id="prostorStage">
+      <img src="assets/prostor.webp" alt="Daniel a Kristýna proti obloze">
+      <div class="prostor-veil"></div>
+      <div class="prostor-text">
+        <p class="prostor-hlavni">Existujeme právě proto, abychom vytvářeli prostor, kde toto sjednocení a návrat do smyslu může probíhat.</p>
+        <span class="prostor-linka" aria-hidden="true"><i></i><i></i></span>
+        <p class="prostor-doplnek">Nevytváříme další směr ani nauku jako další fragment. Ukazujeme možnosti a cesty a jdeme po nich na začátku s vámi, dokud nebudete moci jít sami.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== VIDEO ====================== -->
+
+
+<!-- ====================== MISE ====================== -->
+<section class="band band--paper band--tight">
+  <div class="mise">
+    <div class="mise-text">
+      <p class="kicker" data-reveal>Mise</p>
+      <p class="lead" data-reveal>Pomáháme vzdělaným lidem, kteří nenacházejí dost ani v materialistickém pohledu na člověka, ani v povrchní spiritualitě, porozumět svému tělu, psyché a vědomí a převést toto porozumění do každodenního života.</p>
+      <p>Propojujeme jungiánskou hlubinnou psychologii, védské tradice, práci s tělem a současné poznání. Nenabízíme rychlá řešení, ale systematické vzdělávání, osobní praxi, živé vedení a dlouhodobou komunitu.</p>
+    </div>
+    <figure class="mise-foto" data-reveal><img src="assets/mise.webp" alt="Daniel"></figure>
+  </div>
+  <div class="accent" data-reveal></div>
+</section>
+
+<!-- ====================== ČÁST II ====================== -->
+<section class="band band--paper" id="cast-ii">
+  <div class="hold">
+    <p class="kicker" data-reveal>Část druhá <span class="dot">·</span> Dva lidé</p>
+    <h2 class="title" data-reveal>Kdo jsme</h2>
+    <p class="lead" data-reveal>Věnujeme se propojení hlubinné psychologie s védskými naukami o vědomí. Učíme jungiánskou psychologii, jógu, tantru, mytologii, ajurvédu a džjotiš.</p>
+    <p>V dnešní době zkratek a instantních řešení ukazujeme, že skutečného poznání ani řešení současných krizí nelze dosáhnout bez odvahy jít do hloubky.</p>
+  </div>
+  <div class="accent" data-reveal></div>
+
+  <div class="wide">
+    <div class="vimeo" data-reveal>
+        <button class="vimeo-fasada" type="button" data-vimeo="1214647697" aria-label="Přehrát video, Kdo jsme">
+          <img class="vimeo-poster" src="" alt="" aria-hidden="true" hidden>
+          <span class="vimeo-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M9.5 6 L18.5 12 L9.5 18 Z"/></svg>
+          </span>
+          <span class="vimeo-kicker">Kdo jsme</span>
+          <span class="vimeo-popis">Daniel Paulus o tom, u koho jsme studovali a proč se každý díváme jinam.</span>
+        </button>
+      </div>
+    </div>
+  
+
+<div class="wide">
+    <div class="grid2 grid2--lide" data-reveal>
+      <div class="card card--top">
+        <div class="art art--portrait" style="border:0;border-radius:0">
+          <img class="art-img" src="assets/daniel.webp" alt="">
+        </div>
+        <div class="card-body">
+          <h3>Ing. Daniel Paulus</h3>
+          <p>Daniel Paulus je lektor a průvodce jungiánské psychologie, jógové filozofie a védské tradice. Propojuje hlubinnou psychologii Carla Gustava Junga s autentickou tradicí Šri Vidja.</p>
+          <p>Vystudoval ekonomii a informatiku. Dvacet let pracoval ve vrcholových manažerských pozicích v mezinárodních korporacích a souběžně se třicet let věnuje osobní psychologické a duchovní práci.</p>
+        </div>
+      </div>
+
+      <div class="card card--top k">
+        <div class="art art--portrait" style="border:0;border-radius:0">
+          <img class="art-img" src="assets/kristyna.webp" alt="">
+        </div>
+        <div class="card-body">
+          <h3 style="color:var(--red)">Mgr. Kristýna Paulus</h3>
+          <p>Kristýna Paulus je lektorka jógy, ájurvédská terapeutka a poradkyně védské astrologie. Tradiční ájurvédu a védskou astrologii propojuje s autentickou tradicí Šri Vidja.</p>
+          <p>Vystudovala politickou filozofii a politologii. Specializuje se na ženské zdraví a vzdělávání učitelů jógy, kteří vědí, že podložka je jen začátek.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== SYMBOLON ====================== -->
+<section class="sym" aria-label="Dvě poloviny jedné destičky">
+  <div class="sym-track">
+    <div class="sym-stage" id="symStage">
+      <svg viewBox="0 0 400 400" role="img" aria-label="Dva protnuté kruhy, z jejichž průniku vzniká třetí tvar">
+      <defs><clipPath id="lens"><path d="M200,104.74 A110,110 0 0,1 200,295.26 A110,110 0 0,1 200,104.74 Z"/></clipPath></defs>
+      <g class="pul pul--l" fill="none" stroke-linecap="round">
+        <circle cx="145" cy="200" r="110" pathLength="1" stroke-width="1"/>
+        <circle cx="145" cy="200" r="103" pathLength="1" stroke-width="0.35"/>
+      </g>
+      <g class="pul pul--r" fill="none" stroke-linecap="round">
+        <circle cx="255" cy="200" r="110" pathLength="1" stroke-width="1"/>
+        <circle cx="255" cy="200" r="103" pathLength="1" stroke-width="0.35"/>
+      </g>
+      <g class="lens">
+        <g clip-path="url(#lens)" class="lens-srafura" fill="none" stroke-linecap="butt">
+        
+          <line x1="140" y1="108" x2="260" y2="108" stroke-width="0.4"/>
+          <line x1="140" y1="113" x2="260" y2="113" stroke-width="0.4"/>
+          <line x1="140" y1="118" x2="260" y2="118" stroke-width="0.4"/>
+          <line x1="140" y1="123" x2="260" y2="123" stroke-width="0.4"/>
+          <line x1="140" y1="128" x2="260" y2="128" stroke-width="0.4"/>
+          <line x1="140" y1="133" x2="260" y2="133" stroke-width="0.4"/>
+          <line x1="140" y1="138" x2="260" y2="138" stroke-width="0.4"/>
+          <line x1="140" y1="143" x2="260" y2="143" stroke-width="0.4"/>
+          <line x1="140" y1="148" x2="260" y2="148" stroke-width="0.4"/>
+          <line x1="140" y1="153" x2="260" y2="153" stroke-width="0.4"/>
+          <line x1="140" y1="158" x2="260" y2="158" stroke-width="0.4"/>
+          <line x1="140" y1="163" x2="260" y2="163" stroke-width="0.4"/>
+          <line x1="140" y1="168" x2="260" y2="168" stroke-width="0.4"/>
+          <line x1="140" y1="173" x2="260" y2="173" stroke-width="0.4"/>
+          <line x1="140" y1="178" x2="260" y2="178" stroke-width="0.4"/>
+          <line x1="140" y1="183" x2="260" y2="183" stroke-width="0.4"/>
+          <line x1="140" y1="188" x2="260" y2="188" stroke-width="0.4"/>
+          <line x1="140" y1="193" x2="260" y2="193" stroke-width="0.4"/>
+          <line x1="140" y1="198" x2="260" y2="198" stroke-width="0.4"/>
+          <line x1="140" y1="203" x2="260" y2="203" stroke-width="0.4"/>
+          <line x1="140" y1="208" x2="260" y2="208" stroke-width="0.4"/>
+          <line x1="140" y1="213" x2="260" y2="213" stroke-width="0.4"/>
+          <line x1="140" y1="218" x2="260" y2="218" stroke-width="0.4"/>
+          <line x1="140" y1="223" x2="260" y2="223" stroke-width="0.4"/>
+          <line x1="140" y1="228" x2="260" y2="228" stroke-width="0.4"/>
+          <line x1="140" y1="233" x2="260" y2="233" stroke-width="0.4"/>
+          <line x1="140" y1="238" x2="260" y2="238" stroke-width="0.4"/>
+          <line x1="140" y1="243" x2="260" y2="243" stroke-width="0.4"/>
+          <line x1="140" y1="248" x2="260" y2="248" stroke-width="0.4"/>
+          <line x1="140" y1="253" x2="260" y2="253" stroke-width="0.4"/>
+          <line x1="140" y1="258" x2="260" y2="258" stroke-width="0.4"/>
+          <line x1="140" y1="263" x2="260" y2="263" stroke-width="0.4"/>
+          <line x1="140" y1="268" x2="260" y2="268" stroke-width="0.4"/>
+          <line x1="140" y1="273" x2="260" y2="273" stroke-width="0.4"/>
+          <line x1="140" y1="278" x2="260" y2="278" stroke-width="0.4"/>
+          <line x1="140" y1="283" x2="260" y2="283" stroke-width="0.4"/>
+          <line x1="140" y1="288" x2="260" y2="288" stroke-width="0.4"/>
+        </g>
+        <path class="lens-obrys" d="M200,104.74 A110,110 0 0,1 200,295.26 A110,110 0 0,1 200,104.74 Z"/>
+      </g>
+    </svg>
+      <p class="sym-cap"><b>Vesica piscis.</b></p>
+      <p class="sym-citat">Všichni jsme básníky a léčiteli, když správně používáme jazyk. Člověk vytváří mandorlu pokaždé, když řekne něco, co je pravdivé.</p>
+      <p class="sym-dodatek">Když mluvíte z místa autenticity, vytváříte most mezi vnitřním a vnějším světem. Když vaše slova spojují emoce s jasností, subjektivní s objektivním, tvoříte mandorlu. Pravdivé slovo není jen informace. Je to akt spojení, mezi tím, co cítíte, a tím, co vyjadřujete. Mezi vámi a druhým člověkem. Mezi fragmenty zkušenosti a celkem.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== DVĚ OPTIKY ====================== -->
+<section class="band">
+  <div class="wide" style="text-align:center">
+    <div class="optiky-band" data-reveal><img src="assets/dve-optiky.webp" alt="Daniel a Kristýna zády k sobě, každý hledí jinam"><div class="optiky-text"><h2 class="title">Dva pohledy<br>na jednoho člověka.</h2></div></div></div>
+  
+
+  <div class="wide">
+    <div class="grid2 grid2--lide" data-reveal>
+      <div class="card card--top">
+        <div class="art art--wide" style="border:0;border-radius:0">
+          <img class="art-img" src="assets/optika-daniel.webp" alt="">
+        </div>
+        <div class="card-body">
+          <p class="card-label">Daniel</p>
+          <dl>
+            <dt>Kam se dívá</dt><dd>psyché, nevědomí, vzorce, mýtus</dd>
+            <dt>Čím</dt><dd>hlubinná psychologie, meditace, tantra, mytologie</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="card card--top k">
+        <div class="art art--wide" style="border:0;border-radius:0">
+          <img class="art-img" src="assets/prameny.webp" alt="">
+        </div>
+        <div class="card-body">
+          <p class="card-label k">Kristýna</p>
+          <dl>
+            <dt>Kam se dívá</dt><dd>tělo, konstituce, rytmus, fáze života</dd>
+            <dt>Čím</dt><dd>ajurvéda, džjotiš, ásánová praxe, ženské zdraví</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== LINIE ====================== -->
+<section class="band band--tight">
+  <div class="wide">
+    <p class="kicker" data-reveal>Linie <span class="dot">·</span> u koho studujeme a kde se inspirujeme</p>
+    <div class="card" data-reveal style="margin-bottom:26px">
+      <div class="art art--cinema" style="border:0;border-radius:0">
+        <img class="art-img" src="assets/optika-kristyna.webp" alt="">
+      </div>
+    </div>
+
+    <div class="ucitele" data-reveal>
+      <figure class="ucitel">
+        <img loading="lazy" src="assets/ucitele/dr-david-frawley.webp" alt="Dr. David Frawley">
+        <figcaption><span class="u-n">Dr. David Frawley</span><span class="u-o">Jóga, ajurvéda, meditace, mantra, védské poradenství, džjotiš</span></figcaption>
+      </figure>
+      <figure class="ucitel">
+        <img loading="lazy" src="assets/ucitele/dr-georg-feuerstein.webp" alt="Dr. Georg Feuerstein">
+        <figcaption><span class="u-n">Dr. Georg Feuerstein</span><span class="u-o">Tantra, historie a literatura jógy</span></figcaption>
+      </figure>
+      <figure class="ucitel">
+        <img loading="lazy" src="assets/ucitele/dr-robert-svoboda.webp" alt="Dr. Robert Svoboda">
+        <figcaption><span class="u-n">Dr. Robert Svoboda</span><span class="u-o">Tantra, historie jógy, ajurvéda, váma marga</span></figcaption>
+      </figure>
+      <figure class="ucitel">
+        <img loading="lazy" src="assets/ucitele/mudr-stanislav-grof.webp" alt="MUDr. Stanislav Grof">
+        <figcaption><span class="u-n">MUDr. Stanislav Grof</span><span class="u-o">Transpersonální psychologie</span></figcaption>
+      </figure>
+      <figure class="ucitel">
+        <img loading="lazy" src="assets/ucitele/dr-jordan-b-peterson.webp" alt="Dr. Jordan B. Peterson">
+        <figcaption><span class="u-n">Dr. Jordan B. Peterson</span><span class="u-o">Sociální a osobnostní psychologie</span></figcaption>
+      </figure>
+      <figure class="ucitel">
+        <img loading="lazy" src="assets/ucitele/sri-sivapremandadzi.webp" alt="Šri Šívapremandadži">
+        <figcaption><span class="u-n">Šri Šívapremandadži</span><span class="u-o">Tantra, Šri Vidja, mantra, meditace</span></figcaption>
+      </figure>
+      <figure class="ucitel">
+        <img loading="lazy" src="assets/ucitele/sri-amritananda-natha-saraswati-a-sri-an.webp" alt="Šri Amritananda Natha Saraswati a Šri Annapurnamba">
+        <figcaption><span class="u-n">Šri Amritananda Natha Saraswati a Šri Annapurnamba</span><span class="u-o">Šri Vidja, tantra, meditace, mantra, rituály</span></figcaption>
+      </figure>
+      <figure class="ucitel">
+        <img loading="lazy" src="assets/ucitele/raja-choudhury.webp" alt="Raja Choudhury">
+        <figcaption><span class="u-n">Raja Choudhury</span><span class="u-o">Tantra, historie jógy, krija, mantra, Trika</span></figcaption>
+      </figure>
+      <figure class="ucitel">
+        <img loading="lazy" src="assets/ucitele/yogini-shambavi-devi.webp" alt="Yogini Shambavi Devi">
+        <figcaption><span class="u-n">Yogini Shambavi Devi</span><span class="u-o">Mantra, džjotiš, meditace</span></figcaption>
+      </figure>
+      <figure class="ucitel">
+        <img loading="lazy" src="assets/ucitele/everett-newell.webp" alt="Everett Newell">
+        <figcaption><span class="u-n">Everett Newell</span><span class="u-o">Jóga</span></figcaption>
+      </figure>
+      <figure class="ucitel">
+        <img loading="lazy" src="assets/ucitele/rod-stryker.webp" alt="Rod Stryker">
+        <figcaption><span class="u-n">Rod Stryker</span><span class="u-o">Jóga, tantra, Šri Vidja</span></figcaption>
+      </figure>
+      <figure class="ucitel">
+        <img loading="lazy" src="assets/ucitele/steven-highburger.webp" alt="Steven Highburger">
+        <figcaption><span class="u-n">Steven Highburger</span><span class="u-o">Džjotiš</span></figcaption>
+      </figure>
+      <figure class="ucitel">
+        <img loading="lazy" src="assets/ucitele/milan-calabek.webp" alt="Milan Calábek">
+        <figcaption><span class="u-n">Milan Calábek</span><span class="u-o">Epigenetika, buddhismus, meditace, filosofie</span></figcaption>
+      </figure>
+    </div>
+
+    <p class="note" data-reveal style="max-width:52ch;margin:22px auto 0;text-align:center">U Frawleyho absolvoval Daniel čtyři certifikační programy v AIVS, Kristýna u něj studuje ajurvédu i džjotiš včetně konzultace a čtení. Svobodovy online programy jsme prošli oba. Šri Šívapremandadži nás oba vedl více než dvouletým iniciačním procesem.</p>
+
+    <div class="group" style="margin-top:26px">
+      <span class="group-label">STUDIUM A INSPIRACE</span>
+      <dl class="knihy" data-reveal>
+        <div><dt>Hlubinná psychologie</dt><dd>C. G. Jung, Marie-Louise von Franz, Robert A. Johnson, James Hollis, James Hillman, Edward Edinger, Robert Moore, Bessel van der Kolk, Richard Schwartz.</dd></div>
+        <div><dt>Mytologie a religionistika</dt><dd>Joseph Campbell, Mircea Eliade, Heinrich Zimmer, Martin Shaw.</dd></div>
+        <div><dt>Mytopoetické hnutí</dt><dd>Robert Bly, Michael Meade, Clarissa Pinkola Estés.</dd></div>
+        <div><dt>Filosofové vědomí</dt><dd>Jean Gebser, Ken Wilber, Iain McGilchrist.</dd></div>
+        <div><dt>Současní myslitelé</dt><dd>John Vervaeke, Jonathan Pageau, Mark Vernon, Stephen Jenkinson.</dd></div>
+        <div><dt>Tantra a indické tradice</dt><dd>Christopher Wallis, Paul Muller-Ortega.</dd></div>
+        <div><dt>Mystici a transpersonální tradice</dt><dd>Aldous Huxley, Ram Dass, Krishna Das, Paul Brunton, Sri M, Sri Aurobindo, Sri Ramana Maharshi, Rupert Spira.</dd></div>
+        <div><dt>Česká mystická linie</dt><dd>Karel Weinfurter, Květoslav Minařík, Eduard a Míla Tomášovi.</dd></div>
+        <div><dt>Mystická poezie</dt><dd>Rainer Maria Rilke, W. B. Yeats, Antonio Machado, Rúmí, Ibn Arabí, Kabír.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== ČÁST III ====================== -->
+<section class="band band--paper" id="cast-iii">
+  <div class="hold">
+    <p class="kicker" data-reveal>Část třetí <span class="dot">·</span> Co se tady dělá</p>
+    <h2 class="title" data-reveal>
+      <span class="ln"><i style="--i:0">Nemusíte si vybírat</i></span>
+      <span class="ln"><i style="--i:1">mezi porozuměním a praxí</i></span>
+    </h2>
+    <p>Nikdo vás neposílá jinam pro druhou půlku. Někdo u toho je dost dlouho na to, aby se něco stalo. A když se pletete, někdo to řekne.</p>
+  </div>
+  <div class="accent" data-reveal></div>
+
+  <div class="wide">
+    <div class="grid3" data-reveal>
+      <div class="card card--top">
+        <div class="card-body">
+          <h3>Psychologie i tradice na jednom místě</h3>
+          <p>Jednotlivé oblasti bývají často dostupné odděleně. Člověk pak musí sám skládat dohromady psychologické porozumění, tělesnou praxi, tradiční kontext a každodenní život. V PAULUS mezi těmito oblastmi vytváříme vědomé vazby.</p>
+          <p class="note" style="border-left:2px solid var(--gold);padding-left:14px;margin-top:16px">Čtyři oblasti nabídky, dvě optiky, odkazy z jednoho oboru do druhého uvnitř kurzů.</p>
+        </div>
+      </div>
+      <div class="card card--top">
+        <div class="card-body">
+          <h3>Struktura a přístupnost</h3>
+          <p>Programy na měsíce, praxe mezi lekcemi, živá skupina. Terapie je otevřená, retreat jednorázový, knihovna kurzů samoobslužná.</p>
+          <p class="note" style="border-left:2px solid var(--gold);padding-left:14px;margin-top:16px">Dvanáctitýdenní kohorty, dva týdny praxe na modul, Satsanga po skončení, více než sedmdesát lidí v dlouhodobém vedení.</p>
+        </div>
+      </div>
+      <div class="card card--top">
+        <div class="card-body">
+          <h3>Autentická linie a učitelé</h3>
+          <p>Učitelé jménem a roky studia. V textech je oddělené, co říká tradice, co ukazuje výzkum a co je vlastní výklad.</p>
+          <p class="note" style="border-left:2px solid var(--gold);padding-left:14px;margin-top:16px">Jmenovitě uvedení učitelé, zdroje pod texty, autor a datum u každé stránky, žádné certifikáty.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== OHLASY ====================== -->
+<section class="band band--deeplight">
+  <div class="hold">
+    <p class="kicker" data-reveal>Ohlasy</p>
+    <h2 class="title" data-reveal>
+      <span class="ln"><i style="--i:0">Co říkají lidé,</i></span>
+      <span class="ln"><i style="--i:1">kteří tím prošli</i></span>
+    </h2>
+  </div>
+  <div class="accent" data-reveal></div>
+
+  <div class="wide">
+    <div class="grid3" data-reveal>
+      <div class="card card--top">
+        <div class="card-body">
+          <p>„Roky jsem se věnoval seberozvoji, ale opakovaně jsem narážel na limity, které se mi nedařilo překonat. Daniel a Kristýna mi nejen pomohli tyto hranice pochopit a integrovat, ale také zásadním způsobem přispěli k rozvoji mého života po fyzické, psychické i společenské stránce. Změny přicházely přirozeně a postupně."</p>
+          <p class="signature">Filip Kasaj</p>
+        </div>
+      </div>
+      <div class="card card--top">
+        <div class="card-body">
+          <p>„Jako psychoterapeutka znám mnoho cest práce se sebou, přesto mi toto vedení spolu s paralelním studiem ajurvédy u Kristýny Paulus otevřelo nový rozměr péče o duševní zdraví. Nabízí zdroje, zpomalení a laskavou ale pevnou oporu místo tlaku na výkon."</p>
+          <p class="signature">Tereza Sladková</p>
+        </div>
+      </div>
+      <div class="card card--top">
+        <div class="card-body">
+          <p>„Díky naší společné půlroční práci právě teď sedím nad knihou a cítím KLID. Pocit klidu, to bylo mé velké přání, možná až ve sféře nedosažitelné. A to vzhledem k okolním turbulencím a všem situacím, které byly a jsou součástí mého života."</p>
+          <p class="signature">Martina Galužná</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="citat-scena">
+  <div class="cs-track">
+    <div class="cs-stage" id="csStage">
+      <img src="assets/hala.webp" alt="">
+      <div class="citat-scena-veil"></div>
+      <div class="citat-scena-text">
+        <p class="citat-hlavni"><span class="cs1">Srozumitelnost</span><br><span class="cs2">bez zjednodušování</span><br><span class="cs2">hlubokých témat.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== PŘEKLAD ====================== -->
+<section class="band band--paper band--tight">
+  <div class="hold">
+    <p class="kicker" data-reveal>Odpovědnost za jazyk</p>
+    <p>Složité téma lze předat srozumitelně, aniž se odstraní jeho napětí, hranice a souvislosti. Proto rozlišujeme, co pochází z tradice, co ze současného poznání a co je náš vlastní výklad.</p>
+  </div>
+  <div class="accent" data-reveal></div>
+</section>
+
+<!-- ====================== FILOSOFIE ====================== -->
+<section class="band band--paper band--tight">
+  <div class="hold">
+    <p class="kicker" data-reveal>Metoda <span class="dot">·</span> proč obojí</p>
+    <h2 class="title ruled" data-reveal>Když Jung dostane praxi a tradice dostane Junga</h2>
+    <p>Jungova psychologie nabízí západní jazyk pro dynamiku nevědomí, stínu, projekce a individuace. Pomáhá rozpoznat, co se v člověku odehrává mimo jeho vědomou kontrolu a jak se to promítá do vztahů, rozhodnutí a duchovní praxe.</p>
+    <p>Védské a tantrické tradice uchovávají jiné mapy člověka a konkrétní způsoby práce s tělem, dechem, myslí, energií a vědomím. Nevznikly ze stejných předpokladů a neříkají jednoduše totéž co Jung.</p>
+    <p>Stavíme je do rozhovoru tam, kde se mohou vzájemně osvětlit. Psychologie může pomoci rozlišit psychický materiál, který se v duchovní praxi otevírá. Tradice může nabídnout dlouhodobou disciplínu a praxi, u níž samotné porozumění nestačí.</p>
+    <p>Nejde o jejich sloučení. Jde o přesnější rozlišování toho, co se v konkrétním člověku právě děje a jak s tím pracovat.</p>
+  </div>
+</section>
+
+<!-- ====================== S ČÍM LIDÉ PŘICHÁZEJÍ ====================== -->
+<section class="band band--paper band--tight">
+  <div class="wide">
+    <p class="kicker" data-reveal>Kdo sem přichází <span class="dot">·</span> a s čím</p>
+    <h2 class="title" data-reveal style="max-width:20ch">Čtyři dveře</h2>
+    <div class="accent"></div>
+    <div class="dvere" data-reveal>
+      <div class="card card--top">
+        <div class="card-body">
+          <p class="card-label">Něco se zlomilo</p>
+          <p>Rozvod, nemoc, vyhoření, ztráta. Odklad, který došel.</p>
+          <p class="note" style="border-left:2px solid var(--gold);padding-left:14px;margin-top:14px">Potřebuju to vyřešit, ne studovat. Odpovídá na ni rychlost prvního kontaktu a to, že vás nikdo neodešle na kurz.</p>
+        </div>
+      </div>
+      <div class="card card--top">
+        <div class="card-body">
+          <p class="card-label">Ví o sobě hodně, ale zvenku</p>
+          <p>Knihy, podcasty, umělá inteligence. Umí pojmenovat svoje vzorce a nezměnilo se nic.</p>
+          <p class="note" style="border-left:2px solid var(--gold);padding-left:14px;margin-top:14px">Tohle už znám. Odpovídá na ni první úkol, který je zážitkový, ne výkladový.</p>
+        </div>
+      </div>
+      <div class="card card--top">
+        <div class="card-body">
+          <p class="card-label">Přišel tělem</p>
+          <p>Cvičí roky a naráží na to, že tělo samo nestačí.</p>
+          <p class="note" style="border-left:2px solid var(--gold);padding-left:14px;margin-top:14px">Psychologie mě nezajímá, chci praxi. Nevyvrací se. Ásána a ajurvéda jsou plnohodnotná cesta a nemusí nikam pokračovat.</p>
+        </div>
+      </div>
+      <div class="card card--top">
+        <div class="card-body">
+          <p class="card-label">Něco se otevřelo</p>
+          <p>Retreat, dýchání, silný sen, krize. A není kde pokračovat.</p>
+          <p class="note" style="border-left:2px solid var(--gold);padding-left:14px;margin-top:14px">Chci zpátky ten stav. Odpovídá na ni rozdíl mezi zážitkem a integrací. Zážitek se opakovat nedá a nemá.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="lead" data-reveal style="max-width:44rem;margin:38px auto 0">Nejčastěji sem přichází vzdělaný dospělý mezi pětatřiceti a pětašedesáti, který už prošel mainstreamovou psychologií nebo mainstreamovou spiritualitou a ani v jedné nenašel dost.</p>
+  </div>
+</section>
+
+<!-- ====================== CESTA ====================== -->
+<section class="scene">
+  <div class="scene-media">
+    <img class="scene-img parallax" data-parallax="0.1" src="assets/cesta.webp" alt="">
+    <div class="scene-veil" aria-hidden="true"></div>
+  </div>
+
+  <div class="scene-copy">
+    <div class="wide">
+      <p class="kicker" data-reveal>Cesta <span class="dot">·</span> tři kroky</p>
+      <h2 class="title" data-reveal>
+        <span class="ln"><i style="--i:0">Vstup, doprovázení,</i></span>
+        <span class="ln"><i style="--i:1">osamostatnění</i></span>
+      </h2>
+
+      <div class="steps">
+        <div class="steps-line" id="stepsLine" aria-hidden="true"></div>
+        <div class="step" data-reveal>
+          <div class="step-glyph">I</div>
+          <div class="step-stage">Krok první</div>
+          <h3>Vstup</h3>
+          <p>Vstupní bod se liší podle toho, kterými ze čtyř dveří přicházíte. Někoho čeká osobní vedení, jiného kohorta a jiného praxe s tělem. Začátek proto nevypadá pro každého stejně.</p>
+        </div>
+        <div class="step" data-reveal>
+          <div class="step-glyph">II</div>
+          <div class="step-stage">Krok druhý</div>
+          <h3>Doprovázení</h3>
+          <p>Kohorta na měsíce, nebo šest měsíců osobního vedení. Mezi lekcemi praktikujete, skupina jde ve stejném čase a když se spletete, někdo vám to řekne.</p>
+        </div>
+        <div class="step" data-reveal>
+          <div class="step-glyph">III</div>
+          <div class="step-stage">Krok třetí</div>
+          <h3>Osamostatnění</h3>
+          <p>Cílem není, abyste tady zůstali. Poslední lekce každého programu ukazuje, jak pokračovat vlastní praxí. Šest měsíců osobního vedení má domluvený konec a závěrečný rozhovor.</p>
+          <p class="lead">Pro všechny, kteří s námi kousek cesty šli, zůstává otevřená bezplatná komunita Satsanga.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CO SE NEDĚLÁ ====================== -->
+<section class="band band--paper">
+  <div class="wide">
+    <h2 class="title" data-reveal style="text-align:center">Co se tady nedělá</h2>
+    <div class="accent"></div>
+    <ul class="nots" data-reveal>
+      <li><span>Rychlá proměna. Změna potřebuje čas, praxi, vztah a ochotu setkat se i s tím, co není příjemné.</span></li>
+      <li><span>Certifikáty na konci kurzu. Dvanáct týdnů z nikoho neudělá učitele a papír na tom nic nezmění.</span></li>
+      <li><span>Následovníci. Dobrý učitel nebere člověku odpovědnost za jeho život.</span></li>
+      <li><span>Nový univerzální systém. Překládáme mezi jazyky tradic a netvrdíme, že všechny říkají totéž.</span></li>
+      <li><span>Vymezování se vůči druhým. Kritika padne, když na ni přijde řeč, ale nestavíme na ní nic.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ====================== MANIFEST ====================== -->
+<section class="band band--paper band--tight" id="manifest" style="border-top:1px solid var(--line)">
+  <div class="manifest" data-reveal>
+    <p class="kicker" style="text-align:center">Manifest</p>
+    <p class="claim">Odvaha jít do hloubky</p>
+    <div class="accent"></div>
+
+    <div class="audio">
+      <audio id="manifestAudio" preload="metadata" src="assets/manifest.mp3"></audio>
+      <button class="audio-btn" id="audioBtn" type="button" aria-label="Přehrát manifest">
+        <svg class="ico ico-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6 L18.5 12 L9.5 18 Z"/></svg><svg class="ico ico-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="8.8" y="6.5" width="2.6" height="11" rx="0.6"/><rect x="12.6" y="6.5" width="2.6" height="11" rx="0.6"/></svg>
+      </button>
+      <div class="audio-body">
+        <span class="audio-label">Manifest, čtený</span>
+        <div class="audio-line" id="audioLine" role="slider" tabindex="0" aria-label="Posun v nahrávce" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <span id="audioFill"></span><i id="audioKnob"></i>
+        </div>
+      </div>
+      <span class="audio-time" id="audioTime">0:00 / 0:00</span>
+    </div>
+
+    <p>Nikdy jsme neměli více informací a jednodušší přístup k nim. A přitom toho o sobě a o svém místě ve světě víme čím dál méně.</p>
+    <p>Náš svět analyzujeme a rozdělujeme na stále menší kousky, a tím méně máme kapacitu poskládat je zpátky do celku. Zaměřujeme se na vnější poznávání a ztrácí se nám vnitřní porozumění. Máme více a více horizontálního dostatku, ale méně a méně vertikálního smyslu.</p>
+    <p>Rozdělil se i člověk. Tělo řeší jeden obor, psychiku druhý, smysl třetí, a žádný z nich neví o těch ostatních. Spiritualita bez stínu, psychologie bez vědomí, praxe bez porozumění a porozumění bez praxe.</p>
+    <p>Nevěříme, že tomu chybí další technika, další rychlá odpověď nebo další motivační návod. Chybí orientace. Schopnost porozumět tomu, co se odehrává v těle, co člověka řídí z nevědomí a co od něj žádá život.</p>
+    <p>Slovo jóga i religio znamenají totéž. Spojit to, co bylo rozděleno. O to nám jde.</p>
+    <p>Hlubinná psychologie pomáhá vidět, co o sobě nevíme. Védské tradice uchovávají po staletí ověřované způsoby, jak pracovat s tělem, myslí, energií a vědomím. Současné poznání umožňuje pokládat nové otázky a ověřovat, co funguje.</p>
+    <p>Nevytváříme nový univerzální systém a netvrdíme, že všechny tradice říkají totéž. Překládáme mezi jejich jazyky, ukazujeme jejich podobnosti i rozdíly a hledáme, co je pravdivé a použitelné pro konkrétního člověka.</p>
+    <p>Nevěříme v rychlou transformaci. Skutečná změna potřebuje čas, praxi, vztah a ochotu setkat se i s tím, co není příjemné.</p>
+    <p>Neučíme jen to, co jsme přečetli. Učíme to, co sami praktikujeme, čím jsme prošli a za co jsme ochotni ručit svým jménem. Proto také otevřeně rozlišujeme, co říká tradice, co ukazuje současný výzkum a co je naše vlastní zkušenost a výklad.</p>
+    <p>Poznání nekončí porozuměním. Musí se projevit ve způsobu, jak člověk zachází se svým tělem, vztahy, prací, mocí, odpovědností i světem kolem sebe.</p>
+    <p>Nechceme vytvářet následovníky. Dobrý učitel člověku nebere odpovědnost za jeho život, pomáhá mu rozvinout schopnost rozlišovat.</p>
+    <p>Proto PAULUS existuje. Aby to spojování mělo kde probíhat.</p>
+    <p>Nevytváříme další směr ani nauku jako další fragment. Ukazujeme možnosti a cesty a jdeme po nich na začátku s vámi, dokud nebudete moci jít sami.</p>
+    <div class="accent"></div>
+    <p class="sign">Daniel a Kristýna Paulus</p>
+  </div>
+</section>
+
+<!-- ====================== SPOLEČNÝ ZÁBĚR ====================== -->
+<section class="zaver-scena">
+  <div class="zv-track">
+    <div class="zv-stage" id="zvStage">
+      <img src="assets/rodina.webp" alt="Rodina za soumraku">
+      <div class="zv-veil"></div>
+      <div class="zv-text">
+        <p class="zv-hlavni">Učíme to, co sami žijeme.</p>
+        <p class="zv-note">Vše, co učíme, se prověřuje životem, ne na podložce.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== KAM ODSUD ====================== -->
+<section class="band">
+  <div class="wide" style="text-align:center;margin-bottom:30px">
+    <p class="kicker" data-reveal>Kam odsud</p>
+    <div class="accent"></div>
+  </div>
+  <nav class="next" data-reveal aria-label="Další kroky">
+    <a href="https://www.paulus.yoga/tema"><b>Nástroje</b><span>Jóga, meditace, psychologie, ajurvéda, džjotiš, tantra, mytologie.</span></a>
+    <a href="https://www.paulus.yoga/kurzy"><b>Programy</b><span>Živé kurzy a ucelené programy ve čtyřech pilířích.</span></a>
+    <a href="https://www.paulus.yoga/veda"><b>Osobní vedení</b><span>Šest měsíců jeden na jednoho. Pojmenovaný začátek i konec.</span></a>
+  </nav>
+</section>
+
+<section class="band band--tight" style="text-align:center">
+  <div class="accent"></div>
+  <p class="claim-sig">Odvaha jít do hloubky</p>
+</section>
+
+<!-- ====================== TIRÁŽ ====================== -->
+<footer class="band" style="border-top:1px solid var(--line); padding-block:clamp(34px,4vw,52px)">
+  <div class="colophon">
+    <a href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img class="foot-logo" src="assets/logo.png" alt="PAULUS"></a>
+
+    <p class="fmenu"><b>Nástroje:</b>
+      <a href="https://www.paulus.yoga/joga">Jóga</a> ·
+      <a href="https://www.paulus.yoga/meditace">Meditace</a> ·
+      <a href="https://www.paulus.yoga/psychologie">Psychologie</a> ·
+      <a href="https://www.paulus.yoga/ajurveda">Ajurvéda</a> ·
+      <a href="https://www.paulus.yoga/dzjotis">Džjotiš</a> ·
+      <a href="https://www.paulus.yoga/tantra">Tantra</a> ·
+      <a href="https://www.paulus.yoga/mytologie">Mytologie</a>
+    </p>
+
+    <p class="fmenu"><b>Programy:</b>
+      <a href="https://www.paulus.yoga/stin">Práce se stínem</a> ·
+      <a href="https://www.paulus.yoga/integralnicesta">Integrální cesta</a> ·
+      <a href="https://www.paulus.yoga/zdravizeny-komplet">Život a zdraví ženy</a> ·
+      <a href="https://www.paulus.yoga/prakticka-ajurveda-2027">Praktická ajurvéda</a> ·
+      <a href="https://www.paulus.yoga/architekt-jogove-praxe">Architekt jógové praxe</a>
+    </p>
+
+    <p class="fmenu"><b>Začátek:</b>
+      <a href="https://www.paulus.yoga/joga-neni-pouze-asana">Začít zdarma</a> ·
+      <a href="https://www.paulus.yoga/joga-od-zacatku">Jóga od začátku do konce</a> ·
+      <a href="https://www.paulus.yoga/umenimeditace">Umění meditace</a>
+    </p>
+
+    <p class="fsoc">
+      <a href="https://www.facebook.com/paulus.yoga">Facebook</a> ·
+      <a href="https://www.instagram.com/paulus.yoga">Instagram</a> ·
+      <a href="https://www.youtube.com/@paulusyoga">YouTube</a> ·
+      <a href="mailto:info@paulus.yoga">info@paulus.yoga</a>
+    </p>
+
+    <p class="ftirazka">K Hájovně 129/36, 142 00 Praha 12 · IČO 07864833 · DIČ CZ07864833 · Texty a revize Daniel Paulus, červenec 2026</p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.paulus.yoga/#organizace",
+      "name": "PAULUS, Jóga a vědomí",
+      "alternateName": "PAULUS",
+      "url": "https://www.paulus.yoga",
+      "slogan": "Odvaha jít do hloubky",
+      "email": "info@paulus.yoga",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cz.paulus.yoga/pribeh/assets/logo.png"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "K Hájovně 129/36",
+        "addressLocality": "Praha 12 Kamýk",
+        "postalCode": "14200",
+        "addressCountry": "CZ"
+      },
+      "sameAs": [
+        "https://www.youtube.com/@paulusyoga",
+        "https://www.instagram.com/paulus.yoga",
+        "https://www.facebook.com/paulus.yoga",
+        "https://www.linkedin.com/company/paulusyoga",
+        "https://cz.paulus.yoga/pribeh"
+      ],
+      "founder": [
+        {
+          "@id": "https://www.paulus.yoga/daniel-paulus#osoba"
+        },
+        {
+          "@id": "https://www.paulus.yoga/kristyna-paulus#osoba"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.paulus.yoga/#web",
+      "url": "https://www.paulus.yoga",
+      "name": "PAULUS, Jóga a vědomí",
+      "inLanguage": "cs",
+      "publisher": {
+        "@id": "https://www.paulus.yoga/#organizace"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.paulus.yoga/daniel-paulus#osoba",
+      "name": "Daniel Paulus",
+      "honorificPrefix": "Ing.",
+      "jobTitle": "Lektor a průvodce jungiánské psychologie, jógové filozofie a védské tradice",
+      "url": "https://www.paulus.yoga/daniel-paulus",
+      "worksFor": {
+        "@id": "https://www.paulus.yoga/#organizace"
+      },
+      "sameAs": [
+        "https://www.danielpaulus.net",
+        "https://danielpaulus.substack.com"
+      ],
+      "knowsAbout": [
+        "jungiánská psychologie",
+        "jógová filozofie",
+        "meditace",
+        "mytologie",
+        "tantra",
+        "Šri Vidja"
+      ],
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "American Institute of Vedic Studies"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.paulus.yoga/kristyna-paulus#osoba",
+      "name": "Kristýna Paulus",
+      "honorificPrefix": "Mgr.",
+      "jobTitle": "Lektorka jógy, ajurvédská terapeutka a poradkyně védské astrologie",
+      "url": "https://www.paulus.yoga/kristyna-paulus",
+      "worksFor": {
+        "@id": "https://www.paulus.yoga/#organizace"
+      },
+      "knowsAbout": [
+        "jóga",
+        "ajurvéda",
+        "džjotiš",
+        "ženské zdraví",
+        "Šri Vidja"
+      ],
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "American Institute of Vedic Studies"
+      }
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://cz.paulus.yoga/pribeh#stranka",
+      "url": "https://cz.paulus.yoga/pribeh",
+      "name": "Příběh PAULUS, kdo jsme a proč existujeme",
+      "description": "Proč vznikla škola propojující hlubinnou psychologii a védské tradice, kdo za ní stojí, u koho studovali a jak vypadá cesta od vstupu k samostatné praxi.",
+      "inLanguage": "cs",
+      "dateModified": "2026-07-31",
+      "isPartOf": {
+        "@id": "https://www.paulus.yoga/#web"
+      },
+      "about": {
+        "@id": "https://www.paulus.yoga/#organizace"
+      },
+      "publisher": {
+        "@id": "https://www.paulus.yoga/#organizace"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://cz.paulus.yoga/pribeh/assets/spolecny.webp"
+      },
+      "breadcrumb": {
+        "@id": "https://cz.paulus.yoga/pribeh#drobecky"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://cz.paulus.yoga/pribeh#drobecky",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "PAULUS",
+          "item": "https://www.paulus.yoga"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Příběh",
+          "item": "https://cz.paulus.yoga/pribeh"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var items = document.querySelectorAll("[data-reveal]");
+  if(reduce || !("IntersectionObserver" in window)){
+    Array.prototype.forEach.call(items, function(el){ el.classList.add("is-in"); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add("is-in"); io.unobserve(e.target); }
+      });
+    }, {rootMargin:"0px 0px -10% 0px", threshold:0.12});
+    Array.prototype.forEach.call(items, function(el){ io.observe(el); });
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll(".sym .pul"), function(p){
+    try{ p.style.setProperty("--len", "700"); }catch(err){}
+  });
+
+  var stage = document.getElementById("symStage");
+  var sTrack = document.querySelector(".sym-track");
+  var bar = document.getElementById("progress");
+  var rail = document.getElementById("rail");
+  var topbar = document.getElementById("topbar");
+  var stepsLn = document.getElementById("stepsLine");
+  var stepsBox = stepsLn ? stepsLn.parentNode : null;
+  var railLinks = document.querySelectorAll("[data-rail]");
+  var parallaxEls = document.querySelectorAll("[data-parallax]");
+
+  function clamp(v){ return v < 0 ? 0 : (v > 1 ? 1 : v); }
+
+  function frame(){
+    var past = window.scrollY > window.innerHeight * 0.85;
+    if(topbar){ topbar.classList.toggle("is-on", past); }
+    if(rail){ rail.classList.toggle("is-on", past); }
+
+    if(bar){
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + "%";
+    }
+
+    if(rail){
+      var active = null;
+      Array.prototype.forEach.call(railLinks, function(a){
+        var sec = document.getElementById(a.getAttribute("data-rail"));
+        if(sec && sec.getBoundingClientRect().top <= window.innerHeight * 0.5){ active = a; }
+        a.classList.remove("is-active");
+      });
+      if(active){ active.classList.add("is-active"); }
+    }
+
+    if(reduce){ return; }
+
+    var zvStage = document.getElementById("zvStage");
+    var zvTrack = document.querySelector(".zv-track");
+    if(zvStage && zvTrack){
+      var zr = zvTrack.getBoundingClientRect();
+      var ztot = zr.height - window.innerHeight;
+      var zz = ztot > 0 ? clamp(-zr.top / ztot) : 0;
+      zvStage.style.setProperty("--z", zz.toFixed(3));
+    }
+
+    var csStage = document.getElementById("csStage");
+    var csTrack = document.querySelector(".cs-track");
+    if(csStage && csTrack){
+      var cr = csTrack.getBoundingClientRect();
+      var ctot = cr.height - window.innerHeight;
+      var rr2 = ctot > 0 ? clamp(-cr.top / ctot) : 0;
+      csStage.style.setProperty("--r", clamp((rr2 - 0.08) / 0.58).toFixed(3));
+    }
+
+    var prStage = document.getElementById("prostorStage");
+    var prTrack = document.querySelector(".prostor-track");
+    if(prStage && prTrack){
+      var qr = prTrack.getBoundingClientRect();
+      var qtot = qr.height - window.innerHeight;
+      var qq = qtot > 0 ? clamp(-qr.top / qtot) : 0;
+      prStage.style.setProperty("--q", qq.toFixed(3));
+    }
+
+    var pinStage = document.getElementById("pinStage");
+    var pTrack = document.querySelector(".pin-track");
+    if(pinStage && pTrack){
+      var pr = pTrack.getBoundingClientRect();
+      var ptot = pr.height - window.innerHeight;
+      var pp = ptot > 0 ? clamp(-pr.top / ptot) : 0;
+      pinStage.style.setProperty("--p", pp.toFixed(3));
+      pinStage.style.setProperty("--ring", clamp((pp - 0.04) / 0.54).toFixed(3));
+    }
+
+    if(stage && sTrack){
+      var r = sTrack.getBoundingClientRect();
+      var total = r.height - window.innerHeight;
+      var p = total > 0 ? clamp(-r.top / total) : 0;
+      var drawn  = clamp(p / 0.38);
+      var joined = clamp((p - 0.36) / 0.30);
+      /* zpomaleni na konci, aby to dosedlo misto naraz */
+      var eased  = 1 - Math.pow(1 - joined, 3);
+      var flash  = p > 0.66 ? clamp(1 - (p - 0.66) / 0.22) : 1;
+      stage.style.setProperty("--undrawn", (1 - drawn).toFixed(3));
+      stage.style.setProperty("--apart", (1 - eased).toFixed(3));
+      stage.style.setProperty("--seam", (0.35 + 0.65 * flash).toFixed(3));
+    }
+
+    Array.prototype.forEach.call(parallaxEls, function(el){
+      var amt = parseFloat(el.getAttribute("data-parallax")) || 0.1;
+      var rr = el.getBoundingClientRect();
+      var off = (rr.top + rr.height / 2 - window.innerHeight / 2) * -amt;
+      el.style.transform = "translate3d(0," + off.toFixed(1) + "px,0) scale(1.06)";
+    });
+
+    if(stepsLn && stepsBox){
+      var rb = stepsBox.getBoundingClientRect();
+      var seen = clamp((window.innerHeight * 0.72 - rb.top) / rb.height);
+      stepsLn.style.height = (seen * (rb.height - 40)) + "px";
+    }
+  }
+
+  var ticking = false;
+  window.addEventListener("scroll", function(){
+    if(!ticking){ ticking = true; window.requestAnimationFrame(function(){ frame(); ticking = false; }); }
+  }, {passive:true});
+  window.addEventListener("resize", frame);
+  frame();
+})();
+
+(function(){
+  var a=document.getElementById("manifestAudio"), b=document.getElementById("audioBtn"),
+      f=document.getElementById("audioFill"), c=document.getElementById("audioTime"),
+      L=document.getElementById("audioLine"), k=document.getElementById("audioKnob");
+  if(!a||!b) return;
+  function mmss(s){ s=Math.max(0,Math.floor(s||0)); return Math.floor(s/60)+":"+String(s%60).padStart(2,"0"); }
+  function kresli(){
+    var pct = a.duration ? (a.currentTime/a.duration*100) : 0;
+    f.style.width = pct+"%"; if(k) k.style.left = pct+"%";
+    if(L) L.setAttribute("aria-valuenow", Math.round(pct));
+    c.textContent = mmss(a.currentTime)+" / "+mmss(a.duration||0);
+  }
+  b.addEventListener("click", function(){
+    if(a.paused){
+      var pok=a.play();
+      if(pok && pok.catch) pok.catch(function(err){
+        a.setAttribute("controls",""); c.textContent="Použijte ovládací prvek";
+        console.warn("Audio se nepodarilo spustit:", err);
+      });
+    } else { a.pause(); }
+  });
+  a.addEventListener("play", function(){ b.classList.add("is-playing"); b.setAttribute("aria-label","Pozastavit manifest"); });
+  a.addEventListener("pause", function(){ b.classList.remove("is-playing"); b.setAttribute("aria-label","Přehrát manifest"); });
+  a.addEventListener("loadedmetadata", kresli);
+  a.addEventListener("timeupdate", kresli);
+  a.addEventListener("ended", function(){ a.currentTime=0; kresli(); });
+  a.addEventListener("error", function(){ c.textContent="Nahrávku se nepodařilo načíst"; });
+  if(L){
+    L.addEventListener("click", function(e){
+      if(!a.duration) return;
+      var r=L.getBoundingClientRect();
+      a.currentTime = Math.min(a.duration, Math.max(0, (e.clientX-r.left)/r.width*a.duration)); kresli();
+    });
+    L.addEventListener("keydown", function(e){
+      if(!a.duration) return;
+      if(e.key==="ArrowRight"){ a.currentTime=Math.min(a.duration,a.currentTime+10); kresli(); }
+      if(e.key==="ArrowLeft"){ a.currentTime=Math.max(0,a.currentTime-10); kresli(); }
+    });
+  }
+  kresli();
+})();
+
+(function(){
+  var tlacitka = document.querySelectorAll(".vimeo-fasada");
+  Array.prototype.forEach.call(tlacitka, function(b){
+    var poster = b.querySelector(".vimeo-poster");
+    if(poster){
+      var zdroj = "assets/video-" + b.getAttribute("data-vimeo") + ".jpg";
+      poster.onload = function(){ poster.hidden = false; };
+      poster.onerror = function(){ poster.remove(); };
+      poster.src = zdroj;
+    }
+    b.addEventListener("click", function(){
+      var id = b.getAttribute("data-vimeo");
+      var f = document.createElement("iframe");
+      f.src = "https://player.vimeo.com/video/" + id +
+              "?autoplay=1&dnt=1&title=0&byline=0&portrait=0&color=B7844E";
+      f.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
+      f.setAttribute("allowfullscreen", "");
+      f.setAttribute("loading", "lazy");
+      f.setAttribute("title", b.querySelector(".vimeo-kicker").textContent);
+      b.parentNode.replaceChild(f, b);
+    });
+  });
+})();
+
+</script>
+
+</body>
+</html>
