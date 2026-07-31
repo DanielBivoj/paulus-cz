@@ -256,6 +256,14 @@ h3{font-family:'Playfair Display',serif; font-weight:500; color:var(--gold); fon
   .vimeo-kicker{font-family:'Playfair Display',serif; font-size:clamp(18px,2.2vw,26px); color:var(--paper); margin-top:6px;}
   .vimeo-popis{font-size:13.5px; line-height:1.7; color:var(--muted); max-width:46ch;}
   .vimeo iframe{width:100%; aspect-ratio:16/9; border:0; border-radius:12px; display:block;}
+  .prepis{margin-top:16px; border-top:1px solid var(--line);}
+  .prepis > summary{list-style:none; cursor:pointer; padding:14px 2px; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); font-weight:600;}
+  .prepis > summary::-webkit-details-marker{display:none;}
+  .prepis > summary::after{content:"+"; float:right; font-size:15px; line-height:1;}
+  .prepis[open] > summary::after{content:"–";}
+  .prepis > summary:hover{color:var(--paper);}
+  .prepis-telo{max-width:var(--measure); padding:4px 2px 22px;}
+  .prepis-telo p{font-size:15px; line-height:1.85;}
   .pin-bg{clip-path:inset(0); position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 45%; opacity:calc(.20 + var(--p) * .26); transform:scale(calc(1.08 - var(--p) * .08)); z-index:0;}
   .pin::after{content:""; position:absolute; inset:0; pointer-events:none; z-index:1;
     background:radial-gradient(60% 50% at 50% 46%, rgba(6,24,31,.10), rgba(6,24,31,.88) 82%);}
@@ -649,6 +657,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="vimeo-kicker">Symbol a sjednocení</span>
           <span class="vimeo-popis">Proč nevědomí mluví obrazy a co se ztrácí, když se svět rozebere na součástky.</span>
         </button>
+        <details class="prepis">
+          <summary>Přepis</summary>
+          <div class="prepis-telo">
+            <p>Proč je symbol důležitý? Protože symbol znamená to, co spojuje. Naše nevědomí s námi nemluví jazykem, který jsme se naučili, ale jazykem symbolů. Symbol je něco, co má mnoho významů, a ty spojuje do jednoho celku.</p>
+            <p>Náš svět je vedený analýzou. Analýza znamená dostávat se do větší a větší hloubky, rozebírat věci na součástky. Vidíte to i v medicíně, kdo chce být dobrý, musí se specializovat na malý kousek. A v určitou chvíli, čím víc ty věci fragmentujete, tím víc ztrácíte pojem o celku. Díváte se na srdce a víte, co dělá, ale už nevnímáte, k čemu to srdce ten člověk vlastně má.</p>
+            <p>Konec konců to je i původní význam náboženství. Religio znamená spojovat to, co bylo fragmentováno, spojovat do jednoty. To byl smysl rituálů. A my jsme o ně přišli, protože je považujeme za přežitky.</p>
+          </div>
+        </details>
       </div>
   </div>
 </section>
