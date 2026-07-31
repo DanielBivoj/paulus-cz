@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cz.paulus.yoga/sitemap.xml

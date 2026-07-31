@@ -1,0 +1,7 @@
+/pribeh/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/pribeh/*
+  Cache-Control: public, max-age=300
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
