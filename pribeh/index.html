@@ -77,7 +77,7 @@ p{margin:0 0 1.4em;}
   position:fixed; top:0; left:0; right:0; height:72px; z-index:60;
   display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
   padding:0 var(--gut);
-  background:rgba(10,35,45,.86); backdrop-filter:blur(8px);
+  background:#0A232D;
   border-bottom:1px solid var(--line);
   transform:translateY(-100%); transition:transform .45s var(--ease);
 }
@@ -86,14 +86,14 @@ p{margin:0 0 1.4em;}
   .brand-logo{height:42px; width:auto; opacity:.95; transition:opacity .2s;}
   .topbar > a:first-child:hover .brand-logo{height:42px; width:auto; opacity:.95; transition:opacity .2s;}
 .tb-title{
-  font-family:'Playfair Display',serif; color:var(--gold); font-size:15px;
+  font-family:'Playfair Display',serif; color:#D3A166; font-size:15px;
   letter-spacing:.5px; justify-self:center; font-weight:500; white-space:nowrap;
 }
-.tb{ justify-self:end; background:transparent; border:1px solid var(--line); color:var(--gold);
+.tb{ justify-self:end; background:transparent; border:1px solid rgba(199,152,94,.6); color:#D3A166;
   font-family:'Source Sans 3'; font-size:11px; letter-spacing:2px; padding:6px 14px;
   border-radius:16px; cursor:pointer; text-decoration:none; transition:.2s;
 }
-.tb:hover{border-color:var(--gold); background:rgba(183,132,78,.1);}
+.tb:hover{border-color:#D3A166; background:rgba(211,161,102,.16); color:#F7F4EF;}
 @media (max-width:640px){ .tb-title{display:none} .audio{flex-wrap:wrap; border-radius:20px; gap:16px} .audio-time{width:100%; text-align:right} }
 
 .progress{position:fixed; top:0; left:0; height:2px; width:0; z-index:70; background:var(--gold);}
@@ -198,6 +198,8 @@ h3{font-family:'Playfair Display',serif; font-weight:500; color:var(--gold); fon
 .hero-top,.hero-mid,.hero-foot{position:relative; z-index:2; padding-inline:var(--gut);}
 .hero-top{padding-top:clamp(26px,4vw,44px);}
 .hero-foot{padding-bottom:clamp(30px,5vw,52px);}
+.hero-logo-odkaz{display:inline-block; line-height:0; transition:opacity .25s;}
+.hero-logo-odkaz:hover{opacity:.78;}
 .hero-logo{width:clamp(160px,16vw,230px); height:auto;}
 .hero-title{
   font-family:'Playfair Display',serif; font-weight:500; color:var(--paper);
@@ -531,7 +533,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="progress" id="progress" aria-hidden="true"></div>
 
 <header class="topbar" id="topbar">
-  <a href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img class="brand-logo" src="assets/logo.png" alt="PAULUS, jóga a vědomí"></a>
+  <a href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img class="brand-logo" src="assets/logo.png" width="1040" height="348" alt="PAULUS, jóga a vědomí"></a>
   <span class="tb-title">Příběh</span>
   <a class="tb" href="#manifest">MANIFEST</a>
 </header>
@@ -557,7 +559,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-veil" aria-hidden="true"></div>
 
   <div class="hero-top">
-    <img class="hero-logo" src="assets/logo.png" alt="PAULUS, jóga a vědomí">
+    <a class="hero-logo-odkaz" href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img class="hero-logo" src="assets/logo.png" width="1040" height="348" alt="PAULUS, jóga a vědomí"></a>
   </div>
 
   <div class="hero-mid">
@@ -590,7 +592,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ====================== ČÁST I ====================== -->
 <section class="scene scene--left" id="cast-i">
   <div class="scene-media">
-    <img class="scene-img parallax" data-parallax="0.12" src="assets/rozpad.webp" alt="">
+    <img class="scene-img parallax" data-parallax="0.12" src="assets/rozpad.webp" width="1400" height="875" alt="">
     <div class="scene-veil" aria-hidden="true"></div>
   </div>
 
@@ -618,14 +620,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="slova" data-reveal>
       <figure class="slovo">
-        <img src="assets/diabolos.webp" alt="Diabolos">
+        <img src="assets/diabolos.webp" width="1024" height="1024" alt="Diabolos">
         <figcaption>
           <span class="slovo-n">Diabolos</span>
           <span class="slovo-t">Z řeckého <i>diabállein</i>, házet napříč. Rozhozené a rozdělené na tak malé kousky, že už pro život nedávají smysl. Odtud máme slovo ďábel.</span>
         </figcaption>
       </figure>
       <figure class="slovo">
-        <img src="assets/symbolon.webp" alt="Symbolon">
+        <img src="assets/symbolon.webp" width="1024" height="1024" alt="Symbolon">
         <figcaption>
           <span class="slovo-n">Symbolon</span>
           <span class="slovo-t">Z řeckého <i>symbállein</i>, házet dohromady. Rozlomená destička, kterou dva lidé přiložili k sobě a poznali se. Odtud máme slovo symbol.</span>
@@ -636,7 +638,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="accent" style="margin-block:46px 40px"></div>
 
     <figure class="slovo slovo--pas" data-reveal>
-      <img src="assets/juga.webp" alt="Jóga a religio">
+      <img src="assets/juga.webp" width="1456" height="816" alt="Jóga a religio">
       <figcaption>
         <span class="slovo-n">Jóga a religio</span>
         <span class="slovo-t">Sanskrtské <i>judž</i> znamená spřáhnout. Latinské <i>religare</i> znamená znovu svázat. Obě slova říkají totéž, tedy spojit to, co bylo rozděleno.</span>
@@ -673,7 +675,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="pin" aria-label="Klíčová věta">
   <div class="pin-track">
     <div class="pin-stage" id="pinStage">
-      <img class="pin-bg" src="assets/spolecny.webp" alt="">
+      <img class="pin-bg" src="assets/spolecny.webp" width="1200" height="799" alt="">
       <svg class="pin-ring" viewBox="0 0 600 600" aria-hidden="true">
         <circle cx="300" cy="300" r="230" pathLength="1"/>
       </svg>
@@ -690,7 +692,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="prostor">
   <div class="prostor-track">
     <div class="prostor-stage" id="prostorStage">
-      <img src="assets/prostor.webp" alt="Daniel a Kristýna proti obloze">
+      <img src="assets/prostor.webp" width="1800" height="874" alt="Daniel a Kristýna proti obloze">
       <div class="prostor-veil"></div>
       <div class="prostor-text">
         <p class="prostor-hlavni">Existujeme právě proto, abychom vytvářeli prostor, kde toto sjednocení a návrat do smyslu může probíhat.</p>
@@ -712,7 +714,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="lead" data-reveal>Pomáháme vzdělaným lidem, kteří nenacházejí dost ani v materialistickém pohledu na člověka, ani v povrchní spiritualitě, porozumět svému tělu, psyché a vědomí a převést toto porozumění do každodenního života.</p>
       <p>Propojujeme jungiánskou hlubinnou psychologii, védské tradice, práci s tělem a současné poznání. Nenabízíme rychlá řešení, ale systematické vzdělávání, osobní praxi, živé vedení a dlouhodobou komunitu.</p>
     </div>
-    <figure class="mise-foto" data-reveal><img src="assets/mise.webp" alt="Daniel"></figure>
+    <figure class="mise-foto" data-reveal><img src="assets/mise.webp" width="760" height="950" alt="Daniel"></figure>
   </div>
   <div class="accent" data-reveal></div>
 </section>
@@ -745,7 +747,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="grid2 grid2--lide" data-reveal>
       <div class="card card--top">
         <div class="art art--portrait" style="border:0;border-radius:0">
-          <img class="art-img" src="assets/daniel.webp" alt="">
+          <img class="art-img" src="assets/daniel.webp" width="1024" height="1280" alt="">
         </div>
         <div class="card-body">
           <h3>Ing. Daniel Paulus</h3>
@@ -756,7 +758,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="card card--top k">
         <div class="art art--portrait" style="border:0;border-radius:0">
-          <img class="art-img" src="assets/kristyna.webp" alt="">
+          <img class="art-img" src="assets/kristyna.webp" width="1024" height="1280" alt="">
         </div>
         <div class="card-body">
           <h3 style="color:var(--red)">Mgr. Kristýna Paulus</h3>
@@ -836,14 +838,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ====================== DVĚ OPTIKY ====================== -->
 <section class="band">
   <div class="wide" style="text-align:center">
-    <div class="optiky-band" data-reveal><img src="assets/dve-optiky.webp" alt="Daniel a Kristýna zády k sobě, každý hledí jinam"><div class="optiky-text"><h2 class="title">Dva pohledy<br>na jednoho člověka.</h2></div></div></div>
+    <div class="optiky-band" data-reveal><img src="assets/dve-optiky.webp" width="1600" height="680" alt="Daniel a Kristýna zády k sobě, každý hledí jinam"><div class="optiky-text"><h2 class="title">Dva pohledy<br>na jednoho člověka.</h2></div></div></div>
   
 
   <div class="wide">
     <div class="grid2 grid2--lide" data-reveal>
       <div class="card card--top">
         <div class="art art--wide" style="border:0;border-radius:0">
-          <img class="art-img" src="assets/optika-daniel.webp" alt="">
+          <img class="art-img" src="assets/optika-daniel.webp" width="1000" height="562" alt="">
         </div>
         <div class="card-body">
           <p class="card-label">Daniel</p>
@@ -856,7 +858,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="card card--top k">
         <div class="art art--wide" style="border:0;border-radius:0">
-          <img class="art-img" src="assets/prameny.webp" alt="">
+          <img class="art-img" src="assets/prameny.webp" width="1000" height="562" alt="">
         </div>
         <div class="card-body">
           <p class="card-label k">Kristýna</p>
@@ -876,61 +878,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="kicker" data-reveal>Linie <span class="dot">·</span> u koho studujeme a kde se inspirujeme</p>
     <div class="card" data-reveal style="margin-bottom:26px">
       <div class="art art--cinema" style="border:0;border-radius:0">
-        <img class="art-img" src="assets/optika-kristyna.webp" alt="">
+        <img class="art-img" src="assets/optika-kristyna.webp" width="1300" height="866" alt="">
       </div>
     </div>
 
     <div class="ucitele" data-reveal>
       <figure class="ucitel">
-        <img loading="lazy" src="assets/ucitele/dr-david-frawley.webp" alt="Dr. David Frawley">
+        <img loading="lazy" src="assets/ucitele/dr-david-frawley.webp" width="420" height="420" alt="Dr. David Frawley">
         <figcaption><span class="u-n">Dr. David Frawley</span><span class="u-o">Jóga, ajurvéda, meditace, mantra, védské poradenství, džjotiš</span></figcaption>
       </figure>
       <figure class="ucitel">
-        <img loading="lazy" src="assets/ucitele/dr-georg-feuerstein.webp" alt="Dr. Georg Feuerstein">
+        <img loading="lazy" src="assets/ucitele/dr-georg-feuerstein.webp" width="420" height="420" alt="Dr. Georg Feuerstein">
         <figcaption><span class="u-n">Dr. Georg Feuerstein</span><span class="u-o">Tantra, historie a literatura jógy</span></figcaption>
       </figure>
       <figure class="ucitel">
-        <img loading="lazy" src="assets/ucitele/dr-robert-svoboda.webp" alt="Dr. Robert Svoboda">
+        <img loading="lazy" src="assets/ucitele/dr-robert-svoboda.webp" width="420" height="420" alt="Dr. Robert Svoboda">
         <figcaption><span class="u-n">Dr. Robert Svoboda</span><span class="u-o">Tantra, historie jógy, ajurvéda, váma marga</span></figcaption>
       </figure>
       <figure class="ucitel">
-        <img loading="lazy" src="assets/ucitele/mudr-stanislav-grof.webp" alt="MUDr. Stanislav Grof">
+        <img loading="lazy" src="assets/ucitele/mudr-stanislav-grof.webp" width="420" height="420" alt="MUDr. Stanislav Grof">
         <figcaption><span class="u-n">MUDr. Stanislav Grof</span><span class="u-o">Transpersonální psychologie</span></figcaption>
       </figure>
       <figure class="ucitel">
-        <img loading="lazy" src="assets/ucitele/dr-jordan-b-peterson.webp" alt="Dr. Jordan B. Peterson">
+        <img loading="lazy" src="assets/ucitele/dr-jordan-b-peterson.webp" width="420" height="420" alt="Dr. Jordan B. Peterson">
         <figcaption><span class="u-n">Dr. Jordan B. Peterson</span><span class="u-o">Sociální a osobnostní psychologie</span></figcaption>
       </figure>
       <figure class="ucitel">
-        <img loading="lazy" src="assets/ucitele/sri-sivapremandadzi.webp" alt="Šri Šívapremandadži">
+        <img loading="lazy" src="assets/ucitele/sri-sivapremandadzi.webp" width="420" height="420" alt="Šri Šívapremandadži">
         <figcaption><span class="u-n">Šri Šívapremandadži</span><span class="u-o">Tantra, Šri Vidja, mantra, meditace</span></figcaption>
       </figure>
       <figure class="ucitel">
-        <img loading="lazy" src="assets/ucitele/sri-amritananda-natha-saraswati-a-sri-an.webp" alt="Šri Amritananda Natha Saraswati a Šri Annapurnamba">
+        <img loading="lazy" src="assets/ucitele/sri-amritananda-natha-saraswati-a-sri-an.webp" width="420" height="420" alt="Šri Amritananda Natha Saraswati a Šri Annapurnamba">
         <figcaption><span class="u-n">Šri Amritananda Natha Saraswati a Šri Annapurnamba</span><span class="u-o">Šri Vidja, tantra, meditace, mantra, rituály</span></figcaption>
       </figure>
       <figure class="ucitel">
-        <img loading="lazy" src="assets/ucitele/raja-choudhury.webp" alt="Raja Choudhury">
+        <img loading="lazy" src="assets/ucitele/raja-choudhury.webp" width="420" height="420" alt="Raja Choudhury">
         <figcaption><span class="u-n">Raja Choudhury</span><span class="u-o">Tantra, historie jógy, krija, mantra, Trika</span></figcaption>
       </figure>
       <figure class="ucitel">
-        <img loading="lazy" src="assets/ucitele/yogini-shambavi-devi.webp" alt="Yogini Shambavi Devi">
+        <img loading="lazy" src="assets/ucitele/yogini-shambavi-devi.webp" width="420" height="420" alt="Yogini Shambavi Devi">
         <figcaption><span class="u-n">Yogini Shambavi Devi</span><span class="u-o">Mantra, džjotiš, meditace</span></figcaption>
       </figure>
       <figure class="ucitel">
-        <img loading="lazy" src="assets/ucitele/everett-newell.webp" alt="Everett Newell">
+        <img loading="lazy" src="assets/ucitele/everett-newell.webp" width="420" height="420" alt="Everett Newell">
         <figcaption><span class="u-n">Everett Newell</span><span class="u-o">Jóga</span></figcaption>
       </figure>
       <figure class="ucitel">
-        <img loading="lazy" src="assets/ucitele/rod-stryker.webp" alt="Rod Stryker">
+        <img loading="lazy" src="assets/ucitele/rod-stryker.webp" width="420" height="420" alt="Rod Stryker">
         <figcaption><span class="u-n">Rod Stryker</span><span class="u-o">Jóga, tantra, Šri Vidja</span></figcaption>
       </figure>
       <figure class="ucitel">
-        <img loading="lazy" src="assets/ucitele/steven-highburger.webp" alt="Steven Highburger">
+        <img loading="lazy" src="assets/ucitele/steven-highburger.webp" width="420" height="420" alt="Steven Highburger">
         <figcaption><span class="u-n">Steven Highburger</span><span class="u-o">Džjotiš</span></figcaption>
       </figure>
       <figure class="ucitel">
-        <img loading="lazy" src="assets/ucitele/milan-calabek.webp" alt="Milan Calábek">
+        <img loading="lazy" src="assets/ucitele/milan-calabek.webp" width="420" height="420" alt="Milan Calábek">
         <figcaption><span class="u-n">Milan Calábek</span><span class="u-o">Epigenetika, buddhismus, meditace, filosofie</span></figcaption>
       </figure>
     </div>
@@ -1032,7 +1034,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="citat-scena">
   <div class="cs-track">
     <div class="cs-stage" id="csStage">
-      <img src="assets/hala.webp" alt="">
+      <img src="assets/hala.webp" width="1600" height="666" alt="">
       <div class="citat-scena-veil"></div>
       <div class="citat-scena-text">
         <p class="citat-hlavni"><span class="cs1">Srozumitelnost</span><br><span class="cs2">bez zjednodušování</span><br><span class="cs2">hlubokých témat.</span></p>
@@ -1106,7 +1108,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ====================== CESTA ====================== -->
 <section class="scene">
   <div class="scene-media">
-    <img class="scene-img parallax" data-parallax="0.1" src="assets/cesta.webp" alt="">
+    <img class="scene-img parallax" data-parallax="0.1" src="assets/cesta.webp" width="1500" height="938" alt="">
     <div class="scene-veil" aria-hidden="true"></div>
   </div>
 
@@ -1202,7 +1204,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="zaver-scena">
   <div class="zv-track">
     <div class="zv-stage" id="zvStage">
-      <img src="assets/rodina.webp" alt="Rodina za soumraku">
+      <img src="assets/rodina.webp" width="1800" height="900" alt="Rodina za soumraku">
       <div class="zv-veil"></div>
       <div class="zv-text">
         <p class="zv-hlavni">Učíme to, co sami žijeme.</p>
@@ -1233,7 +1235,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ====================== TIRÁŽ ====================== -->
 <footer class="band" style="border-top:1px solid var(--line); padding-block:clamp(34px,4vw,52px)">
   <div class="colophon">
-    <a href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img class="foot-logo" src="assets/logo.png" alt="PAULUS"></a>
+    <a href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img class="foot-logo" src="assets/logo.png" width="1040" height="348" alt="PAULUS"></a>
 
     <p class="fmenu"><b>Nástroje:</b>
       <a href="https://www.paulus.yoga/joga">Jóga</a> ·
