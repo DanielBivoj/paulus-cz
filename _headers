@@ -5,3 +5,11 @@
   Cache-Control: public, max-age=300
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+
+/co-je-stin/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/co-je-stin/*
+  Cache-Control: public, max-age=300
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

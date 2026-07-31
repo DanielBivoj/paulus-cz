@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kam zmizelo 90 % vašich darů · INFO | PAULUS</title>
+<meta name="description" content="Stín není vaše temná stránka. Je to všechno, co jste se naučili nebýt. Zážitková stránka o tom, co jste odložili, proč to rozhoduje za vás a co se s tím dá dělat.">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W7CCFJW');</script>
+<!-- End Google Tag Manager -->
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#04131A">
+<link rel="canonical" href="https://cz.paulus.yoga/co-je-stin">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="PAULUS">
+<meta property="og:title" content="Kam zmizelo 90 % vašich darů">
+<meta property="og:description" content="Stín není vaše temná stránka. Je to všechno, co jste se naučili nebýt. Zážitková stránka o tom, co jste odložili, proč to rozhoduje za vás a co se s tím dá dělat.">
+<meta property="og:url" content="https://cz.paulus.yoga/co-je-stin">
+<meta property="og:image" content="https://cz.paulus.yoga/co-je-stin/assets/kruh.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   PAULUS · cz.paulus.yoga/co-je-stin
+   Tri akty. Rozpad, tma, navrat.
+   ========================================================================== */
+:root{
+  --papir:#F2EFEA; --papir2:#E8E3DA;
+  --uhel:#0A0C0D; --teal:#04131A; --teal2:#081E27;
+  --zlata:#B7844E; --zlata2:#9A6C36; --cerven:#C1272D;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --mira:44rem;
+
+  /* prepinane podle rezimu */
+  --pozadi:var(--papir); --pismo:#3A362F; --nadpis:#1E1B16;
+  --akcent:var(--zlata2); --linka:rgba(58,54,47,.18); --tise:#6E6A60;
+}
+.tma-rezim{--papirovka:none;
+  
+  --pozadi:var(--uhel); --pismo:#C0BCB4; --nadpis:#F2EFEA;
+  --akcent:var(--zlata); --linka:rgba(183,132,78,.22); --tise:#6E797D;
+}
+.teal-rezim{
+  --pozadi:var(--teal2); --pismo:#C7CDCF; --nadpis:#F2EFEA;
+  --akcent:var(--zlata); --linka:rgba(183,132,78,.24); --tise:#7d8b90;
+}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:auto;}
+body{
+  margin:0; background:var(--pozadi); color:var(--pismo);
+  transition:background 1.2s var(--ease), color 1.2s var(--ease);
+  font-family:'Source Sans 3',system-ui,sans-serif; font-weight:300;
+  font-size:16px; line-height:1.75; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Playfair Display',serif; font-weight:500; color:var(--nadpis); letter-spacing:-.01em; transition:color 1.2s var(--ease);}
+p{margin:0 0 1.3em;}
+p:last-child{margin-bottom:0;}
+
+/* ---------- obrazy ---------- */
+.obraz{
+  position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:0;
+}
+.obraz img,.obraz video{
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+.obraz--mix{mix-blend-mode:screen;}
+.papirovka{display:var(--papirovka,block);
+  position:absolute; inset:0; pointer-events:none; z-index:1; opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+  mix-blend-mode:multiply;
+}
+.deska,.zrcadlo,.ohlasy,.zaver{position:relative;}
+.deska .in,.zr,.ohl,.zaver > div{position:relative; z-index:3;}
+.deska .kick{position:relative; z-index:2;}
+
+.sazenicova{overflow:hidden;}
+.sazenicova::before{
+  content:""; position:absolute; left:50%; top:50%; translate:-50% -50%;
+  width:min(78vw,620px); aspect-ratio:4/5; z-index:0; pointer-events:none;
+  background:url('assets/sazenice.jpg') center/contain no-repeat;
+  mix-blend-mode:multiply; filter:invert(1) contrast(1.15);
+  opacity:.13;
+}
+
+/* ---------- pevne prvky ---------- */
+.nit{
+  position:fixed; left:clamp(14px,3vw,42px); top:16svh; bottom:16svh; width:1px;
+  z-index:40; pointer-events:none; opacity:0; transition:opacity .8s var(--ease);
+}
+.nit.je{opacity:1;}
+.nit-cara{position:absolute; inset:0; background:color-mix(in srgb, var(--akcent) 18%, transparent);}
+.nit-cara i{position:absolute; inset:0 0 auto 0; height:0; background:var(--akcent); display:block;}
+.nit-bod{
+  position:absolute; left:50%; top:0; width:9px; height:9px; margin-left:-4.5px;
+  border:1px solid var(--akcent); background:var(--pozadi); rotate:45deg;
+  box-shadow:0 0 0 5px var(--pozadi);
+}
+@media (max-width:820px){ .nit{display:none;} }
+.pruh{position:fixed; top:0; left:0; height:2px; width:0; background:var(--akcent); z-index:70;}
+.hlava{
+  position:fixed; top:0; left:0; right:0; height:72px; z-index:60;
+  display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
+  padding:0 clamp(16px,3vw,30px);
+  background:rgba(10,35,45,.86); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(183,132,78,.28);
+  transform:translateY(-100%); transition:transform .45s var(--ease);
+}
+.hlava.je{transform:none;}
+.hlava > a:first-child{justify-self:start; display:block; line-height:0;}
+.hlava img{height:42px; width:auto; opacity:.95;}
+.hlava .tb-title{
+  font-family:'Playfair Display',serif; color:#B7844E; font-size:15px;
+  letter-spacing:.5px; justify-self:center; font-weight:500; white-space:nowrap;
+}
+.hlava .sada{justify-self:end; display:flex; gap:10px; align-items:center;}
+.hlava .knf{
+  background:transparent; border:1px solid rgba(183,132,78,.4); color:#B7844E;
+  font-family:'Source Sans 3',sans-serif; font-size:11px; letter-spacing:2px; padding:6px 14px;
+  border-radius:16px; cursor:pointer; text-decoration:none; transition:.2s;
+}
+.hlava .knf:hover{border-color:#B7844E; background:rgba(183,132,78,.14); color:#F2EFEA;}
+.hlava .knf i{font-style:normal; opacity:.75; letter-spacing:1.6px;}
+@media (max-width:760px){ .hlava .tb-title{display:none;} .hlava .knf i{display:none;} }
+.zvuk[aria-pressed="true"]{color:#F2EFEA; border-color:#B7844E;}
+
+/* ---------- uvod ---------- */
+.pozadiUvod{
+  position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden;
+  opacity:0; transition:opacity 3.4s var(--ease) .3s;
+}
+.uvod.je .pozadiUvod{opacity:1;}
+.pozadiUvod::before{
+  content:""; position:absolute; left:50%; top:46%; translate:-50% -50%;
+  border-radius:50%; pointer-events:none;
+}
+.pozadiUvod::before{
+  width:min(150vmin,1500px); aspect-ratio:1;
+  background:radial-gradient(circle, rgba(255,253,248,.95) 0%, rgba(255,251,242,.55) 34%, rgba(242,239,234,0) 66%);
+  animation:dychej 22s ease-in-out infinite;
+}
+.pozadiVideo{
+  position:absolute; left:0; bottom:0; width:100%; height:84%;
+  object-fit:cover; object-position:center bottom;
+  mix-blend-mode:multiply; opacity:.55;
+  mask-image:linear-gradient(180deg, transparent 0%, #000 32%, #000 100%);
+  -webkit-mask-image:linear-gradient(180deg, transparent 0%, #000 32%, #000 100%);
+}
+@keyframes plyne{
+  0%,100%{transform:scale(1.04) translateY(0)}
+  50%{transform:scale(1.09) translateY(-1.6%)}
+}
+@keyframes dychej{
+  0%,100%{transform:scale(1); opacity:1}
+  50%{transform:scale(1.09); opacity:.82}
+}
+.uvod h1{position:relative; z-index:2;}
+.znak{
+  position:absolute; top:clamp(26px,5vw,54px); left:50%; translate:-50% 0;
+  width:clamp(160px,16vw,230px); height:auto; opacity:0; z-index:2;
+  transition:opacity 1.4s var(--ease);
+}
+.dolu{z-index:2;}
+@media (prefers-reduced-motion:reduce){ .pozadiUvod::before{animation:none;} }
+.uvod.je .znak{opacity:.92;}
+.uvod{background:radial-gradient(64% 54% at 50% 44%, #FFFDF9, var(--papir) 62%, var(--papir2)); min-height:100svh; display:grid; place-items:center; text-align:center; padding:0 24px; position:relative;}
+.uvod h1{margin:0; color:var(--nadpis); font-weight:500; display:flex; flex-direction:column; align-items:center; gap:0;}
+.rad{
+  font-size:clamp(19px,3vw,36px); line-height:1.25; letter-spacing:.01em;
+  opacity:0; transform:translateY(12px);
+  transition:opacity 1.2s var(--ease), transform 1.2s var(--ease);
+}
+.uvod.je .rad--a{opacity:1; transform:none; transition-delay:.2s;}
+.rad--b.je{opacity:1; transform:none;}
+.cifra{
+  display:flex; align-items:baseline; justify-content:center; color:var(--akcent);
+  line-height:.74; margin:clamp(14px,2.2vw,30px) 0 clamp(34px,5.4vw,74px); opacity:0; transform:translateY(18px);
+  transition:opacity 1.4s var(--ease), transform 1.6s var(--ease);
+}
+.uvod.je .cifra{opacity:1; transform:none; transition-delay:1s;}
+.cifra b,.cifra u{
+  font-family:'Playfair Display',serif; font-weight:500; line-height:.74;
+  font-size:clamp(92px,19vw,210px); letter-spacing:-.03em;
+}
+.cifra b{font-variant-numeric:tabular-nums; font-feature-settings:"tnum";}
+.cifra u{text-decoration:none; margin-left:.02em;}
+.dolu{
+  position:absolute; bottom:34px; left:50%; translate:-50% 0;
+  font:600 10px/1 'Source Sans 3',sans-serif; letter-spacing:3px; text-transform:uppercase;
+  color:var(--tise); display:grid; justify-items:center; gap:10px;
+}
+.dolu i{display:block; width:1px; height:38px; background:linear-gradient(var(--zlata2),transparent); animation:tah 2.4s var(--ease) infinite;}
+@keyframes tah{0%{transform:scaleY(.2);transform-origin:top;opacity:0}40%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);transform-origin:bottom;opacity:0}}
+
+/* ---------- jeviste s kruhem ---------- */
+.akt{position:relative;}
+.stopa--rozpad{height:600svh;}
+.stopa--navrat{height:720svh;}
+.jeviste{
+  position:sticky; top:0; height:100svh; overflow:hidden; display:grid; place-items:center;
+  background:
+    radial-gradient(64% 52% at 50% 42%, rgba(183,132,78,.10), transparent 70%),
+    var(--scenaBarva, var(--pozadi));
+}
+.kruh{width:min(66vmin,540px); height:min(66vmin,540px); display:block; overflow:visible; margin-bottom:12svh; position:relative; z-index:2;}
+.dil{transform-box:fill-box; transform-origin:300px 300px; will-change:transform,opacity;}
+.jadro{fill:none; stroke:rgba(154,108,54,.35); stroke-width:1;}
+.cislo{position:absolute; left:50%; top:50%; translate:-50% -50%; margin-top:-6svh; text-align:center; pointer-events:none; z-index:3;}
+.cislo b{
+  display:block; font-family:'Playfair Display',serif; font-weight:500;
+  font-size:clamp(48px,11vmin,116px); line-height:1; color:var(--nadpis);
+  font-variant-numeric:tabular-nums; letter-spacing:-.02em;
+}
+.cislo span{
+  display:block; margin-top:12px; font-size:11px; letter-spacing:3.4px; text-transform:uppercase;
+  color:var(--akcent); font-weight:600; opacity:0; transition:opacity .8s var(--ease);
+}
+.cislo span.je{opacity:1;}
+.hromada{position:absolute; left:50%; bottom:0; translate:-50% 0; width:min(96vmin,860px); max-height:22svh; pointer-events:none; z-index:1;}
+.hromada path{fill:#0A0C0D; stroke:rgba(10,12,13,.5); stroke-width:1;}
+.popisky{position:absolute; inset:auto 0 26svh 0; padding:0 24px; display:grid; place-items:center; pointer-events:none; z-index:4;}
+.pop{grid-area:1/1; text-align:center; opacity:0; transform:translateY(14px); transition:opacity .5s var(--ease), transform .5s var(--ease); max-width:34ch;
+  padding:22px 30px; border-radius:2px;
+  background:radial-gradient(60% 70% at 50% 50%, rgba(4,7,9,.86), rgba(4,7,9,.62) 62%, transparent 100%);
+  backdrop-filter:blur(2px);}
+.pop.je{opacity:1; transform:none;}
+.pop b{display:block; font-family:'Playfair Display',serif; font-weight:500; font-size:clamp(21px,3.4vw,34px); color:#D9A867; margin-bottom:8px; text-shadow:0 2px 18px rgba(0,0,0,.75);}
+.pop b s{text-decoration:none; color:#9AA3A6;}
+.pop b em{font-style:normal; color:var(--akcent);}
+.pop i{font-style:italic; font-size:16.5px; color:#EDE9E2; display:block; text-shadow:0 1px 12px rgba(0,0,0,.8);}
+.nadpisak{
+  position:absolute; left:50%; top:9svh; translate:-50% 0; text-align:center; z-index:4;
+  font-size:11px; letter-spacing:3.4px; text-transform:uppercase; color:var(--akcent);
+  font-weight:600; pointer-events:none;
+}
+
+/* ---------- odkazy v textu ---------- */
+.deska a,.zaverzr a{
+  color:var(--akcent); text-decoration:none;
+  border-bottom:1px solid color-mix(in srgb, var(--akcent) 45%, transparent);
+  transition:border-color .25s, color .25s;
+}
+.deska a:hover,.zaverzr a:hover{border-bottom-color:var(--akcent); color:var(--nadpis);}
+.deska .zlat a{color:inherit;}
+
+/* ---------- textove desky ---------- */
+.deska,.zrcadlo,.ohlasy,.zaver,.pata,.akt{background:var(--pozadi); color:var(--pismo); transition:background 1.2s var(--ease), color 1.2s var(--ease);}
+.deska{min-height:88svh; display:grid; place-items:center; text-align:center; padding:12svh clamp(24px,6vw,40px); border-top:1px solid var(--linka);}
+.deska .in{max-width:var(--mira);}
+.deska .kick{font-size:11px; letter-spacing:3.4px; text-transform:uppercase; color:var(--akcent); font-weight:600; margin:0 0 18px;}
+.deska h2{font-size:clamp(24px,4.4vw,48px); line-height:1.18; margin:0 0 22px; text-wrap:balance;}
+.deska .vel{font-family:'Playfair Display',serif; font-size:clamp(18px,2.5vw,24px); line-height:1.45; color:var(--nadpis);}
+.zlat{color:var(--akcent);}
+.tise{color:var(--tise); font-size:14px;}
+
+/* ---------- akt druhy, sal ---------- */
+.stopa--tma{height:190svh;}
+.sal{position:sticky; top:0; height:100svh; overflow:hidden; background:#050708; cursor:none;}
+.vrstva{position:absolute; inset:0;}
+.utrzek{
+  position:absolute; width:min(28ch,64vw); translate:-50% -50%;
+  font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(16px,2.3vw,25px);
+  line-height:1.35; color:#E9E2D6; text-align:center; transition:color .4s var(--ease);
+}
+.utrzek.naleze{color:var(--akcent);}
+.utrzek small{display:block; margin-top:10px; font-family:'Source Sans 3',sans-serif; font-style:normal; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:var(--tise); font-weight:600;}
+.tma{
+  position:absolute; inset:0; pointer-events:none; z-index:3;
+  background:radial-gradient(circle var(--r,190px) at var(--x,50%) var(--y,50%),
+    rgba(5,7,8,0) 0%, rgba(5,7,8,.06) 40%, rgba(5,7,8,.72) 70%, #050708 88%, #050708 100%);
+}
+.svetlo{
+  position:absolute; inset:0; pointer-events:none; z-index:2; mix-blend-mode:screen;
+  background:radial-gradient(circle calc(var(--r,190px) * .9) at var(--x,50%) var(--y,50%),
+    rgba(214,178,122,.18) 0%, rgba(214,178,122,.06) 45%, transparent 72%);
+}
+.utrzek{transition:color .5s var(--ease);}
+.utrzek{opacity:1;}
+.utrzek.naleze{opacity:1;}
+.zrno{position:absolute; inset:0; pointer-events:none; opacity:.3; mix-blend-mode:overlay; background-image:radial-gradient(rgba(255,255,255,.12) .5px, transparent .6px); background-size:3px 3px;}
+.navod{pointer-events:none; position:absolute; left:50%; top:9svh; translate:-50% 0; z-index:5; text-align:center; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--tise); font-weight:600; pointer-events:none; transition:opacity .6s var(--ease);}
+.spodek{position:absolute; left:50%; bottom:6svh; translate:-50% 0; z-index:6;
+  display:grid; justify-items:center; gap:14px; pointer-events:none;}
+.pocitadlo{margin:0; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--tise); font-weight:600;}
+.odhal{
+  pointer-events:auto; cursor:pointer; background:rgba(8,11,13,.8);
+  border:1px solid rgba(183,132,78,.45); color:#C9A06A;
+  font:600 10px/1 'Source Sans 3',sans-serif; letter-spacing:2.6px; text-transform:uppercase;
+  padding:11px 18px; opacity:0; transition:opacity .8s var(--ease), color .2s, border-color .2s, background .2s;
+}
+.odhal.je{opacity:1;}
+.odhal:hover{color:#F2EFEA; border-color:#D9A867; background:rgba(183,132,78,.18);}
+.pocitadlo b{color:var(--akcent); font-weight:600;}
+.hotovo{position:absolute; left:50%; top:50%; translate:-50% -50%; z-index:6; text-align:center; max-width:26ch; padding:0 24px; opacity:0; transition:opacity .9s var(--ease); pointer-events:none;}
+.hotovo.je{opacity:1;}
+.sal.hotovo-tma .navod,.sal.hotovo-tma .spodek{opacity:0; transition:opacity .8s var(--ease);}
+.hotovo p{font-family:'Playfair Display',serif; font-size:clamp(20px,3.4vw,34px); line-height:1.25; color:var(--nadpis); margin:0;}
+
+/* ---------- zrcadlo ---------- */
+.zrcadlo{min-height:100svh; padding:13svh 24px; display:grid; place-items:center; border-top:1px solid var(--linka);}
+.zr{max-width:820px; width:100%; text-align:center;}
+.krok{display:none;}
+.krok.je{display:block; animation:naber .7s var(--ease);}
+@keyframes naber{from{opacity:0; transform:translateY(12px)}to{opacity:1; transform:none}}
+.zr .kick{font-size:11px; letter-spacing:3.4px; text-transform:uppercase; color:var(--akcent); font-weight:600; margin:0 0 14px;}
+.zr h2{font-size:clamp(23px,4vw,42px); line-height:1.2; margin:0 0 10px; text-wrap:balance;}
+.zr .pod{color:var(--tise); font-size:14.5px; margin:0 0 32px;}
+.mriz{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:30px;}
+.vol{border:1px solid var(--linka); background:transparent; color:var(--pismo); font:400 15px/1 'Source Sans 3',sans-serif; padding:13px 20px; cursor:pointer; transition:border-color .2s,color .2s,background .2s;}
+.vol:hover{border-color:var(--akcent); color:var(--nadpis);}
+.vol[aria-pressed="true"]{background:var(--akcent); border-color:var(--akcent); color:var(--pozadi); font-weight:600;}
+.dal{display:inline-block; padding:14px 32px; border:1px solid var(--akcent); background:transparent; color:var(--akcent); font:600 11px/1 'Source Sans 3',sans-serif; letter-spacing:3px; text-transform:uppercase; cursor:pointer; transition:background .25s,color .25s,opacity .25s;}
+.dal:hover{background:var(--akcent); color:var(--pozadi);}
+.dal[disabled]{opacity:.3; cursor:default;}
+.dal[disabled]:hover{background:transparent; color:var(--akcent);}
+.vysledek{display:grid; gap:24px; margin:4px 0 32px;}
+.sloup{border-top:1px solid var(--linka); padding-top:18px;}
+.sloup p.st{font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--tise); font-weight:600; margin:0 0 12px;}
+.sloup .slova{display:flex; flex-wrap:wrap; gap:8px; justify-content:center;}
+.sloup .slova span{border:1px solid var(--linka); padding:9px 16px; font-size:14.5px; color:var(--nadpis);}
+.sloup--zlat .slova span{border-color:rgba(183,132,78,.6); color:var(--akcent);}
+.zaverzr{max-width:46ch; margin:0 auto;}
+
+/* ---------- ohlasy ---------- */
+.ohlasy{padding:12svh clamp(24px,6vw,40px); border-top:1px solid var(--linka);}
+.ohl{max-width:1000px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px;}
+.ohl blockquote{margin:0; border-top:2px solid var(--akcent); background:color-mix(in srgb, var(--pozadi) 94%, var(--nadpis)); padding:22px 24px 24px;}
+.ohl p{font-size:15px; margin:0 0 14px;}
+.ohl cite{font-style:normal; font-family:'Playfair Display',serif; font-size:17px; color:var(--akcent);}
+.ohlasy .kick{text-align:center; font-size:11px; letter-spacing:3.4px; text-transform:uppercase; color:var(--akcent); font-weight:600; margin:0 0 34px;}
+
+/* ---------- vstup, blok k nakupu ---------- */
+.vstup{
+  position:relative; overflow:hidden; text-align:center;
+  min-height:92svh; display:grid; place-items:center;
+  padding:14svh clamp(24px,6vw,40px);
+  background:var(--pozadi); color:var(--pismo);
+  border-top:1px solid var(--linka);
+}
+.vstup-in{position:relative; z-index:3; max-width:var(--mira);}
+.vstup .vel{font-family:'Playfair Display',serif; font-size:clamp(21px,3.4vw,34px);
+  line-height:1.3; margin:0; text-wrap:balance;}
+.vstup.je .pozadiZaver{opacity:.92;}
+.vstup .papirovka{z-index:1;}
+
+/* ---------- zaver ---------- */
+.tvoje{
+  max-width:620px; margin:38px auto 30px; padding:26px 26px 28px;
+  border:1px solid var(--linka); background:color-mix(in srgb, var(--pozadi) 76%, #FFFDF9);
+  opacity:0; transform:translateY(14px);
+  transition:opacity 1.2s var(--ease), transform 1.2s var(--ease);
+}
+.zaver .tvoje.je{opacity:1; transform:none;}
+.tvoje-nadpis{font-size:11px; letter-spacing:3px; text-transform:uppercase;
+  color:var(--tise); font-weight:600; margin:0 0 16px !important;}
+.tvoje-slova{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:18px;}
+.tvoje-slova span{border:1px solid var(--linka); padding:9px 15px; font-size:14.5px; color:var(--nadpis);}
+.tvoje-slova span.zl{border-color:color-mix(in srgb, var(--akcent) 60%, transparent); color:var(--akcent);}
+.tvoje-veta{font-size:15px; margin:0 !important; max-width:44ch; margin-inline:auto !important;}
+.pozadiZaver{
+  position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden;
+  opacity:0; transition:opacity 3s var(--ease);
+}
+.pozadiZaver::after{
+  content:""; position:absolute; inset:-4%;
+  background:url('assets/zaver.jpg') center/cover no-repeat;
+  mix-blend-mode:multiply; filter:contrast(1.12) brightness(1.04);
+  animation:plyne 34s ease-in-out infinite reverse;
+}
+@media (prefers-reduced-motion:reduce){ .pozadiZaver::after{animation:none;} }
+.cesta{
+  display:grid; justify-items:center; margin:26px auto 4px;
+  height:clamp(44px,6.5vh,80px); position:relative; width:1px;
+}
+.cesta-linka{
+  position:absolute; inset:0; width:1px;
+  background:linear-gradient(var(--zlata2), color-mix(in srgb, var(--zlata2) 25%, transparent));
+  transform:scaleY(0); transform-origin:top; transition:transform 1.6s var(--ease);
+}
+.cesta.je .cesta-linka{transform:scaleY(1);}
+.cesta-bod{
+  position:absolute; top:0; left:50%; width:7px; height:7px; margin-left:-3.5px;
+  border:1px solid var(--zlata2); background:var(--papir); rotate:45deg;
+  opacity:0; transition:opacity .5s var(--ease);
+}
+.cesta.je .cesta-bod{opacity:1; animation:padej 3.4s var(--ease) 1.2s infinite;}
+@keyframes padej{
+  0%{top:0; opacity:0}
+  14%{opacity:1}
+  70%{top:100%; opacity:1}
+  86%,100%{top:100%; opacity:0}
+}
+@media (prefers-reduced-motion:reduce){
+  .cesta-linka{transform:none;}
+  .cesta.je .cesta-bod{animation:none; top:100%;}
+}
+.zaver.je .zaver .papirovka{z-index:1;}
+.body{display:grid; grid-template-columns:repeat(2,1fr); gap:14px;
+  max-width:860px; margin:34px auto 32px; text-align:left;}
+.bod{border-top:2px solid var(--akcent); padding:18px 4px 6px;}
+.bod--siroky{grid-column:1 / -1;}
+@media (max-width:680px){ .body{grid-template-columns:1fr; gap:6px;} }
+.bod h3{display:block; margin:0; font-family:'Playfair Display',serif; font-weight:500; font-size:19px;
+  color:var(--nadpis); margin-bottom:8px; line-height:1.25;}
+.bod span{font-size:14.5px; line-height:1.7; display:block;}
+.parametry{font-size:14.5px; line-height:2; color:#4A453C; margin-top:22px !important; font-weight:400;}
+.vstup .tise{color:#5C5649 !important;}
+.hlava .knf i{font-style:normal; opacity:.75; letter-spacing:2px;}
+@media (max-width:560px){ .hlava .knf i{display:none;} }
+.zaver .tlac{position:relative; overflow:hidden;}
+.zaver .tlac::after{
+  content:""; position:absolute; inset:0; translate:-120% 0;
+  background:linear-gradient(90deg, transparent, rgba(242,239,234,.5), transparent);
+  animation:lesk 4.5s var(--ease) infinite;
+}
+@keyframes lesk{0%,70%{translate:-120% 0}100%{translate:120% 0}}
+.zaver{min-height:auto; display:grid; place-items:center; text-align:center; padding:13svh clamp(24px,6vw,40px) 12svh; border-top:1px solid var(--linka);}
+.zaver h2{font-size:clamp(25px,4.4vw,48px); line-height:1.18; margin:0 auto 18px; max-width:22ch; text-wrap:balance;}
+.zaver p{max-width:48ch; margin:0 auto 12px;}
+.zaver .kick{font-size:11px; letter-spacing:3.4px; text-transform:uppercase; color:var(--akcent); font-weight:600; margin:0 0 16px;}
+.zaver .vel{font-family:'Playfair Display',serif; font-size:clamp(18px,2.4vw,23px); line-height:1.45; color:var(--nadpis);}
+.tlac{
+  margin-top:26px; display:inline-block; padding:21px 46px;
+  background:var(--zlata2); border:1px solid var(--zlata2); color:#FBF8F3; text-decoration:none;
+  font:600 13px/1 'Source Sans 3',sans-serif; letter-spacing:3.2px; text-transform:uppercase;
+  box-shadow:0 10px 30px rgba(122,86,42,.28);
+  transition:background .25s, box-shadow .3s, transform .25s var(--ease);
+}
+.tlac:hover{background:#8A5F2E; box-shadow:0 14px 38px rgba(122,86,42,.38); transform:translateY(-2px);}
+.tlac:active{transform:translateY(0);}
+
+/* ---------- dalsi cteni ---------- */
+.dalsi-cteni{
+  background:var(--papir2); color:var(--pismo); text-align:center;
+  padding:11svh clamp(24px,6vw,40px) 10svh; border-top:1px solid var(--linka);
+}
+.dalsi-kick{font-size:11px; letter-spacing:3.4px; text-transform:uppercase; color:var(--tise); font-weight:600; margin:0 0 14px;}
+.dalsi{margin:0 0 10px;}
+.dalsi a{
+  font-family:'Playfair Display',serif; font-size:clamp(24px,3.8vw,40px); color:var(--nadpis);
+  text-decoration:none; border-bottom:1px solid var(--linka); padding-bottom:4px;
+  transition:color .25s, border-color .25s;
+}
+.dalsi a:hover{color:var(--zlata2); border-bottom-color:var(--zlata2);}
+.dalsi a span{color:var(--zlata2); margin-left:.24em;}
+.dalsi-popis{font-size:14.5px; color:var(--tise); max-width:44ch; margin:0 auto;}
+
+/* ---------- paticka ---------- */
+.pata{
+  background:var(--uhel); color:#8C9498; text-align:center;
+  padding:56px clamp(24px,6vw,40px) 48px; border-top:1px solid rgba(183,132,78,.24);
+}
+.colophon{max-width:900px; margin:0 auto; font-size:13.5px; line-height:1.85;}
+.colophon .foot-logo{height:42px; width:auto; opacity:.95; margin-bottom:22px;}
+.pata a{color:#B7844E; text-decoration:none; border-bottom:1px solid rgba(183,132,78,.28);}
+.pata a:hover{color:#F2EFEA; border-bottom-color:#B7844E;}
+.pata > .colophon > a{border:0;}
+.fmenu{font-size:12.5px; line-height:1.9; color:#8C9498; margin:0 0 6px; max-width:none;}
+.fmenu b{color:#C0BCB4; font-weight:600;}
+.fsoc{font-size:12.5px; line-height:1.9; margin:16px 0 12px;}
+.ftirazka{font-size:11.5px; line-height:1.6; color:#6E797D; margin:0; opacity:.9;}
+@media (max-width:640px){ .fmenu,.fsoc{font-size:13.5px; line-height:2.2;} .ftirazka{font-size:12px;} }
+
+@media (max-width:640px){ .sal{cursor:auto;} }
+
+/* ---------- dotykova zarizeni a uzke obrazovky ---------- */
+@media (pointer:coarse){
+  .vol,.dal,.odhal,.hlava .knf,.tlac{min-height:46px; display:inline-flex; align-items:center; justify-content:center;}
+  .tlac{min-height:56px;}
+}
+@media (max-width:820px){
+  .stopa--rozpad{height:440svh;}
+  .stopa--navrat{height:520svh;}
+  .stopa--tma{height:170svh;}
+  .kruh{width:min(78vmin,420px); height:min(78vmin,420px); margin-bottom:16svh;}
+  .cislo{margin-top:-8svh;}
+  .popisky{bottom:20svh;}
+  .pop{padding:18px 22px; width:min(34ch,88vw);}
+  .body{gap:10px;}
+  .parametry{line-height:1.85;}
+}
+@media (max-width:520px){
+  .deska,.zrcadlo,.vstup{padding-inline:20px;}
+  .nadpisak{top:7svh; letter-spacing:2.4px;}
+  .spodek{bottom:4svh;}
+  .mriz{gap:8px;}
+  .vol{padding:12px 15px; font-size:14px;}
+  .tvoje{padding:20px 18px 22px;}
+  .tlac{padding:19px 26px; font-size:12px; letter-spacing:2.4px;}
+}
+@media (prefers-reduced-motion:reduce){
+  .stopa--rozpad,.stopa--tma,.stopa--navrat{height:auto;}
+  .jeviste,.sal{position:static; height:auto; padding:10svh 0;}
+  .dolu i{animation:none;}
+  .pop{position:static; opacity:1; transform:none;}
+  .popisky{position:static; display:grid; gap:20px; padding:36px 24px 0;}
+  .tma{display:none;}
+  .utrzek{position:static; translate:none; max-width:none; margin:26px auto; display:block;}
+  .vrstva{position:static; display:grid; padding:60px 24px;}
+}
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7CCFJW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="pruh" id="pruh" aria-hidden="true"></div>
+
+<div class="nit" id="nit" aria-hidden="true">
+  <span class="nit-cara"><i id="nitVypln"></i></span>
+  <span class="nit-bod" id="nitBod"></span>
+</div>
+
+<header class="hlava" id="hlava">
+  <a href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img src="assets/logo.png" alt="PAULUS, jóga a vědomí" width="1040" height="348"></a>
+  <span class="tb-title">Stín</span>
+  <span class="sada">
+    <button class="knf zvuk" id="zvuk" aria-pressed="false">Zvuk</button>
+    <a class="knf" href="https://www.paulus.yoga/stin">Práce se stínem <i>živě od října</i></a>
+  </span>
+</header>
+
+<!-- ====================== ÚVOD ====================== -->
+<section class="uvod" id="uvod">
+  <div class="pozadiUvod" aria-hidden="true">
+    <video class="pozadiVideo" id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg">
+      <source src="assets/hero.webm" type="video/webm">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+  </div>
+  <img class="znak" src="assets/logo.png" alt="PAULUS, jóga a vědomí" width="1040" height="348">
+  <h1 aria-label="Kam zmizelo 90 % vašich darů?">
+    <span class="rad rad--a" aria-hidden="true">Kam zmizelo</span>
+    <span class="cifra" aria-hidden="true"><b id="cifra">0</b><u>%</u></span>
+    <span class="rad rad--b" id="radB" aria-hidden="true">vašich darů?</span>
+  </h1>
+  <span class="dolu"><i></i>Posouvejte</span>
+</section>
+
+<!-- ====================== AKT I, ROZPAD ====================== -->
+<section class="akt tma-rezim" id="rozpad">
+  <div class="stopa stopa--rozpad">
+    <div class="jeviste">
+      <div class="obraz obraz--mix" id="obrazA" style="opacity:0">
+        <img src="assets/strepy.jpg" alt="" loading="lazy" width="1680" height="720">
+      </div>
+      <p class="nadpisak">Akt první <span aria-hidden="true">·</span> co jste odložili</p>
+      <svg class="kruh" viewBox="0 0 600 600" aria-hidden="true">
+        <circle class="jadro" cx="300" cy="300" r="118"></circle>
+        <g id="dilyA"></g>
+      </svg>
+      <div class="cislo">
+        <b id="pocet">100&nbsp;%</b>
+        <span id="podcislo">z toho, čím jste mohli být</span>
+      </div>
+      <div class="popisky" id="popiskyA"></div>
+      <svg class="hromada" viewBox="0 0 800 220" aria-hidden="true" preserveAspectRatio="none">
+        <path id="hromadaA" d=""></path>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="deska tma-rezim">
+  <div class="obraz" style="opacity:.34">
+    <img src="assets/postava.jpg" alt="" loading="lazy" width="1456" height="816">
+  </div>
+  <div class="in">
+    <p class="kick">Co z toho plyne</p>
+    <h2>Stín není vaše temná stránka. Je to všechno, co jste se naučili nebýt.</h2>
+    <p class="vel">To, co jste odložili, nezmizelo. Působí to dál v naučených vzorcích, v automatických reakcích a v přesvědčeních o tom, kdo jste a co si můžete dovolit.</p>
+    <p>Tyhle vzorce zareagují dřív, než si jejich vlivu stačíte všimnout. Část toho, čemu říkáte vlastní volba, je zvyk, který jste nikdy vědomě nezvolili.</p>
+    <p>Nezahodili jste to ze slabosti. Přizpůsobili jste se, protože jste jako děti záviseli na tom, aby vás dospělí přijali.</p>
+    <p class="tise" style="margin-top:30px; font-size:13px">Devadesát procent není měření. Je to obraz Roberta Blyho.</p>
+  </div>
+</section>
+
+<!-- ====================== AKT II, TMA ====================== -->
+<section class="akt tma-rezim" id="tmaAkt">
+  <div class="stopa stopa--tma">
+    <div class="sal" id="sal">
+      <div class="obraz" style="opacity:.9">
+        <video id="jeskyne" muted loop playsinline preload="none" poster="assets/jeskyne.jpg">
+          <source src="assets/jeskyne.webm" type="video/webm">
+          <source src="assets/jeskyne.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="vrstva">
+        <div class="utrzek" data-x="28" data-y="26">To, co na druhém vidíte, může být pravda. Síla vaší reakce však nemluví jen o něm.</div>
+        <div class="utrzek" data-x="72" data-y="46">Komplex je autonomní síla. Jedná dřív, než se stihnete rozhodnout.</div>
+        <div class="utrzek" data-x="28" data-y="70">Persona je tvář, kterou potřebujete. Potíž začíná, když ji přestanete rozeznávat od celého sebe.</div>
+        <div class="utrzek" data-x="72" data-y="82">Do tmy nešly jen zlé věci. Šly tam i barvy, hudba a hravost.</div>
+        <div class="utrzek" data-x="50" data-y="55">Vidíte jen to, na co svítíte.</div>
+      </div>
+      <div class="svetlo" id="svetlo"></div>
+      <div class="tma" id="tma"></div>
+      <div class="zrno"></div>
+      <p class="nadpisak" style="top:auto; bottom:14svh; z-index:5">Akt druhý <span aria-hidden="true">·</span> co je ve tmě</p>
+      <p class="navod" id="navod">Posviťte kolem sebe</p>
+      <div class="spodek">
+        <p class="pocitadlo" id="pocitadlo">Nalezeno <b id="kolik">0</b> z 5</p>
+        <button type="button" id="odhal" class="odhal">Ukázat vše</button>
+      </div>
+      <div class="hotovo" id="hotovo"><p>Nevědomí není zlé. Je jen neosvětlené.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== ZRCADLO ====================== -->
+<section class="zrcadlo tma-rezim">
+  <div class="zr">
+    <div class="krok je" id="krok1">
+      <p class="kick">Zrcadlo <span aria-hidden="true">·</span> první polovina</p>
+      <h2>Co vás na lidech dráždí?</h2>
+      <p class="pod">Vyberte tři. Ne to, co je špatné obecně, ale to, co ve vás zvedne víc, než by situace zasloužila. Ten druhý se možná chová přesně tak, jak si myslíte. Síla vaší reakce ale nemluví jen o něm.</p>
+      <div class="mriz" id="mriz1"></div>
+      <button class="dal" id="dal1" disabled>Pokračovat</button>
+    </div>
+    <div class="krok" id="krok2">
+      <p class="kick">Zrcadlo <span aria-hidden="true">·</span> druhá polovina</p>
+      <h2>Co na lidech obdivujete?</h2>
+      <p class="pod">Zase tři, a tentokrát ty, u kterých vás obdiv trochu píchne.</p>
+      <div class="mriz" id="mriz2"></div>
+      <button class="dal" id="dal2" disabled>Ukázat</button>
+    </div>
+    <div class="krok" id="krok3">
+      <p class="kick">Zrcadlo <span aria-hidden="true">·</span> obojí</p>
+      <h2>Obojí ukazuje na totéž místo</h2>
+      <div class="vysledek">
+        <div class="sloup">
+          <p class="st">Co jste odložili, protože to nebylo přijatelné</p>
+          <div class="slova" id="vyp1"></div>
+        </div>
+        <div class="sloup sloup--zlat">
+          <p class="st">Co jste odložili, protože jste uvěřili, že to k vám nemá patřit</p>
+          <div class="slova" id="vyp2"></div>
+        </div>
+      </div>
+      <div class="zaverzr">
+        <p>Ten člověk možná skutečně jedná tak, jak si myslíte. Síla vaší reakce však nemluví jen o něm.</p>
+        <p class="zlat">Temné i zlaté. Obojí leží na stejném místě.</p>
+        <p class="tise">Nic z toho si tahle stránka nepamatuje a nikam to neposílá. Zapamatovat si to musíte sami.</p>
+      </div>
+      <p style="margin-top:28px"><button class="dal" id="znovu">Znovu</button></p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== AKT III, NÁVRAT ====================== -->
+<section class="akt tma-rezim" id="navrat">
+  <div class="stopa stopa--navrat">
+    <div class="jeviste">
+      <div class="obraz obraz--mix" id="obrazB" style="opacity:0">
+        <img src="assets/navrat.jpg" alt="" loading="lazy" width="1680" height="720">
+      </div>
+      <p class="nadpisak">Akt třetí <span aria-hidden="true">·</span> co se vrací</p>
+      <svg class="kruh" viewBox="0 0 600 600" aria-hidden="true">
+        <circle class="jadro" cx="300" cy="300" r="118"></circle>
+        <g id="dilyB"></g>
+      </svg>
+      <div class="popisky" id="popiskyB"></div>
+      <svg class="hromada" viewBox="0 0 800 220" aria-hidden="true" preserveAspectRatio="none">
+        <path id="hromadaB" d=""></path>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="deska sazenicova" style="--pozadi:var(--papir)">
+  <div class="papirovka"></div>
+  <div class="in">
+    <p class="kick">Co se tím změní</p>
+    <h2>Získáte odstup od vlastních reakcí</h2>
+    <p class="vel">Dnes reagujete okamžitě a až potom přemýšlíte proč. Touhle prací se mezi podnětem a reakcí postupně otevírá prostor, ve kterém se dá rozhodnout.</p>
+    <p>Začnete své vzorce rozpoznávat dřív, než zcela převezmou řízení. Uvidíte, kdy se vám vrací stará situace v novém obalu, a nemusíte v ní hrát stejnou roli jako vždycky.</p>
+    <p>Ve vztazích začnete dřív rozpoznávat, co ten druhý opravdu udělal a co jste si k tomu přidali sami. Hádek o nedorozumění bývá pak méně.</p>
+    <p>Přestane vás stát tolik sil držet se zpátky. To, co jste roky potlačovali, se dá použít. Vztek jako hranice, citlivost jako blízkost, tvrdohlavost jako vytrvalost.</p>
+    <p>A dostanete se ke schopnostem, o kterých jste uvěřili, že k vám nepatří. Většinou je to právě to, co roky obdivujete na druhých.</p>
+    <p class="vel zlat">Nic z toho nepřijde samo. Změnit se dá jen to, co nejdřív uvidíte a pojmenujete.</p>
+      </div>
+</section>
+
+<!-- ====================== MOST ====================== -->
+<section class="deska tma-rezim">
+  <div class="in">
+    <p class="kick">Proč to nestačí</p>
+    <h2>Vidět není totéž co změnit</h2>
+    <p class="vel">Tahle stránka vám mohla ukázat stopu. Nemůže vám ale ukázat to, co jste se celý život učili nevidět.</p>
+    <p>Stín není nedostatek informací. Je to slepé místo vašeho vlastního pohledu. Proto se nedá vyřešit dalším článkem, dalším videem ani hodinou přemýšlení o sobě. Když se na sebe díváte pořád stejným pohledem, snadno znovu dojdete k tomu, co jste si mysleli už předtím.</p>
+    <p>Potřebujete čas, pravidelnou praxi, zpětnou vazbu a druhé lidi, kteří vám ukážou to, co byste znovu přehlédli.</p>
+    <p class="vel zlat">Proto <a href="https://www.paulus.yoga/stin">Práce se stínem</a> trvá šest měsíců, probíhá živě a nevedu ji jako sérii přednášek.</p>
+  </div>
+</section>
+
+<!-- ====================== OHLASY ====================== -->
+<section class="ohlasy" style="--pozadi:var(--papir2)"><div class="papirovka"></div>
+  <p class="kick">Co říkají lidé, kteří tím prošli</p>
+  <div class="ohl">
+    <blockquote>
+      <p>„Učení Carla Junga je samo o sobě dost složité a číst jeho knihy bez vedení je docela boj, ale tady je to podané přehledně a srozumitelně. Není to jen teorie, člověk si během toho reálně sahá do sebe a začíná chápat svoje vzorce."</p>
+      <cite>Jiří Buček</cite>
+    </blockquote>
+    <blockquote>
+      <p>„Po Integrální cestě jsem si myslela, že už o sobě leccos vím, ale Práce se stínem mě vyvedla z omylu. Pojmenovala jsem si svůj vzorec kontroly a znovu se učím spontánní radosti a lehkosti, která mi tak chyběla."</p>
+      <cite>Alexandra Micková</cite>
+    </blockquote>
+    <blockquote>
+      <p>„Hodně těžké pro mě je připustit si, že některé věci si nesu z dětství, protože mám skvělé rodiče a celé dětství bych popsala jako šťastné. A zároveň cítím, že jak některé věci odkrývám a léčím, uvolňuje se mi s tím i tělo."</p>
+      <cite>Jitka Bokrová</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ====================== ZÁVĚR ====================== -->
+<section class="zaver" style="--pozadi:var(--papir2)"><div class="papirovka"></div>
+  <div>
+    <p class="kick">Práce se stínem</p>
+    <h2>Svoboda začíná tam, kde vidíte, co vás řídí</h2>
+    <p class="vel">Uvědomění samo o sobě ještě není změna. Je to ale okamžik, kdy se poprvé objeví možnost volby.</p>
+
+    <div class="body">
+      <div class="bod"><h3>Není to katalog témat</h3><span>Každá lekce vychází z toho, co se otevřelo v předchozích čtrnácti dnech. Jde se popořádku, od struktury psychiky přes komplexy a zranění až ke zlatému stínu. V poslední lekci ukazuji, jak pokračovat beze mě.</span></div>
+      <div class="bod"><h3>Pracuje se s tím, co se právě děje</h3><span>Ne s modelovými příklady, ale s vaším konfliktem, snem nebo reakcí, která přišla mezi setkáními. Ptáte se a dostanete odpověď ode mě.</span></div>
+      <div class="bod"><h3>Skupina není publikum</h3><span>Není to jen organizační formát. To, co vás na ostatních přitahuje, dráždí nebo znejišťuje, přináší materiál, který by o samotě nevznikl.</span></div>
+      <div class="bod"><h3>Učím z knih, ne z videí na internetu</h3><span>Jung, von Franz, Johnson, Bly, Hollis, Neumann. K tomu van der Kolk a Schwartz pro práci s tělem a s částmi osobnosti, Frankl pro otázku smyslu a védská tradice tam, kde skutečně sedí.</span></div>
+      <div class="bod bod--siroky"><h3>Nezůstává se u výkladu</h3><span>Ke každé lekci patří tři až pět cvičení, pozorování a rituálů na čtrnáct dní mezi setkáními. K tomu vedená meditace a dechová technika navázaná na téma lekce. Práci se stínem nestačí pochopit. Musí se dělat.</span></div>
+    </div>
+
+    <div class="tvoje" id="tvoje" hidden>
+      <p class="tvoje-nadpis">Vaše vlastní slova z poloviny této stránky</p>
+      <div class="tvoje-slova" id="tvojeSlova"></div>
+      <p class="tvoje-veta">Přesně s tímhle materiálem se v kurzu pracuje. Ne s příklady z knihy, ale s tím, co jste právě pojmenovali sami.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====================== VSTUP ====================== -->
+<section class="vstup" id="vstup" style="--pozadi:var(--papir)">
+  <div class="pozadiZaver" aria-hidden="true"></div>
+  <div class="papirovka"></div>
+  <div class="vstup-in">
+    <p class="vel zlat">Vaše cesta k větší svobodě začíná v říjnu.</p>
+
+    <div class="cesta" id="cesta" aria-hidden="true">
+      <span class="cesta-linka"><i></i></span>
+      <span class="cesta-bod"></span>
+    </div>
+
+    <a class="tlac" href="https://www.paulus.yoga/stin">Prohlédnout celý kurz</a>
+    <p class="parametry">Dvanáct živých online setkání během šesti měsíců<br>jednou za čtrnáct dní <span aria-hidden="true">·</span> záznamy a pracovní materiály zůstávají<br>začátek v říjnu 2026 <span aria-hidden="true">·</span> 15 900 Kč, nebo 6 × 3 000 Kč</p>
+    <p class="tise" style="margin-top:22px; font-size:12.5px">Kurz je vzdělávací a sebezkušenostní. Nenahrazuje psychoterapii ani psychiatrickou péči.</p>
+  </div>
+</section>
+
+<section class="dalsi-cteni">
+  <p class="dalsi-kick">Další čtení</p>
+  <p class="dalsi"><a href="https://cz.paulus.yoga/pribeh">Příběh <span aria-hidden="true">&rarr;</span></a></p>
+  <p class="dalsi-popis">Proč PAULUS existuje, kdo za ním stojí a u koho jsme studovali.</p>
+</section>
+
+<footer class="pata">
+  <div class="colophon">
+    <a href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img class="foot-logo" src="assets/logo.png" alt="PAULUS" width="1040" height="348"></a>
+
+    <p class="fmenu"><b>Nástroje:</b>
+      <a href="https://www.paulus.yoga/joga">Jóga</a> ·
+      <a href="https://www.paulus.yoga/meditace">Meditace</a> ·
+      <a href="https://www.paulus.yoga/psychologie">Psychologie</a> ·
+      <a href="https://www.paulus.yoga/ajurveda">Ajurvéda</a> ·
+      <a href="https://www.paulus.yoga/dzjotis">Džjotiš</a> ·
+      <a href="https://www.paulus.yoga/tantra">Tantra</a> ·
+      <a href="https://www.paulus.yoga/mytologie">Mytologie</a>
+    </p>
+
+    <p class="fmenu"><b>Programy:</b>
+      <a href="https://www.paulus.yoga/stin">Práce se stínem</a> ·
+      <a href="https://www.paulus.yoga/integralnicesta">Integrální cesta</a> ·
+      <a href="https://www.paulus.yoga/zdravizeny-komplet">Život a zdraví ženy</a> ·
+      <a href="https://www.paulus.yoga/prakticka-ajurveda-2027">Praktická ajurvéda</a> ·
+      <a href="https://www.paulus.yoga/architekt-jogove-praxe">Architekt jógové praxe</a>
+    </p>
+
+    <p class="fmenu"><b>Začátek:</b>
+      <a href="https://www.paulus.yoga/joga-neni-pouze-asana">Začít zdarma</a> ·
+      <a href="https://www.paulus.yoga/joga-od-zacatku">Jóga od začátku do konce</a> ·
+      <a href="https://www.paulus.yoga/umenimeditace">Umění meditace</a>
+    </p>
+
+    <p class="fsoc">
+      <a href="https://www.facebook.com/paulus.yoga">Facebook</a> ·
+      <a href="https://www.instagram.com/paulus.yoga">Instagram</a> ·
+      <a href="https://www.youtube.com/@paulusyoga">YouTube</a> ·
+      <a href="mailto:info@paulus.yoga">info@paulus.yoga</a>
+    </p>
+
+    <p class="ftirazka">K Hájovně 129/36, 142 00 Praha 12 · IČO 07864833 · DIČ CZ07864833 · Texty a revize Daniel Paulus, červenec 2026</p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type":"Organization","@id":"https://www.paulus.yoga/#organizace","name":"PAULUS","url":"https://www.paulus.yoga/","sameAs":["https://cz.paulus.yoga/pribeh","https://cz.paulus.yoga/co-je-stin"]},
+    {"@type":"WebSite","@id":"https://www.paulus.yoga/#web","url":"https://www.paulus.yoga/","name":"PAULUS","publisher":{"@id":"https://www.paulus.yoga/#organizace"}},
+    {"@type":"Person","@id":"https://www.paulus.yoga/daniel-paulus#osoba","name":"Daniel Paulus","url":"https://www.paulus.yoga/daniel-paulus","worksFor":{"@id":"https://www.paulus.yoga/#organizace"}},
+    {"@type":"Article","@id":"https://cz.paulus.yoga/co-je-stin#stranka","headline":"Kam zmizelo 90 % vašich darů","url":"https://cz.paulus.yoga/co-je-stin","inLanguage":"cs","author":{"@id":"https://www.paulus.yoga/daniel-paulus#osoba"},"publisher":{"@id":"https://www.paulus.yoga/#organizace"},"isPartOf":{"@id":"https://www.paulus.yoga/#web"}},
+    {"@type":"BreadcrumbList","@id":"https://cz.paulus.yoga/co-je-stin#drobecky","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"PAULUS","item":"https://www.paulus.yoga/"},
+      {"@type":"ListItem","position":2,"name":"Stín","item":"https://cz.paulus.yoga/co-je-stin"}]}
+  ]
+}
+</script>
+<script>
+(function(){
+  "use strict";
+  var utlum = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ================= ZVUK ================= */
+  var Zvuk = (function(){
+    var zap = false, ctx = null;
+    function ozvi(f, delka, hlas, tvar){
+      if(!zap) return;
+      try{
+        if(!ctx){ ctx = new (window.AudioContext || window.webkitAudioContext)(); }
+        var o = ctx.createOscillator(), g = ctx.createGain();
+        o.type = tvar || "sine"; o.frequency.value = f;
+        g.gain.setValueAtTime(0, ctx.currentTime);
+        g.gain.linearRampToValueAtTime(hlas, ctx.currentTime + .012);
+        g.gain.exponentialRampToValueAtTime(.0001, ctx.currentTime + delka);
+        o.connect(g); g.connect(ctx.destination);
+        o.start(); o.stop(ctx.currentTime + delka);
+      }catch(e){}
+    }
+    return {
+      prepni:function(b){
+        zap = b;
+        if(zap){
+          if(!ctx){ ctx = new (window.AudioContext || window.webkitAudioContext)(); }
+          if(ctx.state === "suspended"){ ctx.resume(); }
+          ozvi(110, 1.3, .05);
+        }
+      },
+      pad:function(n){ ozvi(196 - n * .9, .16, .032); },
+      nalez:function(n){ ozvi(300 + n * 46, .5, .03); },
+      zpet:function(n){ ozvi(150 + n * 6, .22, .028); }
+    };
+  })();
+
+  var tlZvuk = document.getElementById("zvuk");
+  tlZvuk.addEventListener("click", function(){
+    var b = tlZvuk.getAttribute("aria-pressed") !== "true";
+    tlZvuk.setAttribute("aria-pressed", b ? "true" : "false");
+    Zvuk.prepni(b);
+  });
+
+  /* ================= SPOLEČNÁ GEOMETRIE ================= */
+  var POCET = 100, ZUSTANE = 9;
+  var R1 = 128, R2 = 248, MEZERA = .8;
+
+  function bod(u, r){
+    var a = (u - 90) * Math.PI / 180;
+    return [300 + r * Math.cos(a), 300 + r * Math.sin(a)];
+  }
+
+  function postavKruh(kam){
+    var g = document.getElementById(kam), pole = [];
+    for(var i = 0; i < POCET; i++){
+      var od = i * (360 / POCET) + MEZERA / 2;
+      var kamU = (i + 1) * (360 / POCET) - MEZERA / 2;
+      var a1 = bod(od, R2), a2 = bod(kamU, R2), a3 = bod(kamU, R1), a4 = bod(od, R1);
+      var d = "M" + a1[0].toFixed(2) + " " + a1[1].toFixed(2) +
+              "A" + R2 + " " + R2 + " 0 0 1 " + a2[0].toFixed(2) + " " + a2[1].toFixed(2) +
+              "L" + a3[0].toFixed(2) + " " + a3[1].toFixed(2) +
+              "A" + R1 + " " + R1 + " 0 0 0 " + a4[0].toFixed(2) + " " + a4[1].toFixed(2) + "Z";
+      var p = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      p.setAttribute("d", d); p.setAttribute("class", "dil"); p.setAttribute("fill", "#B7844E");
+      g.appendChild(p);
+      pole.push({el:p, drift:((i * 37) % 100) / 100, otoc:(((i * 53) % 100) / 100 - .5) * 2, poradi:0});
+    }
+    return pole;
+  }
+
+  function tvarHromady(v){
+    var h = 12 + v * 150, y = 220 - h;
+    return "M0 220 L0 " + (y + 40).toFixed(1) +
+           " C 150 " + (y - 14).toFixed(1) + ", 250 " + (y + 26).toFixed(1) + ", 400 " + y.toFixed(1) +
+           " C 550 " + (y + 26).toFixed(1) + ", 650 " + (y - 14).toFixed(1) + ", 800 " + (y + 40).toFixed(1) +
+           " L800 220 Z";
+  }
+
+  function postavPopisky(kam, data, jakVykreslit){
+    var box = document.getElementById(kam);
+    return data.map(function(z){
+      var d = document.createElement("div");
+      d.className = "pop"; d.innerHTML = jakVykreslit(z);
+      box.appendChild(d);
+      return d;
+    });
+  }
+
+  function podil(sekce){
+    var r = sekce.getBoundingClientRect();
+    var delka = sekce.offsetHeight - window.innerHeight;
+    var p = delka > 0 ? (-r.top) / delka : 0;
+    return p < 0 ? 0 : (p > 1 ? 1 : p);
+  }
+
+  /* ================= AKT I ================= */
+  var ZTRATY = [
+    {co:"Vztek",         veta:"Hodné děti se nezlobí."},
+    {co:"Pláč",          veta:"Neplakej."},
+    {co:"Divokost",      veta:"Uklidni se."},
+    {co:"Kreativita",    veta:"Tím se neuživíš."},
+    {co:"Originalita",   veta:"Buď normální."},
+    {co:"Zranitelnost",  veta:"Buď silný."},
+    {co:"Sexualita",     veta:"To se nesluší."},
+    {co:"Chytrost",      veta:"Nevytahuj se."},
+    {co:"Radost",        veta:"Život není zábava."},
+    {co:"Vlastní názor", veta:"Takhle se to prostě dělá."}
+  ];
+
+  var kusyA = postavKruh("dilyA");
+  var poradiA = [];
+  for(var k = 0; k < POCET; k++){ poradiA.push(k); }
+  poradiA.sort(function(a, b){
+    var da = Math.min(Math.abs(a), POCET - Math.abs(a));
+    var db = Math.min(Math.abs(b), POCET - Math.abs(b));
+    return db - da;
+  });
+  poradiA.forEach(function(idx, n){ kusyA[idx].poradi = n; });
+
+  var popA = postavPopisky("popiskyA", ZTRATY, function(z){
+    return "<b>" + z.co + "</b><i>„" + z.veta + "“</i>";
+  });
+
+  var rozpad = document.getElementById("rozpad");
+  var popiskyBoxA = document.getElementById("popiskyA");
+  var obrazA = document.getElementById("obrazA");
+  var obrazB = document.getElementById("obrazB");
+  var pocetEl = document.getElementById("pocet");
+  var podcislo = document.getElementById("podcislo");
+  var hromadaA = document.getElementById("hromadaA");
+  var PADA = POCET - ZUSTANE, poslPad = -1;
+
+  var scenaA = document.querySelector("#rozpad .jeviste");
+
+  function michej(a, b, t){
+    return "rgb(" + [0,1,2].map(function(i){
+      return Math.round(a[i] + (b[i] - a[i]) * t);
+    }).join(",") + ")";
+  }
+  var PAPIR = [242,239,234], UHEL = [10,12,13];
+
+  function kresliA(){
+    var p = podil(rozpad);
+    scenaA.style.setProperty("--scenaBarva", michej(PAPIR, UHEL, Math.pow(p, .72)));
+    obrazA.style.opacity = (Math.max(0, p - .3) / .7 * .34).toFixed(3);
+    obrazA.style.transform = "translateY(" + (p * -40).toFixed(1) + "px) scale(" + (1.08 - p * .06).toFixed(3) + ")";
+    var spadlo = p * PADA, trvani = 7;
+
+    for(var i = 0; i < POCET; i++){
+      var K = kusyA[i];
+      var lp = (spadlo - K.poradi) / trvani;
+      lp = lp < 0 ? 0 : (lp > 1 ? 1 : lp);
+      var e = lp * lp * (3 - 2 * lp);
+      if(e === 0){
+        K.el.style.transform = ""; K.el.style.opacity = "";
+        K.el.setAttribute("fill", "#9A6C36");
+      } else {
+        var dy = e * (300 + K.drift * 130), dx = (K.drift - .5) * 60 * e, rot = K.otoc * 46 * e;
+        K.el.style.transform = "translate(" + dx.toFixed(1) + "px," + dy.toFixed(1) + "px) rotate(" + rot.toFixed(1) + "deg)";
+        K.el.style.opacity = (1 - e * .92).toFixed(3);
+        K.el.setAttribute("fill", e > .55 ? "#2A2622" : "#9A6C36");
+      }
+    }
+
+    var zbylo = 100 - Math.round(spadlo);
+    if(zbylo < ZUSTANE){ zbylo = ZUSTANE; }
+    pocetEl.textContent = zbylo + "\u00A0%";
+    pocetEl.style.color = michej([30,27,22], [242,239,234], Math.pow(p, .55));
+    popiskyBoxA.style.setProperty("--popPismo", michej([58,54,47], [199,205,207], Math.pow(p, .55)));
+    podcislo.classList.toggle("je", p > .93);
+
+    var krok = 1 / ZTRATY.length;
+    for(var j = 0; j < popA.length; j++){
+      popA[j].classList.toggle("je", p >= j * krok + .02 && p < (j + 1) * krok - .02);
+    }
+
+    hromadaA.setAttribute("d", tvarHromady(p));
+    if(p > .96){ udalost("akt1_dokoncen"); }
+    var n = Math.round(spadlo);
+    if(n !== poslPad){ poslPad = n; Zvuk.pad(n); }
+  }
+
+  /* ================= AKT III ================= */
+  var PARY = [
+    {z:"Vztek",         na:"hranice",     veta:"Síla, která umí říct ne, aniž musí ublížit."},
+    {z:"Pláč",          na:"pravdivost",  veta:"Co se nesmělo ukázat, se nedalo ani sdílet."},
+    {z:"Divokost",      na:"energii",     veta:"To, co vás rozhýbe, když rozum už jen opakuje."},
+    {z:"Kreativita",    na:"tvorbu",      veta:"Ne koníček, ale způsob, jak se z vás něco dostane ven."},
+    {z:"Zranitelnost",  na:"blízkost",    veta:"Bez ní se nedá být s nikým doopravdy."},
+    {z:"Originalita",   na:"vlastní směr",veta:"Přestanete žít podle cizí představy o tom, co je normální."},
+    {z:"Sexualita",     na:"živost",      veta:"Není to jen o posteli. Je to o tom, kolik je vás v místnosti."},
+    {z:"Radost",        na:"lehkost",     veta:"To poslední, co se vrací, a to první, co vám chybí."},
+    {z:"Vlastní názor", na:"rozhodnutí",  veta:"Teprve odtud začíná něco jako svobodná volba."}
+  ];
+
+  var kusyB = postavKruh("dilyB");
+  var poradiB = [];
+  for(var m = 0; m < POCET; m++){ poradiB.push(m); }
+  poradiB.sort(function(a, b){
+    var da = Math.min(Math.abs(a), POCET - Math.abs(a));
+    var db = Math.min(Math.abs(b), POCET - Math.abs(b));
+    return da - db;
+  });
+  poradiB.forEach(function(idx, n){ kusyB[idx].poradi = n; });
+
+  var popB = postavPopisky("popiskyB", PARY, function(P){
+    return "<b><s>" + P.z + "</s> &rarr; <em>" + P.na + "</em></b><i>" + P.veta + "</i>";
+  });
+
+  var navrat = document.getElementById("navrat");
+  var hromadaB = document.getElementById("hromadaB");
+  var VRACI = PARY.length * 6, poslZpet = -1;
+
+  var scenaB = document.querySelector("#navrat .jeviste");
+  var navratSekce = document.getElementById("navrat");
+
+  function kresliB(){
+    var p = podil(navrat);
+    var sv = Math.pow(p, 1.35);
+    scenaB.style.setProperty("--scenaBarva", michej(UHEL, PAPIR, sv));
+    navratSekce.style.setProperty("--pismo", michej([199,205,207], [58,54,47], sv));
+    navratSekce.style.setProperty("--nadpis", michej([242,239,234], [30,27,22], sv));
+    navratSekce.style.setProperty("--tise", michej([110,121,125], [110,106,96], sv));
+    navratSekce.style.setProperty("--akcent", michej([183,132,78], [154,108,54], sv));
+    obrazB.style.opacity = ((1 - Math.pow(p, 1.6)) * .3).toFixed(3);
+    obrazB.style.transform = "translateY(" + (p * 40).toFixed(1) + "px) scale(" + (1.02 + p * .06).toFixed(3) + ")";
+    var vraceno = p * VRACI, trvani = 7;
+
+    for(var i = 0; i < POCET; i++){
+      var K = kusyB[i];
+      if(K.poradi < ZUSTANE){
+        K.el.style.transform = ""; K.el.style.opacity = "";
+        K.el.setAttribute("fill", "#B7844E");
+        continue;
+      }
+      var por = K.poradi - ZUSTANE;
+      var lp = (vraceno - por) / trvani;
+      lp = lp < 0 ? 0 : (lp > 1 ? 1 : lp);
+      var e = lp * lp * (3 - 2 * lp);
+      var dy = (1 - e) * (300 + K.drift * 130);
+      var dx = (1 - e) * (K.drift - .5) * 60;
+      var rot = (1 - e) * K.otoc * 46;
+      K.el.style.transform = "translate(" + dx.toFixed(1) + "px," + dy.toFixed(1) + "px) rotate(" + rot.toFixed(1) + "deg)";
+      K.el.style.opacity = (e * e).toFixed(3);
+      K.el.setAttribute("fill", michej(
+        e < .45 ? [42,38,34] : [183,132,78],
+        e < .45 ? [200,193,182] : [154,108,54], sv));
+    }
+
+    var krok = 1 / PARY.length;
+    for(var j = 0; j < popB.length; j++){
+      popB[j].classList.toggle("je", p >= j * krok + .02 && p < (j + 1) * krok - .02);
+    }
+
+    hromadaB.setAttribute("d", tvarHromady(1 - p * .82));
+    hromadaB.parentNode.style.opacity = (1 - sv * .8).toFixed(3);
+    if(p > .96){ udalost("akt3_dokoncen"); }
+    var n = Math.round(vraceno);
+    if(n !== poslZpet){ poslZpet = n; Zvuk.zpet(n); }
+  }
+
+  /* ================= AKT II ================= */
+  var sal = document.getElementById("sal");
+  var tma = document.getElementById("tma");
+  var utrzky = Array.prototype.slice.call(document.querySelectorAll(".utrzek"));
+  var kolikEl = document.getElementById("kolik");
+  var navod = document.getElementById("navod");
+  var hotovo = document.getElementById("hotovo");
+  var nalezeno = 0;
+
+  function rozmisti(){
+    var uzko = window.innerWidth < 760;
+    utrzky.forEach(function(u, i){
+      if(uzko){
+        u.style.left = "50%";
+        u.style.top = (18 + i * 16) + "%";
+      } else {
+        u.style.left = u.getAttribute("data-x") + "%";
+        u.style.top = u.getAttribute("data-y") + "%";
+      }
+    });
+  }
+  rozmisti();
+  window.addEventListener("resize", rozmisti);
+
+  var svetlo = document.getElementById("svetlo");
+  var cilX = null, cilY = null, kdeX = null, kdeY = null;
+
+  function svit(x, y, hleda){
+    var r = sal.getBoundingClientRect();
+    var px = x - r.left, py = y - r.top;
+    px = px < 0 ? 0 : (px > r.width ? r.width : px);
+    py = py < 0 ? 0 : (py > r.height ? r.height : py);
+    cilX = px; cilY = py;
+    if(kdeX === null){ kdeX = px; kdeY = py; }
+    if(!hleda) return;
+    utrzky.forEach(function(u){
+      if(u.classList.contains("naleze")) return;
+      var b = u.getBoundingClientRect();
+      var cx = b.left + b.width / 2 - r.left, cy = b.top + b.height / 2 - r.top;
+      var dx = Math.max(0, Math.abs(px - cx) - b.width / 2);
+      var dy = Math.max(0, Math.abs(py - cy) - b.height / 2);
+      if(Math.hypot(dx, dy) < 40){
+        u.classList.add("naleze");
+        nalezeno++;
+        kolikEl.textContent = nalezeno;
+        Zvuk.nalez(nalezeno);
+        if(nalezeno >= utrzky.length){
+          navod.style.opacity = "0";
+          udalost("tma_dokoncena");
+          sal.classList.add("hotovo-tma");
+          setTimeout(function(){ hotovo.classList.add("je"); }, 500);
+        }
+      }
+    });
+  }
+
+  /* ================= ZRCADLO ================= */
+  var DRAZDI = ["Arogance","Vztek","Sobectví","Manipulace","Lenost","Chlad","Vychloubání","Slabost","Hlučnost"];
+  var OBDIV  = ["Odvaha","Volnost","Sebejistota","Kreativita","Klid","Divokost","Lehkost","Přímost","Hravost"];
+  var vybr1 = [], vybr2 = [];
+
+  function postavVolby(kam, seznam, tlacitko, ulozit){
+    var box = document.getElementById(kam), vybrano = [];
+    seznam.forEach(function(s){
+      var b = document.createElement("button");
+      b.className = "vol"; b.type = "button"; b.textContent = s;
+      b.setAttribute("aria-pressed", "false");
+      b.addEventListener("click", function(){
+        var je = b.getAttribute("aria-pressed") === "true";
+        if(je){
+          b.setAttribute("aria-pressed", "false");
+          vybrano = vybrano.filter(function(v){ return v !== s; });
+        } else {
+          if(vybrano.length >= 3) return;
+          b.setAttribute("aria-pressed", "true");
+          vybrano.push(s);
+        }
+        ulozit(vybrano);
+        document.getElementById(tlacitko).disabled = vybrano.length === 0;
+      });
+      box.appendChild(b);
+    });
+  }
+
+  postavVolby("mriz1", DRAZDI, "dal1", function(v){ vybr1 = v; });
+  postavVolby("mriz2", OBDIV, "dal2", function(v){ vybr2 = v; });
+
+  function ukazKrok(id){
+    ["krok1","krok2","krok3"].forEach(function(k){
+      document.getElementById(k).classList.toggle("je", k === id);
+    });
+  }
+  function vypis(kam, pole){
+    var box = document.getElementById(kam);
+    box.innerHTML = "";
+    pole.forEach(function(s){
+      var e = document.createElement("span"); e.textContent = s; box.appendChild(e);
+    });
+  }
+
+  document.getElementById("dal1").addEventListener("click", function(){ ukazKrok("krok2"); });
+  document.getElementById("dal2").addEventListener("click", function(){
+    vypis("vyp1", vybr1); vypis("vyp2", vybr2); ukazKrok("krok3"); udalost("zrcadlo_dokonceno");
+    prenesDoZaveru();
+  });
+  function prenesDoZaveru(){
+    var box = document.getElementById("tvoje");
+    var slova = document.getElementById("tvojeSlova");
+    if(!box || !slova) return;
+    slova.innerHTML = "";
+    vybr1.forEach(function(s){
+      var e = document.createElement("span"); e.textContent = s; slova.appendChild(e);
+    });
+    vybr2.forEach(function(s){
+      var e = document.createElement("span"); e.className = "zl"; e.textContent = s; slova.appendChild(e);
+    });
+    box.hidden = false;
+    requestAnimationFrame(function(){ box.classList.add("je"); });
+  }
+
+  document.getElementById("znovu").addEventListener("click", function(){
+    Array.prototype.forEach.call(document.querySelectorAll(".vol"), function(b){
+      b.setAttribute("aria-pressed", "false");
+    });
+    vybr1 = []; vybr2 = [];
+    document.getElementById("dal1").disabled = true;
+    document.getElementById("dal2").disabled = true;
+    ukazKrok("krok1");
+  });
+
+  /* nápověda a záložní odhalení */
+  (function(){
+    var tl = document.getElementById("odhal");
+    if(!tl) return;
+    var ukazano = false;
+    var io2 = new IntersectionObserver(function(e){
+      if(e[0].isIntersecting && !ukazano){
+        ukazano = true;
+        setTimeout(function(){
+          if(nalezeno < utrzky.length){ tl.classList.add("je"); }
+        }, 6000);
+      }
+    }, {threshold:.3});
+    io2.observe(document.getElementById("tmaAkt"));
+
+    tl.addEventListener("click", function(){
+      utrzky.forEach(function(u){
+        if(!u.classList.contains("naleze")){ u.classList.add("naleze"); nalezeno++; }
+      });
+      kolikEl.textContent = nalezeno;
+      navod.style.opacity = "0";
+      tl.classList.remove("je");
+      hotovo.classList.add("je");
+      sal.classList.add("hotovo-tma");
+    });
+  })();
+
+  /* světlo dojíždí plynule za ukazatelem */
+  (function plyn(){
+    if(kdeX !== null && cilX !== null){
+      kdeX += (cilX - kdeX) * .18;
+      kdeY += (cilY - kdeY) * .18;
+      tma.style.setProperty("--x", kdeX.toFixed(1) + "px");
+      tma.style.setProperty("--y", kdeY.toFixed(1) + "px");
+      svetlo.style.setProperty("--x", kdeX.toFixed(1) + "px");
+      svetlo.style.setProperty("--y", kdeY.toFixed(1) + "px");
+    }
+    requestAnimationFrame(plyn);
+  })();
+
+  /* ================= VIDEO JESKYNĚ ================= */
+  (function(){
+    var v = document.getElementById("jeskyne");
+    if(!v || utlum) return;
+    var io = new IntersectionObserver(function(zaznamy){
+      zaznamy.forEach(function(z){
+        if(z.isIntersecting){
+          if(!v.getAttribute("data-nacteno")){ v.setAttribute("data-nacteno","1"); v.load(); }
+          var s = v.play(); if(s && s.catch){ s.catch(function(){}); }
+        } else { v.pause(); }
+      });
+    }, {threshold:.05});
+    io.observe(document.getElementById("tmaAkt"));
+  })();
+
+  /* ================= ÚVOD ================= */
+  (function(){
+    var uvod = document.getElementById("uvod");
+    var cifra = document.getElementById("cifra");
+    var radB = document.getElementById("radB");
+    if(utlum){ uvod.classList.add("je"); radB.classList.add("je"); cifra.textContent = "90"; return; }
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){ uvod.classList.add("je"); });
+    });
+    setTimeout(function(){
+      var t0 = null, trv = 2400;
+      (function beh(t){
+        if(t0 === null){ t0 = t; }
+        var q = (t - t0) / trv; if(q > 1){ q = 1; }
+        var e = 1 - Math.pow(1 - q, 4);
+        cifra.textContent = Math.round(e * 90);
+        if(q < 1){ requestAnimationFrame(beh); }
+        else { setTimeout(function(){ radB.classList.add("je"); }, 260); }
+      })(0);
+    }, 1300);
+  })();
+
+  /* ================= NIT DRUHÉ POLOVINY ================= */
+  var nit = document.getElementById("nit");
+  var nitVypln = document.getElementById("nitVypln");
+  var nitBod = document.getElementById("nitBod");
+  var nitOd = document.getElementById("navrat");
+  var nitDo = document.querySelector(".vstup .tlac");
+
+  function kresliNit(){
+    if(!nit || !nitOd || !nitDo) return;
+    var a = nitOd.getBoundingClientRect().top + window.scrollY;
+    var b = nitDo.getBoundingClientRect().top + window.scrollY - window.innerHeight * .5;
+    var p = (window.scrollY - a) / Math.max(1, b - a);
+    var vidno = p > -.02 && p < 1.12;
+    nit.classList.toggle("je", vidno);
+    if(!vidno) return;
+    var q = p < 0 ? 0 : (p > 1 ? 1 : p);
+    nitVypln.style.height = (q * 100).toFixed(2) + "%";
+    nitBod.style.top = (q * 100).toFixed(2) + "%";
+  }
+
+  /* ================= HERO VIDEO ================= */
+  (function(){
+    var v = document.getElementById("heroVideo");
+    if(!v) return;
+    if(utlum){ v.pause(); return; }
+    var io0 = new IntersectionObserver(function(e){
+      if(e[0].isIntersecting){ var s = v.play(); if(s && s.catch){ s.catch(function(){}); } }
+      else { v.pause(); }
+    }, {threshold:.05});
+    io0.observe(v);
+  })();
+
+  /* ================= CESTA K TLAČÍTKU ================= */
+  (function(){
+    var c = document.getElementById("cesta");
+    var zav = document.getElementById("vstup");
+    if(!c) return;
+    if(utlum){ c.classList.add("je"); if(zav){ zav.classList.add("je"); } return; }
+    var io3 = new IntersectionObserver(function(e){
+      if(e[0].isIntersecting){ c.classList.add("je"); io3.disconnect(); }
+    }, {threshold:.6});
+    io3.observe(c);
+    var io4 = new IntersectionObserver(function(e){
+      if(e[0].isIntersecting){ zav.classList.add("je"); io4.disconnect(); }
+    }, {threshold:.15});
+    if(zav){ io4.observe(zav); }
+  })();
+
+  /* ================= MĚŘENÍ ================= */
+  var dL = window.dataLayer = window.dataLayer || [];
+  var uz = {};
+  function udalost(jmeno){
+    if(uz[jmeno]) return;
+    uz[jmeno] = true;
+    dL.push({event:"stin_" + jmeno});
+  }
+  Array.prototype.forEach.call(document.querySelectorAll(".tlac,.hlava .knf[href]"), function(a){
+    a.addEventListener("click", function(){
+      dL.push({event:"stin_cta", umisteni:a.className.indexOf("tlac") > -1 ? "zaver" : "hlava"});
+    });
+  });
+
+  /* ================= SPOLEČNÝ BĚH ================= */
+  var pruh = document.getElementById("pruh");
+  var hlava = document.getElementById("hlava");
+  var ceka = false;
+
+  function snimek(){
+    ceka = false;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    pruh.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + "%";
+    hlava.classList.toggle("je", window.scrollY > window.innerHeight * .8);
+    kresliA();
+    kresliB();
+    kresliNit();
+  }
+
+  if(utlum){
+    pocetEl.textContent = "9\u00A0%";
+    podcislo.classList.add("je");
+    hromadaA.setAttribute("d", tvarHromady(1));
+    hromadaB.setAttribute("d", tvarHromady(.45));
+    popA.forEach(function(e){ e.classList.add("je"); });
+    popB.forEach(function(e){ e.classList.add("je"); });
+    utrzky.forEach(function(u){ u.classList.add("naleze"); });
+    kolikEl.textContent = utrzky.length;
+    hotovo.classList.add("je");
+    hlava.classList.add("je");
+  } else {
+    var ovlada = false;
+
+    function prevzit(x, y){
+      ovlada = true;
+      svit(x, y, true);
+    }
+
+    sal.addEventListener("pointermove", function(e){ prevzit(e.clientX, e.clientY); }, {passive:true});
+    sal.addEventListener("pointerdown", function(e){ prevzit(e.clientX, e.clientY); }, {passive:true});
+    sal.addEventListener("touchmove", function(e){
+      if(e.touches[0]){ prevzit(e.touches[0].clientX, e.touches[0].clientY); }
+    }, {passive:true});
+
+    /* dokud nikdo nesvítí sám, světlo pomalu obchází a nabízí, co se dá najít */
+    (function obeh(t){
+      if(!ovlada){
+        var r = sal.getBoundingClientRect();
+        if(r.top < window.innerHeight * .6 && r.bottom > window.innerHeight * .4){
+          var a = t / 7000 * Math.PI * 2;
+          svit(r.left + r.width / 2 + Math.cos(a) * r.width * .26,
+               r.top + r.height / 2 + Math.sin(a * 1.6) * r.height * .2, false);
+        }
+      }
+      requestAnimationFrame(obeh);
+    })(0);
+
+    window.addEventListener("scroll", function(){
+      if(!ceka){ ceka = true; requestAnimationFrame(snimek); }
+    }, {passive:true});
+    window.addEventListener("resize", snimek);
+    snimek();
+  }
+})();
+</script>
+
+</body>
+</html>
