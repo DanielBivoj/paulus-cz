@@ -65,6 +65,18 @@ h1,h2,h3{font-family:'Playfair Display',serif; font-weight:500; color:var(--nadp
 p{margin:0 0 1.3em;}
 p:last-child{margin-bottom:0;}
 
+/* ---------- odkryvani a paralaxa ---------- */
+[data-odkryj]{opacity:0; transform:translateY(26px); transition:opacity 1s var(--ease), transform 1.1s var(--ease);}
+[data-odkryj].je{opacity:1; transform:none;}
+.bod[data-odkryj]{transform:translateY(30px);}
+.ohl blockquote[data-odkryj]{transform:translateY(34px) scale(.985);}
+.ohl blockquote[data-odkryj].je{transform:none;}
+[data-posun]{will-change:transform;}
+@media (prefers-reduced-motion:reduce){
+  [data-odkryj]{opacity:1 !important; transform:none !important;}
+  [data-posun]{transform:none !important;}
+}
+
 /* ---------- obrazy ---------- */
 .obraz{
   position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:0;
@@ -85,6 +97,7 @@ p:last-child{margin-bottom:0;}
 .sazenicova{overflow:hidden;}
 .sazenicova::before{
   content:""; position:absolute; left:50%; top:50%; translate:-50% -50%;
+  transform:translateY(var(--posun,0px));
   width:min(78vw,620px); aspect-ratio:4/5; z-index:0; pointer-events:none;
   background:url('assets/sazenice.jpg') center/contain no-repeat;
   mix-blend-mode:multiply; filter:invert(1) contrast(1.15);
@@ -92,6 +105,15 @@ p:last-child{margin-bottom:0;}
 }
 
 /* ---------- pevne prvky ---------- */
+.zvukPlovouci{
+  position:fixed; top:clamp(18px,3vw,30px); right:clamp(18px,3vw,30px); z-index:62;
+  width:44px; height:44px; display:grid; place-items:center;
+  background:rgba(10,35,45,.08); border:1px solid rgba(154,108,54,.45); border-radius:50%;
+  color:#9A6C36; cursor:pointer; transition:opacity .5s var(--ease), background .25s, color .25s, border-color .25s;
+}
+.zvukPlovouci:hover{background:rgba(154,108,54,.16); color:#7A5527; border-color:#9A6C36;}
+.zvukPlovouci .ikona{width:18px; height:18px;}
+.zvukPlovouci.pryc{opacity:0; pointer-events:none;}
 .nit{
   position:fixed; left:clamp(14px,3vw,42px); top:16svh; bottom:16svh; width:1px;
   z-index:40; pointer-events:none; opacity:0; transition:opacity .8s var(--ease);
@@ -129,6 +151,15 @@ p:last-child{margin-bottom:0;}
 }
 .hlava .knf:hover{border-color:#D3A166; background:rgba(211,161,102,.16); color:#F7F4EF;}
 .hlava .knf i{font-style:normal; opacity:.82; letter-spacing:1.6px; margin-left:.5em;}
+.hlava .zvuk{display:inline-flex; align-items:center; gap:8px;}
+.ikona{width:15px; height:15px; flex:none; display:block;}
+.ikona .repro{fill:currentColor; stroke:none;}
+.ikona .vlna{fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round;}
+.ikona .skrt{fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round;
+  opacity:0; transition:opacity .2s;}
+.zvuk[aria-pressed="false"] .vlna{opacity:0;}
+.zvuk[aria-pressed="false"] .skrt{opacity:1;}
+.zvuk[aria-pressed="false"]{color:#8C9498; border-color:rgba(140,148,152,.4);}
 .jen-uzke{display:none;}
 @media (max-width:900px){ .hlava .knf i{display:none;} }
 @media (max-width:760px){
@@ -362,8 +393,8 @@ p:last-child{margin-bottom:0;}
   border-top:1px solid var(--linka);
 }
 .vstup-in{position:relative; z-index:3; max-width:var(--mira);}
-.vstup .vel{font-family:'Playfair Display',serif; font-size:clamp(21px,3.4vw,34px);
-  line-height:1.3; margin:0; text-wrap:balance;}
+.vstup .vel{font-family:'Playfair Display',serif; font-size:clamp(23px,3.8vw,40px);
+  line-height:1.25; margin:0; text-wrap:balance; color:var(--nadpis);}
 .vstup.je .pozadiZaver{opacity:.92;}
 .vstup .papirovka{z-index:1;}
 
@@ -386,15 +417,15 @@ p:last-child{margin-bottom:0;}
   opacity:0; transition:opacity 3s var(--ease);
 }
 .pozadiZaver::after{
-  content:""; position:absolute; inset:-4%;
+  content:""; position:absolute; inset:-14% -4%;
   background:url('assets/zaver.jpg') center/cover no-repeat;
   mix-blend-mode:multiply; filter:contrast(1.12) brightness(1.04);
   animation:plyne 34s ease-in-out infinite reverse;
 }
 @media (prefers-reduced-motion:reduce){ .pozadiZaver::after{animation:none;} }
 .cesta{
-  display:grid; justify-items:center; margin:26px auto 4px;
-  height:clamp(44px,6.5vh,80px); position:relative; width:1px;
+  display:grid; justify-items:center; margin:30px auto 2px;
+  height:clamp(50px,7vh,92px); position:relative; width:1px;
 }
 .cesta-linka{
   position:absolute; inset:0; width:1px;
@@ -415,6 +446,8 @@ p:last-child{margin-bottom:0;}
   86%,100%{top:100%; opacity:0}
 }
 @media (prefers-reduced-motion:reduce){
+  .tlac{animation:none;}
+  .tlac::before,.tlac::after{display:none;}
   .cesta-linka{transform:none;}
   .cesta.je .cesta-bod{animation:none; top:100%;}
 }
@@ -444,14 +477,31 @@ p:last-child{margin-bottom:0;}
 .zaver .kick{font-size:11px; letter-spacing:3.4px; text-transform:uppercase; color:var(--akcent); font-weight:600; margin:0 0 16px;}
 .zaver .vel{font-family:'Playfair Display',serif; font-size:clamp(18px,2.4vw,23px); line-height:1.45; color:var(--nadpis);}
 .tlac{
-  margin-top:26px; display:inline-block; padding:21px 46px;
+  position:relative; margin-top:30px; display:inline-block;
+  padding:clamp(22px,3vw,28px) clamp(38px,6vw,68px);
   background:var(--zlata2); border:1px solid var(--zlata2); color:#FBF8F3; text-decoration:none;
-  font:600 13px/1 'Source Sans 3',sans-serif; letter-spacing:3.2px; text-transform:uppercase;
-  box-shadow:0 10px 30px rgba(122,86,42,.28);
+  font:600 clamp(13px,1.5vw,16px)/1 'Source Sans 3',sans-serif; letter-spacing:3.4px; text-transform:uppercase;
+  box-shadow:0 12px 34px rgba(122,86,42,.3);
   transition:background .25s, box-shadow .3s, transform .25s var(--ease);
+  animation:tep 3.6s ease-in-out 1.2s infinite;
 }
-.tlac:hover{background:#8A5F2E; box-shadow:0 14px 38px rgba(122,86,42,.38); transform:translateY(-2px);}
-.tlac:active{transform:translateY(0);}
+.tlac:hover{background:#8A5F2E; box-shadow:0 18px 46px rgba(122,86,42,.42); transform:translateY(-3px) scale(1.02); animation-play-state:paused;}
+.tlac:active{transform:translateY(0) scale(1);}
+@keyframes tep{
+  0%,88%,100%{transform:none}
+  92%{transform:scale(1.028)}
+  96%{transform:scale(.998)}
+}
+.tlac::before,.tlac::after{
+  content:""; position:absolute; inset:-1px; border:1px solid var(--zlata2);
+  opacity:0; pointer-events:none;
+  animation:vlnaVen 3.6s ease-out 1.2s infinite;
+}
+.tlac::after{animation-delay:1.6s;}
+@keyframes vlnaVen{
+  0%{opacity:.45; transform:scale(1)}
+  55%,100%{opacity:0; transform:scale(1.13)}
+}
 
 /* ---------- dalsi cteni ---------- */
 .dalsi-cteni{
@@ -534,6 +584,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <source src="assets/hudba.mp3" type="audio/mpeg">
 </audio>
 
+<button class="zvukPlovouci zvuk" id="zvukHero" aria-pressed="false" aria-label="Zapnout zvuk">
+  <svg class="ikona" viewBox="0 0 24 24" aria-hidden="true">
+    <path class="repro" d="M4 9v6h4l5 4V5L8 9H4z"/>
+    <path class="vlna" d="M16.5 8.8a4.5 4.5 0 0 1 0 6.4"/>
+    <path class="vlna" d="M19 6.3a8 8 0 0 1 0 11.4"/>
+    <path class="skrt" d="M4 20 20 4"/>
+  </svg>
+</button>
+
 <div class="pruh" id="pruh" aria-hidden="true"></div>
 
 <div class="nit" id="nit" aria-hidden="true">
@@ -545,7 +604,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img src="assets/logo.png" alt="PAULUS, jóga a vědomí" width="1040" height="348"></a>
   <span class="tb-title">Stín</span>
   <span class="sada">
-    <button class="knf zvuk" id="zvuk" aria-pressed="false">Zvuk<span id="zvukStav" class="jen-siroke"> vypnutý</span></button>
+    <button class="knf zvuk" id="zvuk" aria-pressed="false" aria-label="Zapnout zvuk">
+      <svg class="ikona" viewBox="0 0 24 24" aria-hidden="true">
+        <path class="repro" d="M4 9v6h4l5 4V5L8 9H4z"/>
+        <path class="vlna" d="M16.5 8.8a4.5 4.5 0 0 1 0 6.4"/>
+        <path class="vlna" d="M19 6.3a8 8 0 0 1 0 11.4"/>
+        <path class="skrt" d="M4 20 20 4"/>
+      </svg>
+      <span class="jen-siroke">Zvuk</span>
+    </button>
     <a class="knf" href="https://www.paulus.yoga/stin"><span class="jen-siroke">Práce se stínem</span><span class="jen-uzke">Kurz</span><i>živě od října</i></a>
   </span>
 </header>
@@ -699,43 +766,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="deska sazenicova" style="--pozadi:var(--papir)">
   <div class="papirovka"></div>
   <div class="in">
-    <p class="kick">Co se tím změní</p>
-    <h2>Získáte odstup od vlastních reakcí</h2>
-    <p class="vel">Dnes reagujete okamžitě a až potom přemýšlíte proč. Touhle prací se mezi podnětem a reakcí postupně otevírá prostor, ve kterém se dá rozhodnout.</p>
-    <p>Začnete své vzorce rozpoznávat dřív, než zcela převezmou řízení. Uvidíte, kdy se vám vrací stará situace v novém obalu, a nemusíte v ní hrát stejnou roli jako vždycky.</p>
-    <p>Ve vztazích začnete dřív rozpoznávat, co ten druhý opravdu udělal a co jste si k tomu přidali sami. Hádek o nedorozumění bývá pak méně.</p>
-    <p>Přestane vás stát tolik sil držet se zpátky. To, co jste roky potlačovali, se dá použít. Vztek jako hranice, citlivost jako blízkost, tvrdohlavost jako vytrvalost.</p>
-    <p>A dostanete se ke schopnostem, o kterých jste uvěřili, že k vám nepatří. Většinou je to právě to, co roky obdivujete na druhých.</p>
-    <p class="vel zlat">Nic z toho nepřijde samo. Změnit se dá jen to, co nejdřív uvidíte a pojmenujete.</p>
+    <p class="kick" data-odkryj>Co se tím změní</p>
+    <h2 data-odkryj>Získáte odstup od vlastních reakcí</h2>
+    <p class="vel" data-odkryj>Dnes reagujete okamžitě a až potom přemýšlíte proč. Touhle prací se mezi podnětem a reakcí postupně otevírá prostor, ve kterém se dá rozhodnout.</p>
+    <p data-odkryj>Začnete své vzorce rozpoznávat dřív, než zcela převezmou řízení. Uvidíte, kdy se vám vrací stará situace v novém obalu, a nemusíte v ní hrát stejnou roli jako vždycky.</p>
+    <p data-odkryj>Ve vztazích začnete dřív rozpoznávat, co ten druhý opravdu udělal a co jste si k tomu přidali sami. Hádek o nedorozumění bývá pak méně.</p>
+    <p data-odkryj>Přestane vás stát tolik sil držet se zpátky. To, co jste roky potlačovali, se dá použít. Vztek jako hranice, citlivost jako blízkost, tvrdohlavost jako vytrvalost.</p>
+    <p data-odkryj>A dostanete se ke schopnostem, o kterých jste uvěřili, že k vám nepatří. Většinou je to právě to, co roky obdivujete na druhých.</p>
+    <p class="vel zlat" data-odkryj>Nic z toho nepřijde samo. Změnit se dá jen to, co nejdřív uvidíte a pojmenujete.</p>
       </div>
 </section>
 
 <!-- ====================== MOST ====================== -->
 <section class="deska tma-rezim">
   <div class="in">
-    <p class="kick">Proč to nestačí</p>
-    <h2>Vidět není totéž co změnit</h2>
-    <p class="vel">Tahle stránka vám mohla ukázat stopu. Nemůže vám ale ukázat to, co jste se celý život učili nevidět.</p>
-    <p>Stín není nedostatek informací. Je to slepé místo vašeho vlastního pohledu. Proto se nedá vyřešit dalším článkem, dalším videem ani hodinou přemýšlení o sobě. Když se na sebe díváte pořád stejným pohledem, snadno znovu dojdete k tomu, co jste si mysleli už předtím.</p>
-    <p>Potřebujete čas, pravidelnou praxi, zpětnou vazbu a druhé lidi, kteří vám ukážou to, co byste znovu přehlédli.</p>
-    <p class="vel zlat">Proto <a href="https://www.paulus.yoga/stin">Práce se stínem</a> trvá šest měsíců, probíhá živě a nevedu ji jako sérii přednášek.</p>
+    <p class="kick" data-odkryj>Proč to nestačí</p>
+    <h2 data-odkryj>Vidět není totéž co změnit</h2>
+    <p class="vel" data-odkryj>Tahle stránka vám mohla ukázat stopu. Nemůže vám ale ukázat to, co jste se celý život učili nevidět.</p>
+    <p data-odkryj>Stín není nedostatek informací. Je to slepé místo vašeho vlastního pohledu. Proto se nedá vyřešit dalším článkem, dalším videem ani hodinou přemýšlení o sobě. Když se na sebe díváte pořád stejným pohledem, snadno znovu dojdete k tomu, co jste si mysleli už předtím.</p>
+    <p data-odkryj>Potřebujete čas, pravidelnou praxi, zpětnou vazbu a druhé lidi, kteří vám ukážou to, co byste znovu přehlédli.</p>
+    <p class="vel zlat" data-odkryj>Proto <a href="https://www.paulus.yoga/stin">Práce se stínem</a> trvá šest měsíců, probíhá živě a nevedu ji jako sérii přednášek.</p>
   </div>
 </section>
 
 <!-- ====================== OHLASY ====================== -->
 <section class="ohlasy" style="--pozadi:var(--papir2)"><div class="papirovka"></div>
-  <p class="kick">Co říkají lidé, kteří tím prošli</p>
+  <p class="kick" data-odkryj>Co říkají lidé, kteří tím prošli</p>
   <div class="ohl">
-    <blockquote>
-      <p>„Učení Carla Junga je samo o sobě dost složité a číst jeho knihy bez vedení je docela boj, ale tady je to podané přehledně a srozumitelně. Není to jen teorie, člověk si během toho reálně sahá do sebe a začíná chápat svoje vzorce."</p>
+    <blockquote data-odkryj>
+      <p data-odkryj>„Učení Carla Junga je samo o sobě dost složité a číst jeho knihy bez vedení je docela boj, ale tady je to podané přehledně a srozumitelně. Není to jen teorie, člověk si během toho reálně sahá do sebe a začíná chápat svoje vzorce."</p>
       <cite>Jiří Buček</cite>
     </blockquote>
-    <blockquote>
-      <p>„Po Integrální cestě jsem si myslela, že už o sobě leccos vím, ale Práce se stínem mě vyvedla z omylu. Pojmenovala jsem si svůj vzorec kontroly a znovu se učím spontánní radosti a lehkosti, která mi tak chyběla."</p>
+    <blockquote data-odkryj>
+      <p data-odkryj>„Po Integrální cestě jsem si myslela, že už o sobě leccos vím, ale Práce se stínem mě vyvedla z omylu. Pojmenovala jsem si svůj vzorec kontroly a znovu se učím spontánní radosti a lehkosti, která mi tak chyběla."</p>
       <cite>Alexandra Micková</cite>
     </blockquote>
-    <blockquote>
-      <p>„Hodně těžké pro mě je připustit si, že některé věci si nesu z dětství, protože mám skvělé rodiče a celé dětství bych popsala jako šťastné. A zároveň cítím, že jak některé věci odkrývám a léčím, uvolňuje se mi s tím i tělo."</p>
+    <blockquote data-odkryj>
+      <p data-odkryj>„Hodně těžké pro mě je připustit si, že některé věci si nesu z dětství, protože mám skvělé rodiče a celé dětství bych popsala jako šťastné. A zároveň cítím, že jak některé věci odkrývám a léčím, uvolňuje se mi s tím i tělo."</p>
       <cite>Jitka Bokrová</cite>
     </blockquote>
   </div>
@@ -744,16 +811,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ====================== ZÁVĚR ====================== -->
 <section class="zaver" style="--pozadi:var(--papir2)"><div class="papirovka"></div>
   <div>
-    <p class="kick">Práce se stínem</p>
-    <h2>Svoboda začíná tam, kde vidíte, co vás řídí</h2>
-    <p class="vel">Uvědomění samo o sobě ještě není změna. Je to ale okamžik, kdy se poprvé objeví možnost volby.</p>
+    <p class="kick" data-odkryj>Práce se stínem</p>
+    <h2 data-odkryj>Svoboda začíná tam, kde vidíte, co vás řídí</h2>
+    <p class="vel" data-odkryj>Uvědomění samo o sobě ještě není změna. Je to ale okamžik, kdy se poprvé objeví možnost volby.</p>
 
     <div class="body">
-      <div class="bod"><h3>Není to katalog témat</h3><span>Každá lekce vychází z toho, co se otevřelo v předchozích čtrnácti dnech. Jde se popořádku, od struktury psychiky přes komplexy a zranění až ke zlatému stínu. V poslední lekci ukazuji, jak pokračovat beze mě.</span></div>
-      <div class="bod"><h3>Pracuje se s tím, co se právě děje</h3><span>Ne s modelovými příklady, ale s vaším konfliktem, snem nebo reakcí, která přišla mezi setkáními. Ptáte se a dostanete odpověď ode mě.</span></div>
-      <div class="bod"><h3>Skupina není publikum</h3><span>Není to jen organizační formát. To, co vás na ostatních přitahuje, dráždí nebo znejišťuje, přináší materiál, který by o samotě nevznikl.</span></div>
-      <div class="bod"><h3>Učím z knih, ne z videí na internetu</h3><span>Jung, von Franz, Johnson, Bly, Hollis, Neumann. K tomu van der Kolk a Schwartz pro práci s tělem a s částmi osobnosti, Frankl pro otázku smyslu a védská tradice tam, kde skutečně sedí.</span></div>
-      <div class="bod bod--siroky"><h3>Nezůstává se u výkladu</h3><span>Ke každé lekci patří tři až pět cvičení, pozorování a rituálů na čtrnáct dní mezi setkáními. K tomu vedená meditace a dechová technika navázaná na téma lekce. Práci se stínem nestačí pochopit. Musí se dělat.</span></div>
+      <div class="bod" data-odkryj><h3>Není to katalog témat</h3><span>Každá lekce vychází z toho, co se otevřelo v předchozích čtrnácti dnech. Jde se popořádku, od struktury psychiky přes komplexy a zranění až ke zlatému stínu. V poslední lekci ukazuji, jak pokračovat beze mě.</span></div>
+      <div class="bod" data-odkryj><h3>Pracuje se s tím, co se právě děje</h3><span>Ne s modelovými příklady, ale s vaším konfliktem, snem nebo reakcí, která přišla mezi setkáními. Ptáte se a dostanete odpověď ode mě.</span></div>
+      <div class="bod" data-odkryj><h3>Skupina není publikum</h3><span>Není to jen organizační formát. To, co vás na ostatních přitahuje, dráždí nebo znejišťuje, přináší materiál, který by o samotě nevznikl.</span></div>
+      <div class="bod" data-odkryj><h3>Učím z knih, ne z videí na internetu</h3><span>Jung, von Franz, Johnson, Bly, Hollis, Neumann. K tomu van der Kolk a Schwartz pro práci s tělem a s částmi osobnosti, Frankl pro otázku smyslu a védská tradice tam, kde skutečně sedí.</span></div>
+      <div class="bod bod--siroky" data-odkryj><h3>Nezůstává se u výkladu</h3><span>Ke každé lekci patří tři až pět cvičení, pozorování a rituálů na čtrnáct dní mezi setkáními. K tomu vedená meditace a dechová technika navázaná na téma lekce. Práci se stínem nestačí pochopit. Musí se dělat.</span></div>
     </div>
 
     <div class="tvoje" id="tvoje" hidden>
@@ -770,15 +837,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="pozadiZaver" aria-hidden="true"></div>
   <div class="papirovka"></div>
   <div class="vstup-in">
-    <p class="vel zlat">Vaše cesta k větší svobodě začíná v říjnu.</p>
+    <p class="vel zlat" data-odkryj>Vaše cesta k větší svobodě začíná v říjnu.</p>
 
     <div class="cesta" id="cesta" aria-hidden="true">
       <span class="cesta-linka"><i></i></span>
       <span class="cesta-bod"></span>
     </div>
 
-    <a class="tlac" href="https://www.paulus.yoga/stin">Prohlédnout celý kurz</a>
-    <p class="parametry">Dvanáct živých online setkání během šesti měsíců<br>jednou za čtrnáct dní <span aria-hidden="true">·</span> záznamy a pracovní materiály zůstávají<br>začátek v říjnu 2026 <span aria-hidden="true">·</span> 15 900 Kč, nebo 6 × 3 000 Kč</p>
+    <a class="tlac" data-odkryj href="https://www.paulus.yoga/stin">Prohlédnout celý kurz</a>
+    <p class="parametry" data-odkryj>Dvanáct živých online setkání během šesti měsíců<br>jednou za čtrnáct dní <span aria-hidden="true">·</span> záznamy a pracovní materiály zůstávají<br>začátek v říjnu 2026 <span aria-hidden="true">·</span> 15 900 Kč, nebo 6 × 3 000 Kč</p>
     <p class="tise" style="margin-top:22px; font-size:12.5px">Kurz je vzdělávací a sebezkušenostní. Nenahrazuje psychoterapii ani psychiatrickou péči.</p>
   </div>
 </section>
@@ -904,11 +971,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       var filtr = ctx.createBiquadFilter();
       filtr.type = "lowpass";
-      filtr.frequency.setValueAtTime(Math.min(6000, f * 9), t);
+      filtr.frequency.setValueAtTime(Math.min(3200, f * 5), t);
       filtr.frequency.exponentialRampToValueAtTime(Math.max(220, f * 2), t + delka * 0.8);
       filtr.Q.value = 0.6;
 
-      var slozky = [[1, 1], [2.01, 0.34], [3.0, 0.12]];
+      var slozky = [[1, 1], [2.01, 0.16], [3.0, 0.04]];
       slozky.forEach(function(s){
         var o = ctx.createOscillator();
         o.type = "sine";
@@ -927,7 +994,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     function hraj(index, hlas, delka){
       if(!zap) return;
       var ted = ctx ? ctx.currentTime : 0;
-      if(ted - posledni < 0.08) return;
+      if(ted - posledni < 0.34) return;
       posledni = ted;
       var i = Math.max(0, Math.min(STUPNICE.length - 1, Math.round(index)));
       ton(STUPNICE[i], hlas, delka);
@@ -938,18 +1005,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var cilHlas = 0.34, prolinani = null;
 
     var hudbaNactena = false;
+
+    function zkusPustit(pokus){
+      if(!hudba || !zap) return;
+      var s = hudba.play();
+      if(s && s.then){
+        s.catch(function(){
+          if(pokus < 12){ setTimeout(function(){ zkusPustit(pokus + 1); }, 250); }
+        });
+      }
+    }
+
     function rozjedHudbu(){
       if(!hudba) return;
-      if(!hudbaNactena){ hudbaNactena = true; hudba.load(); }
       hudba.volume = 0;
-      var s = hudba.play();
-      if(s && s.catch){ s.catch(function(){}); }
+      if(!hudbaNactena){
+        hudbaNactena = true;
+        hudba.preload = "auto";
+        hudba.addEventListener("canplay", function(){ zkusPustit(0); }, {once:true});
+        hudba.load();
+      }
+      zkusPustit(0);
+
       clearInterval(prolinani);
       prolinani = setInterval(function(){
         if(!hudba) return;
+        if(hudba.paused && zap){ zkusPustit(0); }
         var rozdil = cilHlas - hudba.volume;
         if(Math.abs(rozdil) < 0.006){ hudba.volume = Math.max(0, Math.min(1, cilHlas)); return; }
         hudba.volume = Math.max(0, Math.min(1, hudba.volume + rozdil * 0.06));
+      }, 60);
+    }
+
+    function zastavHudbu(){
+      if(!hudba) return;
+      clearInterval(prolinani);
+      var krok = setInterval(function(){
+        hudba.volume = Math.max(0, hudba.volume - 0.05);
+        if(hudba.volume <= 0.01){ clearInterval(krok); hudba.pause(); }
       }, 60);
     }
 
@@ -972,14 +1065,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }, 50);
     }
 
-    function zastavHudbu(){
-      if(!hudba) return;
-      clearInterval(prolinani);
-      var krok = setInterval(function(){
-        hudba.volume = Math.max(0, hudba.volume - 0.05);
-        if(hudba.volume <= 0.01){ clearInterval(krok); hudba.pause(); }
-      }, 60);
-    }
 
     return {
       prepni:function(b){
@@ -994,22 +1079,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       /* v nejtmavší části hraje nejsytěji, na koncích ustupuje */
       hlasitost:function(v){ cilHlas = 0.15 + v * 0.17; },
       /* první akt: sestup od výšky dolů, jak kruhu ubývá */
-      pad:function(n){ hraj(17 - (n / 91) * 13, 0.16, 1.3); },
+      pad:function(n){ hraj(17 - (n / 91) * 13, 0.035, 2.0); },
       /* tma: každý nález o kus výš */
       nalez:function(){ if(hudba && !hudba.paused){ zesil(); } },
       /* třetí akt: pozvolný vzestup, jak se kruh skládá */
-      zpet:function(n){ hraj(4 + (n / 60) * 12, 0.14, 1.7); }
+      zpet:function(n){ hraj(4 + (n / 60) * 12, 0.03, 2.2); }
     };
   })();
 
   var tlZvuk = document.getElementById("zvuk");
-  var zvukStav = document.getElementById("zvukStav");
-  tlZvuk.addEventListener("click", function(){
+  var tlZvukHero = document.getElementById("zvukHero");
+
+  function prepniZvuk(){
     var b = tlZvuk.getAttribute("aria-pressed") !== "true";
-    tlZvuk.setAttribute("aria-pressed", b ? "true" : "false");
-    if(zvukStav){ zvukStav.textContent = b ? " zapnutý" : " vypnutý"; }
+    [tlZvuk, tlZvukHero].forEach(function(t){
+      if(!t) return;
+      t.setAttribute("aria-pressed", b ? "true" : "false");
+      t.setAttribute("aria-label", b ? "Vypnout zvuk" : "Zapnout zvuk");
+    });
     Zvuk.prepni(b);
-  });
+  }
+
+  tlZvuk.addEventListener("click", prepniZvuk);
+  if(tlZvukHero){ tlZvukHero.addEventListener("click", prepniZvuk); }
 
   /* ================= SPOLEČNÁ GEOMETRIE ================= */
   var POCET = 100, ZUSTANE = 9;
@@ -1456,6 +1548,51 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     nitBod.style.top = (q * 100).toFixed(2) + "%";
   }
 
+  /* ================= ODKRÝVÁNÍ A PARALAXA ================= */
+  (function(){
+    var prvky = document.querySelectorAll("[data-odkryj]");
+    if(utlum){
+      Array.prototype.forEach.call(prvky, function(e){ e.classList.add("je"); });
+      return;
+    }
+    var io5 = new IntersectionObserver(function(zaznamy){
+      zaznamy.forEach(function(z){
+        if(!z.isIntersecting) return;
+        var rodic = z.target.parentNode;
+        var sourozenci = Array.prototype.filter.call(rodic.children, function(x){
+          return x.hasAttribute && x.hasAttribute("data-odkryj");
+        });
+        var poradi = sourozenci.indexOf(z.target);
+        z.target.style.transitionDelay = (Math.max(0, poradi) * 0.11).toFixed(2) + "s";
+        z.target.classList.add("je");
+        io5.unobserve(z.target);
+      });
+    }, {rootMargin:"0px 0px -12% 0px", threshold:0.15});
+    Array.prototype.forEach.call(prvky, function(e){ io5.observe(e); });
+  })();
+
+  /* pomalý posun obrazů proti scrollu */
+  var posuvne = [];
+  (function(){
+    var sazenice = document.querySelector(".sazenicova");
+    var zaverPoz = document.querySelector(".vstup .pozadiZaver");
+    if(sazenice){ posuvne.push({el:sazenice, rychlost:0.14, promenna:true}); }
+    if(zaverPoz){ posuvne.push({el:zaverPoz, rychlost:-0.1, promenna:false}); }
+  })();
+
+  function kresliPosun(){
+    if(utlum) return;
+    for(var i = 0; i < posuvne.length; i++){
+      var P = posuvne[i];
+      var r = P.el.getBoundingClientRect();
+      if(r.bottom < -200 || r.top > window.innerHeight + 200) continue;
+      var stred = r.top + r.height / 2 - window.innerHeight / 2;
+      var d = -stred * P.rychlost;
+      if(P.promenna){ P.el.style.setProperty("--posun", d.toFixed(1) + "px"); }
+      else { P.el.style.transform = "translateY(" + d.toFixed(1) + "px)"; }
+    }
+  }
+
   /* ================= HERO VIDEO ================= */
   (function(){
     var v = document.getElementById("heroVideo");
@@ -1507,10 +1644,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ceka = false;
     var h = document.documentElement.scrollHeight - window.innerHeight;
     pruh.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + "%";
-    hlava.classList.toggle("je", window.scrollY > window.innerHeight * .8);
+    var jeHlava = window.scrollY > window.innerHeight * .8;
+    hlava.classList.toggle("je", jeHlava);
+    if(tlZvukHero){ tlZvukHero.classList.toggle("pryc", jeHlava); }
     kresliA();
     kresliB();
     kresliNit();
+    kresliPosun();
 
     var vyska = document.documentElement.scrollHeight - window.innerHeight;
     var celek = vyska > 0 ? window.scrollY / vyska : 0;
