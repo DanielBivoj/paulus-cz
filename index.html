@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Příběhy · PAULUS | Jóga a vědomí</title>
+<meta name="description" content="Některá témata se nedají vysvětlit, musí se zažít. Příběhy o stínu, o józe a o tom, proč PAULUS vznikl, ke čtení od začátku do konce.">
+<link rel="canonical" href="https://cz.paulus.yoga/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="PAULUS · Jóga a vědomí">
+<meta property="og:title" content="Příběhy · PAULUS">
+<meta property="og:description" content="Některá témata se nedají vysvětlit. Musí se zažít.">
+<meta property="og:url" content="https://cz.paulus.yoga/">
+<meta property="og:image" content="https://cz.paulus.yoga/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#060A0C">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noc:#060A0C; --deep:#081E27; --papir:#F2EFEA;
+  --zlata:#B7844E; --zlata-sv:#D3A166; --terakota:#C4703F; --pisek:#E3B87C;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+img{max-width:100%; height:auto; display:block;}
+body{
+  margin:0; background:var(--noc); color:#C9CFD2;
+  font-family:'Source Sans 3',system-ui,sans-serif; font-weight:300;
+  font-size:18px; line-height:1.72; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+h1,h2{font-family:'Playfair Display',Georgia,serif; font-weight:400; margin:0; letter-spacing:-.012em;}
+p{margin:0 0 1.15em;}
+p:last-child{margin-bottom:0;}
+a{color:var(--zlata-sv);}
+
+/* ---------- zrno ---------- */
+.zrno{
+  position:absolute; inset:0; z-index:3; pointer-events:none; mix-blend-mode:screen; opacity:.1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+/* ---------- hlavicka ---------- */
+.hlava{
+  position:fixed; top:0; left:0; right:0; z-index:60; height:72px;
+  display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
+  padding:0 clamp(16px,3vw,30px);
+  background:#0A232D; border-bottom:1px solid rgba(183,132,78,.28);
+  transform:translateY(-100%); transition:transform .45s var(--ease);
+}
+.hlava.je{transform:none;}
+.hlava > a:first-child{justify-self:start; line-height:0;}
+.hlava img{height:42px; width:auto; opacity:.95;}
+.tb-nazev{font-family:'Playfair Display',serif; color:#D3A166; font-size:15px;
+  letter-spacing:.5px; justify-self:center; white-space:nowrap; font-weight:500;}
+.sada{justify-self:end;}
+.knf{
+  border:1px solid rgba(199,152,94,.6); color:#D3A166; text-decoration:none;
+  font:600 11px/1 'Source Sans 3',sans-serif; letter-spacing:2px; text-transform:uppercase;
+  padding:6px 14px; border-radius:16px; transition:background .25s, color .25s, border-color .25s;
+}
+.knf:hover{border-color:#D3A166; background:rgba(211,161,102,.16); color:#F7F4EF;}
+@media (max-width:760px){
+  .hlava{height:62px; padding:0 14px;}
+  .tb-nazev{display:none;}
+  .hlava img{height:30px;}
+  .knf{font-size:11px; letter-spacing:1.4px; padding:6px 11px;}
+}
+
+/* ---------- práh ---------- */
+.prah{
+  position:relative; height:100svh; min-height:520px; overflow:hidden;
+  display:grid; grid-template-columns:100%; grid-template-rows:auto minmax(0,1fr);
+  align-items:start; justify-items:center;
+  text-align:center; padding:13svh clamp(20px,5vw,40px) 12svh;
+  background:radial-gradient(78% 62% at 50% 34%, #0E1519 0%, var(--noc) 66%);
+}
+.prah-video{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  z-index:0; opacity:0; transition:opacity 2.6s var(--ease) .6s; pointer-events:none;
+}
+.prah.je .prah-video{opacity:.3;}
+.prah-clona{
+  position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:
+    radial-gradient(58% 46% at 50% 34%, rgba(6,10,12,.9) 0%, rgba(6,10,12,.7) 56%, transparent 90%),
+    linear-gradient(180deg, rgba(6,10,12,.9) 0%, transparent 26%, transparent 66%, rgba(6,10,12,.96) 100%);
+}
+.zar{
+  position:absolute; left:50%; top:38%; translate:-50% -50%; z-index:1; pointer-events:none;
+  width:130vmin; height:130vmin; border-radius:50%;
+  background:radial-gradient(circle, rgba(211,161,102,.16) 0%, rgba(183,132,78,.07) 34%, transparent 68%);
+  opacity:0; transform:translate(-50%,-50%) scale(.86);
+  transition:opacity 2.6s var(--ease) .2s, transform 3.4s var(--ease) .2s;
+  animation:dech 24s ease-in-out infinite 3.6s;
+}
+.prah.je .zar{opacity:1; transform:translate(-50%,-50%) scale(1);}
+@keyframes dech{0%,100%{filter:brightness(1)}50%{filter:brightness(1.35)}}
+.prah h1 em{font-style:italic; color:var(--zlata-sv);}
+.prah-in{position:relative; z-index:4; grid-row:1; grid-column:1; max-width:min(36ch,92vw);}
+.prah .kick{
+  font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--zlata);
+  font-weight:600; margin:0 0 24px; opacity:0; transition:opacity 1.4s var(--ease) .2s;
+}
+.prah.je .kick{opacity:1;}
+.prah h1{
+  font-size:clamp(26px,4vw,48px); line-height:1.2; color:#F7F4EF; text-wrap:balance;
+  opacity:0; transform:translateY(16px); filter:blur(7px);
+  transition:opacity 1.6s var(--ease) .8s, transform 1.7s var(--ease) .8s, filter 1.7s var(--ease) .8s;
+}
+.prah.je h1{opacity:1; transform:none; filter:blur(0);}
+.prah .pod{
+  margin-top:clamp(20px,3.5vh,34px); font-size:17px; color:#98A2A6;
+  max-width:32ch; margin-inline:auto; opacity:0; transition:opacity 1.5s var(--ease) 2s;
+}
+.prah.je .pod{opacity:1;}
+.dolu{
+  position:absolute; bottom:clamp(16px,3svh,30px); left:50%; translate:-50% 0; z-index:4;
+  font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#7d8b90;
+  display:grid; justify-items:center; gap:11px;
+}
+.dolu i{display:block; width:1px; height:clamp(24px,3.4svh,38px); background:linear-gradient(var(--zlata-sv), transparent); animation:tah 3s var(--ease) infinite;}
+@keyframes tah{0%{transform:scaleY(.12);transform-origin:top;opacity:0}45%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);transform-origin:bottom;opacity:0}}
+
+/* ---------- vlny ---------- */
+.vlny{
+  position:relative; z-index:2; pointer-events:none; flex:0 1 auto; min-height:0;
+  height:100%; width:auto; aspect-ratio:1;
+  max-width:min(38vmin,310px); max-height:min(38vmin,310px);
+  display:grid; place-items:center;
+  opacity:0; transition:opacity 1.8s var(--ease) 2.8s;
+}
+.prah.je .vlny{opacity:1;}
+.vlny i{
+  grid-area:1/1; display:block; width:100%; aspect-ratio:1; border-radius:50%;
+  border:1px solid rgba(211,161,102,.5);
+  transform:scale(.06); opacity:0;
+}
+.prah.je .vlny i{animation:vlna 7.2s cubic-bezier(.18,.7,.3,1) infinite;}
+.prah.je .vlny i:nth-child(2){animation-delay:1.8s;}
+.prah.je .vlny i:nth-child(3){animation-delay:3.6s;}
+.prah.je .vlny i:nth-child(4){animation-delay:5.4s;}
+@keyframes vlna{
+  0%   {transform:scale(.06); opacity:0; border-color:rgba(247,244,239,.9);}
+  12%  {opacity:1;}
+  100% {transform:scale(1); opacity:0; border-color:rgba(183,132,78,.2);}
+}
+.vlny::after{
+  content:""; grid-area:1/1; width:7px; height:7px; border-radius:50%;
+  background:#F7F4EF; box-shadow:0 0 22px 5px rgba(211,161,102,.6);
+  animation:kap 7.2s ease-in-out infinite;
+}
+@keyframes kap{0%,86%{transform:scale(1); opacity:.95}92%{transform:scale(.4); opacity:.45}100%{transform:scale(1); opacity:.95}}
+@media (max-width:760px){ .vlny{max-width:min(58vmin,270px); max-height:min(58vmin,270px);} }
+
+/* ---------- nit ---------- */
+.nit{
+  position:absolute; left:50%; translate:-50% 0; top:0; bottom:0; width:1px; z-index:2;
+  flex:none;
+  background:linear-gradient(180deg, transparent 0%, rgba(183,132,78,.42) 12%, rgba(183,132,78,.42) 88%, transparent 100%);
+  transform-origin:top; pointer-events:none;
+}
+.pruvod{
+  grid-row:2; grid-column:1; z-index:2; position:relative;
+  display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
+  gap:0; width:100%; height:100%; min-height:0; pointer-events:none;
+}
+.nit-prah{
+  display:block; width:1px; height:clamp(20px,4svh,48px); flex:none;
+  background:linear-gradient(180deg, transparent, rgba(183,132,78,.5));
+  transform:scaleY(0); transform-origin:top;
+  transition:transform 1.6s var(--ease) 2.1s;
+}
+.prah.je .nit-prah{transform:scaleY(1);}
+.prah.je .nit{transform:translateX(-50%) scaleY(1);}
+.svet .nit{opacity:.5;}
+.svet--vpravo .nit{left:14%;}
+.svet:not(.svet--vpravo) .nit{left:86%;}
+@media (max-width:760px){
+  .nit,.svet .nit,.svet--vpravo .nit,.svet:not(.svet--vpravo) .nit{left:20px; translate:0 0;}
+  .prah .nit{left:50%; translate:-50% 0;}
+}
+
+/* ---------- svět ---------- */
+.svet{
+  position:relative; min-height:100svh; display:grid; align-items:center;
+  padding:14svh clamp(22px,7vw,80px); overflow:hidden;
+  text-decoration:none; color:inherit;
+}
+.svet-obraz{
+  position:absolute; inset:0; z-index:0; pointer-events:none;
+  background-position:center; background-size:cover; background-repeat:no-repeat;
+  opacity:0; transform:scale(1.1);
+  transition:opacity 1.6s var(--ease), transform 6s var(--ease);
+}
+.svet.je .svet-obraz{opacity:var(--kryti,.5); transform:scale(1);}
+.svet-clona{
+  position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:
+    linear-gradient(100deg, var(--stin) 0%, var(--stin2) 44%, transparent 88%),
+    linear-gradient(180deg, rgba(6,10,12,.85) 0%, transparent 22%, transparent 74%, rgba(6,10,12,.9) 100%);
+}
+.svet-in{position:relative; z-index:4; max-width:34rem;}
+.cislo{
+  font-family:'Playfair Display',serif; font-size:clamp(48px,7vw,86px); line-height:1;
+  color:var(--akcent); opacity:.34; margin-bottom:clamp(8px,1.6vh,18px);
+  display:block;
+}
+.svet .stitek{
+  display:inline-block; font-size:11px; letter-spacing:3.2px; text-transform:uppercase;
+  font-weight:600; color:var(--akcent); border:1px solid var(--akcent);
+  padding:5px 12px; border-radius:14px; margin-bottom:18px; opacity:.9;
+}
+.svet h2{
+  font-size:clamp(30px,5.4vw,60px); line-height:1.08; color:#F7F4EF; text-wrap:balance;
+  margin-bottom:18px;
+}
+.svet p{font-size:clamp(16.5px,1.9vw,19px); line-height:1.7; color:#B6BEC2; max-width:40ch;}
+.vstup{
+  display:inline-block; margin-top:26px; font-size:11px; letter-spacing:3px;
+  text-transform:uppercase; font-weight:600; color:var(--akcent);
+  border-bottom:1px solid transparent; padding-bottom:5px; transition:border-color .3s;
+}
+.vstup span{margin-left:.6em; display:inline-block; transition:transform .35s var(--ease);}
+.svet:hover .vstup{border-bottom-color:var(--akcent);}
+.svet:hover .vstup span{transform:translateX(7px);}
+.svet:hover .svet-obraz{opacity:calc(var(--kryti,.5) + .12);}
+.svet-in > *{opacity:0; transform:translateY(18px); transition:opacity 1s var(--ease), transform 1.1s var(--ease);}
+.svet.je .svet-in > *{opacity:1; transform:none;}
+.svet.je .cislo{opacity:.34; transition-delay:.1s;}
+.svet.je .stitek{transition-delay:.24s;}
+.svet.je h2{transition-delay:.38s;}
+.svet.je p{transition-delay:.52s;}
+.svet.je .vstup{transition-delay:.66s;}
+.svet--vpravo .svet-in{margin-left:auto; text-align:right;}
+.svet--vpravo .svet-clona{
+  background:
+    linear-gradient(260deg, var(--stin) 0%, var(--stin2) 44%, transparent 88%),
+    linear-gradient(180deg, rgba(6,10,12,.85) 0%, transparent 22%, transparent 74%, rgba(6,10,12,.9) 100%);
+}
+.svet--vpravo .svet-in > p{margin-left:auto;}
+@media (max-width:760px){
+  .svet{padding:12svh 22px;}
+  .svet--vpravo .svet-in{margin-left:0; text-align:left;}
+  .svet--vpravo .svet-in > p{margin-left:0;}
+  .svet-clona{background:linear-gradient(180deg, rgba(6,10,12,.9) 0%, rgba(6,10,12,.62) 40%, rgba(6,10,12,.86) 100%);}
+}
+
+/* ---------- závěr ---------- */
+.zaver{
+  position:relative; text-align:center; padding:clamp(80px,13vh,140px) clamp(22px,6vw,40px);
+  background:radial-gradient(70% 60% at 50% 26%, #0E1519 0%, var(--noc) 68%);
+}
+.zaver-in{position:relative; z-index:4; max-width:32rem; margin:0 auto;}
+.zaver p{font-size:17px; color:#98A2A6;}
+.dalsi{font-family:'Playfair Display',serif; font-size:clamp(19px,2.4vw,24px);
+  line-height:1.5; color:#DDE3E6; margin-bottom:1.5em;}
+.tlac{
+  display:inline-block; margin-top:24px; padding:17px 36px; text-decoration:none;
+  border:1px solid var(--zlata); color:var(--zlata-sv);
+  font:600 11px/1 'Source Sans 3',sans-serif; letter-spacing:3px; text-transform:uppercase;
+  transition:background .25s, color .25s;
+}
+.tlac:hover{background:var(--zlata); color:#0A0C0D;}
+
+/* ---------- paticka ---------- */
+.pata{background:#081E27; color:#7d8b90; padding:clamp(34px,4vw,52px) clamp(24px,6vw,40px);
+  border-top:1px solid rgba(183,132,78,.28);}
+.colophon{max-width:900px; margin:0 auto; font-size:13.5px; line-height:1.85;}
+.colophon > a:first-child{display:block; line-height:0; margin-bottom:22px;}
+.colophon .foot-logo{height:42px; width:auto; opacity:.95;}
+.pata a{color:#B7844E; text-decoration-thickness:1px; text-underline-offset:3px;}
+.pata a:hover{color:#F2EFEA;}
+.fmenu{font-size:12.5px; line-height:1.5; color:#7d8b90; margin:0 0 6px; max-width:none;}
+.fmenu b{color:#F2EFEA; font-weight:600; font-size:11px; letter-spacing:2px; text-transform:uppercase; margin-right:6px;}
+.fcteni{margin-bottom:14px !important;}
+.fsoc{font-size:12.5px; line-height:1.5; margin:16px 0 12px;}
+.ftirazka{font-size:11.5px; line-height:1.5; color:#7d8b90; margin:0; opacity:.85;}
+@media (max-width:640px){ .fmenu,.fsoc{font-size:13.5px; line-height:2.2;} .ftirazka{font-size:12px;} }
+
+@media (max-width:900px){
+  .svet{min-height:92svh; padding:11svh 22px;}
+  .svet h2{font-size:clamp(28px,6vw,42px);}
+  .svet p{max-width:100%;}
+  .cislo{font-size:clamp(40px,9vw,58px);}
+}
+@media (max-width:520px){
+  .prah{padding:11svh 20px 10svh; min-height:480px;}
+  .vlny{max-width:min(52vmin,240px); max-height:min(52vmin,240px);}
+  .prah-in{max-width:100%;}
+  .prah .pod{font-size:16px; max-width:30ch;}
+  .svet{padding:10svh 20px;}
+  .svet .stitek{font-size:11px; letter-spacing:2.4px; padding:5px 10px;}
+  .vstup{font-size:11px; letter-spacing:2.4px;}
+  .zaver{padding:clamp(64px,10vh,110px) 20px;}
+}
+@media (max-height:600px){
+  .prah{padding:9svh 24px 8svh; min-height:420px;}
+  .vlny{max-width:min(28vmin,190px); max-height:min(28vmin,190px);}
+  .nit-prah{height:18px;}
+  .prah h1{font-size:clamp(24px,3.2vw,38px);}
+  .svet{min-height:auto; padding:12svh clamp(22px,7vw,80px);}
+}
+@media (pointer:coarse){
+  .knf,.tlac{min-height:46px; display:inline-flex; align-items:center; justify-content:center;}
+  .svet:hover .svet-obraz{opacity:var(--kryti,.5);}
+  .svet:hover .vstup span{transform:none;}
+}
+@media (prefers-reduced-motion:reduce){
+  .dolu i{animation:none;}
+  .prah-video{display:none;}
+  .prah .kick,.prah h1,.prah .pod,.prah .vlny{opacity:1 !important; transform:none !important; filter:none !important;}
+  .vlny i{animation:none !important; opacity:.3; transform:scale(1);}
+  .vlny{height:auto; width:min(38vmin,310px);}
+  .vlny::after{animation:none !important;}
+  .dvere i{transform:scaleY(1) !important;}
+  .svet-obraz{opacity:var(--kryti,.5) !important; transform:none !important;}
+  .svet-in > *{opacity:1 !important; transform:none !important;}
+}
+</style>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})
+(window,document,'script','dataLayer','GTM-W7CCFJW');</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.paulus.yoga/#organizace","name":"PAULUS · Jóga a vědomí","url":"https://www.paulus.yoga/","sameAs":["https://www.youtube.com/@paulusyoga","https://www.instagram.com/paulus.yoga","https://www.facebook.com/paulus.yoga"]},{"@type":"CollectionPage","@id":"https://cz.paulus.yoga/#rozcestnik","url":"https://cz.paulus.yoga/","name":"Příběhy · PAULUS","inLanguage":"cs","publisher":{"@id":"https://www.paulus.yoga/#organizace"}},{"@type":"ItemList","@id":"https://cz.paulus.yoga/#seznam","itemListElement":[{"@type":"ListItem","position":1,"name":"Symbolon a diabolos","url":"https://cz.paulus.yoga/pribeh"},{"@type":"ListItem","position":2,"name":"Kam zmizelo devadesát procent vašich darů","url":"https://cz.paulus.yoga/co-je-stin"},{"@type":"ListItem","position":3,"name":"Co je jóga?","url":"https://cz.paulus.yoga/co-je-joga"},{"@type":"ListItem","position":4,"name":"Co zůstane z jógy ve dnech, kdy vám není dobře","url":"https://cz.paulus.yoga/vlastni-jogova-praxe"}]}]}
+</script>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7CCFJW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+<header class="hlava" id="hlava">
+  <a href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img src="assets/logo.png" alt="PAULUS, jóga a vědomí" width="1040" height="348"></a>
+  <span class="tb-nazev">Příběhy</span>
+  <span class="sada"><a class="knf" href="https://www.paulus.yoga/">Zpět na web</a></span>
+</header>
+
+<section class="prah" id="prah">
+  <video class="prah-video" id="prahVideo" muted loop playsinline preload="none" poster="assets/prah-poster.webp" aria-hidden="true">
+    <source src="assets/prah.webm" type="video/webm">
+    <source src="assets/prah.mp4" type="video/mp4">
+  </video>
+  <span class="prah-clona" aria-hidden="true"></span>
+  <span class="zar" aria-hidden="true"></span>
+  <span class="zrno" aria-hidden="true"></span>
+  <div class="prah-in">
+    <p class="kick">Příběhy</p>
+    <h1>Některá témata se nedají vysvětlit.<br><em>Musí se zažít.</em></h1>
+    <p class="pod">Prostor, kde se myšlenka nevykládá, ale prochází. Každý příběh se čte od začátku do konce a je v něm něco, co můžete udělat sami.</p>
+  </div>
+  <span class="pruvod" aria-hidden="true">
+    <i class="nit-prah"></i>
+    <span class="vlny"><i></i><i></i><i></i><i></i></span>
+  </span>
+  <span class="dolu"><i></i>Vydat se dál</span>
+</section>
+
+<a class="svet" href="https://cz.paulus.yoga/pribeh"
+   style="--akcent:#D3A166; --kryti:.5; --stin:rgba(6,12,16,.94); --stin2:rgba(6,12,16,.72)">
+  <span class="svet-obraz" data-obraz="assets/p-pribeh.webp" aria-hidden="true"></span>
+  <span class="svet-clona" aria-hidden="true"></span>
+  <span class="zrno" aria-hidden="true"></span>
+  <span class="nit" aria-hidden="true"></span>
+  <span class="svet-in">
+    <span class="cislo">01</span>
+    <span class="stitek">Proč PAULUS vznikl</span>
+    <h2>Symbolon a diabolos</h2>
+    <p>Nikdy jsme neměli více informací a přitom toho o sobě víme čím dál méně. O tom, co znamená spojovat, co bylo rozděleno, a kdo za tím stojí.</p>
+    <span class="vstup">Číst příběh<span>&rarr;</span></span>
+  </span>
+</a>
+
+<a class="svet svet--vpravo" href="https://cz.paulus.yoga/co-je-stin"
+   style="--akcent:#D3A166; --kryti:.62; --stin:rgba(6,10,12,.92); --stin2:rgba(6,10,12,.66)">
+  <span class="svet-obraz" data-obraz="assets/p-stin.webp" aria-hidden="true"></span>
+  <span class="svet-clona" aria-hidden="true"></span>
+  <span class="zrno" aria-hidden="true"></span>
+  <span class="nit" aria-hidden="true"></span>
+  <span class="svet-in">
+    <span class="cislo">02</span>
+    <span class="stitek">Hlubinná psychologie</span>
+    <h2>Kam zmizelo devadesát procent vašich darů</h2>
+    <p>Stín není vaše temná stránka. Je to všechno, co jste se naučili nebýt. Kam se to podělo, proč to rozhoduje za vás a co se s tím dá dělat.</p>
+    <span class="vstup">Vstoupit do tmy<span>&rarr;</span></span>
+  </span>
+</a>
+
+<a class="svet" href="https://cz.paulus.yoga/co-je-joga"
+   style="--akcent:#E3B87C; --kryti:.46; --stin:rgba(11,14,19,.93); --stin2:rgba(11,14,19,.7)">
+  <span class="svet-obraz" data-obraz="assets/p-joga.webp" aria-hidden="true"></span>
+  <span class="svet-clona" aria-hidden="true"></span>
+  <span class="zrno" aria-hidden="true"></span>
+  <span class="nit" aria-hidden="true"></span>
+  <span class="svet-in">
+    <span class="cislo">03</span>
+    <span class="stitek">Sedm vstupů</span>
+    <h2>Co je jóga?</h2>
+    <p>Podložka, pozice, protažení. Není to omyl, jóga skutečně může začít tělem. Jen u něj nekončí a to, co následuje, skoro nikdo neukazuje.</p>
+    <span class="vstup">Projít kolem<span>&rarr;</span></span>
+  </span>
+</a>
+
+<a class="svet svet--vpravo" href="https://cz.paulus.yoga/vlastni-jogova-praxe"
+   style="--akcent:#C4703F; --kryti:.5; --stin:rgba(11,14,19,.93); --stin2:rgba(11,14,19,.7)">
+  <span class="svet-obraz" data-obraz="assets/p-praxe.webp" aria-hidden="true"></span>
+  <span class="svet-clona" aria-hidden="true"></span>
+  <span class="zrno" aria-hidden="true"></span>
+  <span class="nit" aria-hidden="true"></span>
+  <span class="svet-in">
+    <span class="cislo">04</span>
+    <span class="stitek">Rozlišování</span>
+    <h2>Co zůstane z jógy ve dnech, kdy vám není dobře</h2>
+    <p>Návodů a technik je dnes všude dost. Chybí umět poznat, co z nich platí právě teď a co je lepší vynechat.</p>
+    <span class="vstup">Zjistit, co potřebujete<span>&rarr;</span></span>
+  </span>
+</a>
+
+<section class="zaver">
+  <span class="zrno" aria-hidden="true"></span>
+  <div class="zaver-in">
+    <p class="dalsi">Další příběhy přibývají. Zatím je jich tolik, kolik jich unese poctivé zpracování.</p>
+    <p>Kurzy, konzultace a všechno ostatní najdete na hlavním webu.</p>
+    <p><a class="tlac" href="https://www.paulus.yoga/">paulus.yoga</a></p>
+  </div>
+</section>
+
+<footer class="pata">
+  <div class="colophon">
+    <a href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img class="foot-logo" src="assets/logo.png" alt="PAULUS" width="1040" height="348"></a>
+    <p class="fmenu fcteni"><b>Příběhy:</b>
+      <a href="https://cz.paulus.yoga/pribeh">Paulus</a> ·
+      <a href="https://cz.paulus.yoga/co-je-stin">Stín</a> ·
+      <a href="https://cz.paulus.yoga/co-je-joga">Jóga</a> ·
+      <a href="https://cz.paulus.yoga/vlastni-jogova-praxe">Praxe</a>
+    </p>
+    <p class="fmenu"><b>Nástroje:</b>
+      <a href="https://www.paulus.yoga/joga">Jóga</a> ·
+      <a href="https://www.paulus.yoga/meditace">Meditace</a> ·
+      <a href="https://www.paulus.yoga/psychologie">Psychologie</a> ·
+      <a href="https://www.paulus.yoga/ajurveda">Ajurvéda</a> ·
+      <a href="https://www.paulus.yoga/dzjotis">Džjotiš</a> ·
+      <a href="https://www.paulus.yoga/tantra">Tantra</a>
+    </p>
+    <p class="fmenu"><b>Začátek:</b>
+      <a href="https://www.paulus.yoga/joga-neni-pouze-asana">Začít zdarma</a> ·
+      <a href="https://www.paulus.yoga/joga-od-zacatku">Jóga od začátku do konce</a> ·
+      <a href="https://www.paulus.yoga/umenimeditace">Umění meditace</a>
+    </p>
+    <p class="fsoc">
+      <a href="https://www.facebook.com/paulus.yoga">Facebook</a> ·
+      <a href="https://www.instagram.com/paulus.yoga">Instagram</a> ·
+      <a href="https://www.youtube.com/@paulusyoga">YouTube</a> ·
+      <a href="mailto:info@paulus.yoga">info@paulus.yoga</a>
+    </p>
+    <p class="ftirazka">K Hájovně 129/36, 142 00 Praha 12 · IČO 07864833 · DIČ CZ07864833</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var utlum = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var prah = document.getElementById("prah");
+  requestAnimationFrame(function(){ prah.classList.add("je"); });
+
+  var video = document.getElementById("prahVideo");
+  if(video && !utlum){
+    video.preload = "auto";
+    video.load();
+    var pokus = video.play();
+    if(pokus && pokus.catch){ pokus.catch(function(){}); }
+    var iov = new IntersectionObserver(function(e){
+      if(e[0].isIntersecting){
+        var s = video.play(); if(s && s.catch){ s.catch(function(){}); }
+      } else { video.pause(); }
+    }, {threshold:.05});
+    iov.observe(video);
+  }
+
+  var hlava = document.getElementById("hlava");
+  window.addEventListener("scroll", function(){
+    hlava.classList.toggle("je", window.scrollY > window.innerHeight * .7);
+  }, {passive:true});
+
+  var svety = document.querySelectorAll(".svet");
+
+  function nacti(s){
+    var o = s.querySelector(".svet-obraz");
+    if(o && !o.dataset.hotovo){
+      o.dataset.hotovo = "1";
+      o.style.backgroundImage = "url('" + o.getAttribute("data-obraz") + "')";
+    }
+  }
+
+  if(utlum){
+    Array.prototype.forEach.call(svety, function(s){ nacti(s); s.classList.add("je"); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function(z){
+    z.forEach(function(x){
+      if(!x.isIntersecting) return;
+      nacti(x.target);
+      x.target.classList.add("je");
+      io.unobserve(x.target);
+    });
+  }, {rootMargin:"0px 0px -14% 0px", threshold:0.2});
+
+  var ioBlizko = new IntersectionObserver(function(z){
+    z.forEach(function(x){
+      if(x.isIntersecting){ nacti(x.target); ioBlizko.unobserve(x.target); }
+    });
+  }, {rootMargin:"600px 0px 600px 0px"});
+
+  Array.prototype.forEach.call(svety, function(s){ io.observe(s); ioBlizko.observe(s); });
+})();
+</script>
+
+</body>
+</html>
