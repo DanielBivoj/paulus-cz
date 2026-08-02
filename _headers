@@ -13,3 +13,19 @@
   Cache-Control: public, max-age=300
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+
+/kam-joga-pokracuje/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/kam-joga-pokracuje/*
+  Cache-Control: public, max-age=300
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/vlastni-jogova-praxe/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/vlastni-jogova-praxe/*
+  Cache-Control: public, max-age=300
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
