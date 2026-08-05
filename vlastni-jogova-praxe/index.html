@@ -428,6 +428,33 @@ h2{font-size:clamp(25px,4.4vw,44px); line-height:1.2; margin:0 0 24px; text-wrap
   .dech-plocha{width:min(30vmin,190px);}
   .hriste{height:min(58vh,330px);}
 }
+
+/* rozbalovací menu Příběhy, doplněno srpen 2026 */
+.rozbal{position:relative;display:inline-block}
+.rozbal > button{background:transparent;border:1px solid rgba(199,152,94,.6);color:#D3A166;
+  font-family:'Source Sans 3',system-ui,sans-serif;font-size:11px;letter-spacing:2px;
+  text-transform:uppercase;padding:6px 14px;border-radius:16px;cursor:pointer;min-height:34px}
+.rozbal > button:hover{border-color:#D3A166;background:rgba(211,161,102,.16);color:#F7F4EF}
+.rozbal-menu{position:absolute;right:0;top:calc(100% + 10px);min-width:238px;z-index:200;
+  background:#0A232D;border:1px solid rgba(183,132,78,.28);padding:8px 0;
+  box-shadow:0 18px 40px rgba(0,0,0,.5)}
+.rozbal-menu a,.rozbal-menu span{display:block;padding:11px 18px;text-decoration:none;
+  font-family:'Source Sans 3',system-ui,sans-serif;font-size:13.5px;color:#C3CDD6;white-space:nowrap}
+.rozbal-menu a:hover{background:rgba(255,255,255,.07);color:#F2EFEA}
+.rozbal-menu .tady{color:#7d8b90;cursor:default}
+@media(max-width:520px){.rozbal-menu{position:fixed;left:8px;right:8px;top:66px;min-width:0}}
+
+.hlava .sada{justify-self:end;display:flex;align-items:center;gap:10px}
+
+/* oprava hlavičky, srpen 2026 */
+.rozbal > button,.rozbal .knf{background:transparent;font-family:'Source Sans 3',system-ui,sans-serif;
+  cursor:pointer;-webkit-appearance:none;appearance:none}
+.rozbal > button:hover{background:rgba(211,161,102,.16)}
+.hlava .sada,.topbar .sada{grid-column:3;justify-self:end;display:flex;align-items:center;gap:10px}
+@media (max-width:520px){
+  .hlava .sada,.topbar .sada{gap:6px}
+  .rozbal-menu{position:fixed;left:8px;right:8px;top:64px;min-width:0}
+}
 </style>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
 var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
@@ -445,7 +472,20 @@ j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefo
 <header class="hlava" id="hlava">
   <a href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img src="assets/logo.png" alt="PAULUS, jóga a vědomí" width="1040" height="348"></a>
   <span class="tb-nazev">Jakou praxi právě potřebujete</span>
-  <span class="sada"><a class="knf" href="https://www.paulus.yoga/joga-od-zacatku">Chci vědět víc</a></span>
+  <span class="sada">
+    <a class="knf" href="https://www.paulus.yoga/joga-od-zacatku">Chci vědět víc</a>
+    <div class="rozbal">
+      <button class="knf" id="pribehy-tl" type="button" aria-expanded="false" aria-controls="pribehy-menu">Příběhy</button>
+      <div class="rozbal-menu" id="pribehy-menu" hidden>
+        <a href="https://cz.paulus.yoga/pribeh">Příběh PAULUS</a>
+        <a href="https://cz.paulus.yoga/co-je-joga">Co je jóga</a>
+        <a href="https://cz.paulus.yoga/co-je-stin">Co je stín</a>
+        <a href="https://cz.paulus.yoga/co-je-meditace">Co je meditace</a>
+        <span class="tady">Jakou praxi potřebujete</span>
+      
+      </div>
+      </div>
+  </span>
 </header>
 
 <!-- ====================== ÚVOD ====================== -->
@@ -670,8 +710,9 @@ j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefo
     <a href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img class="foot-logo" src="assets/logo.png" alt="PAULUS" width="1040" height="348"></a>
     <p class="fmenu fcteni"><b>Příběhy:</b>
       <a href="https://cz.paulus.yoga/pribeh">Paulus</a> ·
-      <a href="https://cz.paulus.yoga/co-je-stin">Stín</a> ·
       <a href="https://cz.paulus.yoga/co-je-joga">Jóga</a> ·
+      <a href="https://cz.paulus.yoga/co-je-stin">Stín</a> ·
+      <a href="https://cz.paulus.yoga/co-je-meditace">Meditace</a> ·
       <span class="tady">Praxe</span>
     </p>
 
@@ -1013,5 +1054,17 @@ j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefo
 })();
 </script>
 
+<script>
+/* rozbalovací menu Příběhy */
+(function(){
+  var t=document.getElementById('pribehy-tl'), m=document.getElementById('pribehy-menu');
+  if(!t||!m) return;
+  function zavri(){ m.hidden=true; t.setAttribute('aria-expanded','false'); }
+  t.addEventListener('click',function(e){ e.stopPropagation();
+    var o=!m.hidden; m.hidden=o; t.setAttribute('aria-expanded', o?'false':'true'); });
+  document.addEventListener('click',function(e){ if(!m.hidden && !m.contains(e.target)) zavri(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') zavri(); });
+})();
+</script>
 </body>
 </html>
