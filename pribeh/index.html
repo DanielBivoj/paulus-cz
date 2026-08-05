@@ -538,6 +538,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold); outline-offs
 .rozbal-menu a:hover{background:rgba(255,255,255,.07);color:#F2EFEA}
 .rozbal-menu .tady{color:#7d8b90;cursor:default}
 @media(max-width:520px){.rozbal-menu{position:fixed;left:8px;right:8px;top:66px;min-width:0}}
+
+.topbar .sada{justify-self:end;display:flex;align-items:center;gap:10px}
 </style>
 </head>
 <body>
@@ -552,9 +554,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="topbar" id="topbar">
   <a href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img class="brand-logo" src="assets/logo.png" width="1040" height="348" alt="PAULUS, jóga a vědomí"></a>
   <span class="tb-title">Příběh</span>
-  <a class="tb" href="#manifest">MANIFEST</a>
-
-      <span class="sada"><div class="rozbal">
+  <span class="sada">
+    <a class="tb" href="#manifest">MANIFEST</a>
+    <div class="rozbal">
       <button class="knf" id="pribehy-tl" type="button" aria-expanded="false" aria-controls="pribehy-menu">Příběhy</button>
       <div class="rozbal-menu" id="pribehy-menu" hidden>
         <span class="tady">Příběh PAULUS</span>
@@ -564,8 +566,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="https://cz.paulus.yoga/vlastni-jogova-praxe">Jakou praxi potřebujete</a>
       
       </div>
-      </div></span>
-    </header>
+      </div>
+  </span>
+
+      </header>
 
 <nav class="rail" id="rail" aria-label="Části stránky">
   <a href="#cast-i" data-rail="cast-i">I</a>

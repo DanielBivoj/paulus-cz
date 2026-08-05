@@ -62,7 +62,7 @@ a{color:inherit;}
 .hlava > a:first-child{justify-self:start; line-height:0;}
 .hlava img{height:42px; width:auto; opacity:.95;}
 .tb-nazev{font-family:'Fraunces',serif; color:#D3A166; font-size:15px; letter-spacing:.5px; justify-self:center; white-space:nowrap; font-weight:500;}
-.sada{justify-self:end;}
+.sada{justify-self:end;display:flex;align-items:center;gap:10px;}
 .knf{
   border:1px solid rgba(199,152,94,.6); color:#D3A166; text-decoration:none;
   font:600 11px/1 'Source Sans 3',sans-serif; letter-spacing:2px; text-transform:uppercase;
@@ -401,7 +401,8 @@ j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefo
   <a href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img src="assets/logo.png" alt="PAULUS, jóga a vědomí" width="1040" height="348"></a>
   <span class="tb-nazev">Co je jóga</span>
   <span class="sada">
-      <div class="rozbal">
+    <a class="knf" href="https://www.paulus.yoga/joga-od-zacatku">Prohlédnout kurz</a>
+    <div class="rozbal">
       <button class="knf" id="pribehy-tl" type="button" aria-expanded="false" aria-controls="pribehy-menu">Příběhy</button>
       <div class="rozbal-menu" id="pribehy-menu" hidden>
         <a href="https://cz.paulus.yoga/pribeh">Příběh PAULUS</a>
@@ -412,7 +413,7 @@ j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefo
       
       </div>
       </div>
-      <a class="knf" href="https://www.paulus.yoga/joga-od-zacatku">Prohlédnout kurz</a></span>
+  </span>
 </header>
 
 <!-- ====================== ÚVOD ====================== -->
