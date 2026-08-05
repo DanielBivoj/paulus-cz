@@ -397,6 +397,16 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border:0;border-radiu
   .jev{opacity:1;transform:none}
   .hero video{display:none}
 }
+
+/* oprava hlavičky, srpen 2026 */
+.rozbal > button,.rozbal .knf{background:transparent;font-family:'Source Sans 3',system-ui,sans-serif;
+  cursor:pointer;-webkit-appearance:none;appearance:none}
+.rozbal > button:hover{background:rgba(211,161,102,.16)}
+.hlava .sada,.topbar .sada{grid-column:3;justify-self:end;display:flex;align-items:center;gap:10px}
+@media (max-width:520px){
+  .hlava .sada,.topbar .sada{gap:6px}
+  .rozbal-menu{position:fixed;left:8px;right:8px;top:64px;min-width:0}
+}
 </style>
 </head>
 <body>
