@@ -324,6 +324,18 @@ a{color:var(--zlata-sv);}
   .svet-obraz{opacity:var(--kryti,.5) !important; transform:none !important;}
   .svet-in > *{opacity:1 !important; transform:none !important;}
 }
+
+/* rozbalovací menu Příběhy */
+.rozbal{position:relative;display:inline-block}
+.rozbal-menu{position:absolute;right:0;top:calc(100% + 10px);min-width:238px;z-index:200;
+  background:#0A232D;border:1px solid rgba(183,132,78,.28);padding:8px 0;
+  box-shadow:0 18px 40px rgba(0,0,0,.5)}
+.rozbal-menu a,.rozbal-menu span{display:block;padding:11px 18px;text-decoration:none;
+  font:400 13.5px/1.4 'Source Sans 3',system-ui,sans-serif;color:#C3CDD6;white-space:nowrap;
+  letter-spacing:0;text-transform:none;min-height:0;border:0}
+.rozbal-menu a:hover{background:rgba(255,255,255,.07);color:#F2EFEA}
+.rozbal-menu .tady{color:#7d8b90;cursor:default}
+@media(max-width:520px){.rozbal-menu{position:fixed;left:8px;right:8px;top:66px;min-width:0}}
 </style>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
 var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
@@ -341,7 +353,18 @@ j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefo
 <header class="hlava" id="hlava">
   <a href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img src="assets/logo.png" alt="PAULUS, jóga a vědomí" width="1040" height="348"></a>
   <span class="tb-nazev">Příběhy</span>
-  <span class="sada"><a class="knf" href="https://www.paulus.yoga/">Zpět na web</a></span>
+  <span class="sada">
+      <div class="rozbal">
+        <button class="knf" id="pribehy-tl" type="button" aria-expanded="false" aria-controls="pribehy-menu">Příběhy</button>
+        <div class="rozbal-menu" id="pribehy-menu" hidden>
+        <a href="https://cz.paulus.yoga/pribeh">Příběh PAULUS</a>
+        <a href="https://cz.paulus.yoga/co-je-joga">Co je jóga</a>
+        <a href="https://cz.paulus.yoga/co-je-stin">Co je stín</a>
+        <a href="https://cz.paulus.yoga/co-je-meditace">Co je meditace</a>
+        <a href="https://cz.paulus.yoga/vlastni-jogova-praxe">Jakou praxi potřebujete</a>
+        </div>
+      </div>
+      <a class="knf" href="https://www.paulus.yoga/">Zpět na web</a></span>
 </header>
 
 <section class="prah" id="prah">
@@ -373,52 +396,67 @@ j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefo
   <span class="svet-in">
     <span class="cislo">01</span>
     <span class="stitek">Proč PAULUS vznikl</span>
-    <h2>Symbolon a diabolos</h2>
+    <h2>Příběh PAULUS</h2>
     <p>Nikdy jsme neměli více informací a přitom toho o sobě víme čím dál méně. O tom, co znamená spojovat, co bylo rozděleno, a kdo za tím stojí.</p>
     <span class="vstup">Číst příběh<span>&rarr;</span></span>
   </span>
 </a>
 
-<a class="svet svet--vpravo" href="https://cz.paulus.yoga/co-je-stin"
-   style="--akcent:#D3A166; --kryti:.62; --stin:rgba(6,10,12,.92); --stin2:rgba(6,10,12,.66)">
-  <span class="svet-obraz" data-obraz="assets/p-stin.webp" aria-hidden="true"></span>
-  <span class="svet-clona" aria-hidden="true"></span>
-  <span class="zrno" aria-hidden="true"></span>
-  <span class="nit" aria-hidden="true"></span>
-  <span class="svet-in">
-    <span class="cislo">02</span>
-    <span class="stitek">Hlubinná psychologie</span>
-    <h2>Kam zmizelo devadesát procent vašich darů</h2>
-    <p>Stín není vaše temná stránka. Je to všechno, co jste se naučili nebýt. Kam se to podělo, proč to rozhoduje za vás a co se s tím dá dělat.</p>
-    <span class="vstup">Vstoupit do tmy<span>&rarr;</span></span>
-  </span>
-</a>
-
-<a class="svet" href="https://cz.paulus.yoga/co-je-joga"
+<a class="svet svet--vpravo" href="https://cz.paulus.yoga/co-je-joga"
    style="--akcent:#E3B87C; --kryti:.46; --stin:rgba(11,14,19,.93); --stin2:rgba(11,14,19,.7)">
   <span class="svet-obraz" data-obraz="assets/p-joga.webp" aria-hidden="true"></span>
   <span class="svet-clona" aria-hidden="true"></span>
   <span class="zrno" aria-hidden="true"></span>
   <span class="nit" aria-hidden="true"></span>
   <span class="svet-in">
-    <span class="cislo">03</span>
+    <span class="cislo">02</span>
     <span class="stitek">Sedm vstupů</span>
-    <h2>Co je jóga?</h2>
+    <h2>Co je jóga</h2>
     <p>Podložka, pozice, protažení. Není to omyl, jóga skutečně může začít tělem. Jen u něj nekončí a to, co následuje, skoro nikdo neukazuje.</p>
     <span class="vstup">Projít kolem<span>&rarr;</span></span>
   </span>
 </a>
 
-<a class="svet svet--vpravo" href="https://cz.paulus.yoga/vlastni-jogova-praxe"
+<a class="svet" href="https://cz.paulus.yoga/co-je-stin"
+   style="--akcent:#D3A166; --kryti:.62; --stin:rgba(6,10,12,.92); --stin2:rgba(6,10,12,.66)">
+  <span class="svet-obraz" data-obraz="assets/p-stin.webp" aria-hidden="true"></span>
+  <span class="svet-clona" aria-hidden="true"></span>
+  <span class="zrno" aria-hidden="true"></span>
+  <span class="nit" aria-hidden="true"></span>
+  <span class="svet-in">
+    <span class="cislo">03</span>
+    <span class="stitek">Hlubinná psychologie</span>
+    <h2>Co je stín</h2>
+    <p>Stín není vaše temná stránka. Je to všechno, co jste se naučili nebýt. Kam se to podělo, proč to rozhoduje za vás a co se s tím dá dělat.</p>
+    <span class="vstup">Vstoupit do tmy<span>&rarr;</span></span>
+  </span>
+</a>
+
+<a class="svet svet--vpravo" href="https://cz.paulus.yoga/co-je-meditace"
+   style="--akcent:#E0A160; --kryti:.5; --stin:rgba(7,9,13,.94); --stin2:rgba(7,9,13,.72)">
+  <span class="svet-obraz" data-obraz="assets/p-meditace.webp" aria-hidden="true"></span>
+  <span class="svet-clona" aria-hidden="true"></span>
+  <span class="zrno" aria-hidden="true"></span>
+  <span class="nit" aria-hidden="true"></span>
+  <span class="svet-in">
+    <span class="cislo">04</span>
+    <span class="stitek">Pět pohybů</span>
+    <h2>Co je meditace</h2>
+    <p>Zavřené oči, prázdná hlava, klid. Zvenčí to tak vypadá. Zevnitř se dál objevují myšlenky a meditace mění místo, ze kterého je vnímáte.</p>
+    <span class="vstup">Projít pěti pohyby<span>&rarr;</span></span>
+  </span>
+</a>
+
+<a class="svet" href="https://cz.paulus.yoga/vlastni-jogova-praxe"
    style="--akcent:#C4703F; --kryti:.5; --stin:rgba(11,14,19,.93); --stin2:rgba(11,14,19,.7)">
   <span class="svet-obraz" data-obraz="assets/p-praxe.webp" aria-hidden="true"></span>
   <span class="svet-clona" aria-hidden="true"></span>
   <span class="zrno" aria-hidden="true"></span>
   <span class="nit" aria-hidden="true"></span>
   <span class="svet-in">
-    <span class="cislo">04</span>
+    <span class="cislo">05</span>
     <span class="stitek">Rozlišování</span>
-    <h2>Co zůstane z jógy ve dnech, kdy vám není dobře</h2>
+    <h2>Jakou praxi potřebujete</h2>
     <p>Návodů a technik je dnes všude dost. Chybí umět poznat, co z nich platí právě teď a co je lepší vynechat.</p>
     <span class="vstup">Zjistit, co potřebujete<span>&rarr;</span></span>
   </span>
@@ -438,8 +476,9 @@ j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefo
     <a href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img class="foot-logo" src="assets/logo.png" alt="PAULUS" width="1040" height="348"></a>
     <p class="fmenu fcteni"><b>Příběhy:</b>
       <a href="https://cz.paulus.yoga/pribeh">Paulus</a> ·
-      <a href="https://cz.paulus.yoga/co-je-stin">Stín</a> ·
       <a href="https://cz.paulus.yoga/co-je-joga">Jóga</a> ·
+      <a href="https://cz.paulus.yoga/co-je-stin">Stín</a> ·
+      <a href="https://cz.paulus.yoga/co-je-meditace">Meditace</a> ·
       <a href="https://cz.paulus.yoga/vlastni-jogova-praxe">Praxe</a>
     </p>
     <p class="fmenu"><b>Nástroje:</b>
@@ -526,5 +565,16 @@ j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefo
 })();
 </script>
 
+<script>
+(function(){
+  var t=document.getElementById('pribehy-tl'), m=document.getElementById('pribehy-menu');
+  if(!t||!m) return;
+  function zavri(){ m.hidden=true; t.setAttribute('aria-expanded','false'); }
+  t.addEventListener('click',function(e){ e.stopPropagation();
+    var o=!m.hidden; m.hidden=o; t.setAttribute('aria-expanded', o?'false':'true'); });
+  document.addEventListener('click',function(e){ if(!m.hidden && !m.contains(e.target)) zavri(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') zavri(); });
+})();
+</script>
 </body>
 </html>

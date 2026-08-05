@@ -168,13 +168,13 @@ p:last-child{margin-bottom:0;}
   .hlava .tb-title{display:none;}
   .hlava img{height:30px;}
   .hlava .sada{gap:6px;}
-  .hlava .knf{font-size:11px; letter-spacing:1.4px; padding:6px 10px;}
+  .hlava .knf{font-size:10px; letter-spacing:1.4px; padding:6px 11px;}
 }
 @media (max-width:520px){
   .jen-siroke{display:none;}
   .jen-uzke{display:inline;}
   .hlava img{height:26px;}
-  .hlava .knf{font-size:11px; letter-spacing:1px; padding:5px 9px;}
+  .hlava .knf{font-size:9.5px; letter-spacing:1.2px; padding:6px 10px;}
 }
 .zvuk[aria-pressed="true"]{color:#F7F4EF; border-color:#D3A166;}
 
@@ -576,6 +576,21 @@ p:last-child{margin-bottom:0;}
   .utrzek{position:static; translate:none; max-width:none; margin:26px auto; display:block;}
   .vrstva{position:static; display:grid; padding:60px 24px;}
 }
+
+/* rozbalovací menu Příběhy, doplněno srpen 2026 */
+.rozbal{position:relative;display:inline-block}
+.rozbal > button{background:transparent;border:1px solid rgba(199,152,94,.6);color:#D3A166;
+  font-family:'Source Sans 3',system-ui,sans-serif;font-size:11px;letter-spacing:2px;
+  text-transform:uppercase;padding:6px 14px;border-radius:16px;cursor:pointer;min-height:34px}
+.rozbal > button:hover{border-color:#D3A166;background:rgba(211,161,102,.16);color:#F7F4EF}
+.rozbal-menu{position:absolute;right:0;top:calc(100% + 10px);min-width:238px;z-index:200;
+  background:#0A232D;border:1px solid rgba(183,132,78,.28);padding:8px 0;
+  box-shadow:0 18px 40px rgba(0,0,0,.5)}
+.rozbal-menu a,.rozbal-menu span{display:block;padding:11px 18px;text-decoration:none;
+  font-family:'Source Sans 3',system-ui,sans-serif;font-size:13.5px;color:#C3CDD6;white-space:nowrap}
+.rozbal-menu a:hover{background:rgba(255,255,255,.07);color:#F2EFEA}
+.rozbal-menu .tady{color:#7d8b90;cursor:default}
+@media(max-width:520px){.rozbal-menu{position:fixed;left:8px;right:8px;top:66px;min-width:0}}
 </style>
 </head>
 <body>
@@ -607,6 +622,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img src="assets/logo.png" alt="PAULUS, jóga a vědomí" width="1040" height="348"></a>
   <span class="tb-title">Stín</span>
   <span class="sada">
+      <div class="rozbal">
+      <button class="knf" id="pribehy-tl" type="button" aria-expanded="false" aria-controls="pribehy-menu">Příběhy</button>
+      <div class="rozbal-menu" id="pribehy-menu" hidden>
+        <a href="https://cz.paulus.yoga/pribeh">Příběh PAULUS</a>
+        <a href="https://cz.paulus.yoga/co-je-joga">Co je jóga</a>
+        <span class="tady">Co je stín</span>
+        <a href="https://cz.paulus.yoga/co-je-meditace">Co je meditace</a>
+        <a href="https://cz.paulus.yoga/vlastni-jogova-praxe">Jakou praxi potřebujete</a>
+      
+      </div>
+      </div>
+      
     <button class="knf zvuk" id="zvuk" aria-pressed="false" aria-label="Zapnout zvuk">
       <svg class="ikona" viewBox="0 0 24 24" aria-hidden="true">
         <path class="repro" d="M4 9v6h4l5 4V5L8 9H4z"/>
@@ -865,8 +892,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <p class="fmenu fcteni"><b>Příběhy:</b>
       <a href="https://cz.paulus.yoga/pribeh">Paulus</a> ·
-      <span class="tady">Stín</span> ·
       <a href="https://cz.paulus.yoga/co-je-joga">Jóga</a> ·
+      <span class="tady">Stín</span> ·
+      <a href="https://cz.paulus.yoga/co-je-meditace">Meditace</a> ·
       <a href="https://cz.paulus.yoga/vlastni-jogova-praxe">Praxe</a>
     </p>
 
@@ -1716,5 +1744,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 })();
 </script>
 
+<script>
+/* rozbalovací menu Příběhy */
+(function(){
+  var t=document.getElementById('pribehy-tl'), m=document.getElementById('pribehy-menu');
+  if(!t||!m) return;
+  function zavri(){ m.hidden=true; t.setAttribute('aria-expanded','false'); }
+  t.addEventListener('click',function(e){ e.stopPropagation();
+    var o=!m.hidden; m.hidden=o; t.setAttribute('aria-expanded', o?'false':'true'); });
+  document.addEventListener('click',function(e){ if(!m.hidden && !m.contains(e.target)) zavri(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') zavri(); });
+})();
+</script>
 </body>
 </html>
