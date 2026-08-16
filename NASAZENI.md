@@ -1,112 +1,96 @@
-# Nasazení stránky Příběh
+# Nasazení · Mapa vnitřního světa
 
-Cíl: `https://cz.paulus.yoga/pribeh`
-
-Statické soubory, žádný build. Podia se nikde nedotýká a www.paulus.yoga zůstává beze změny.
+Adresa po nasazení: `https://cz.paulus.yoga/mapa-vnitrniho-sveta`
 
 ---
 
-## 1. Repozitář na GitHubu
-
-Nový repozitář, například `paulus-cz`. Může být soukromý, Cloudflare si ho přečte.
-
-Nahraj do něj obsah téhle složky tak, jak je. V kořeni repozitáře musí být `pribeh/`, `_headers`, `_redirects`, `robots.txt` a `sitemap.xml`.
-
-Přes web GitHubu: **Add file → Upload files**, přetáhnout celou složku, dole **Commit changes**.
-
----
-
-## 2. Projekt v Cloudflare Pages
-
-Cloudflare → **Workers & Pages** → **Create** → záložka **Pages** → **Connect to Git**.
-
-Vybrat repozitář a potvrdit. V nastavení buildu:
-
-| Položka | Hodnota |
-|---|---|
-| Framework preset | None |
-| Build command | nechat prázdné |
-| Build output directory | `/` |
-| Root directory | nechat prázdné |
-
-**Save and Deploy.** První nasazení trvá zhruba minutu.
-
----
-
-## 3. Doména
-
-V projektu → **Custom domains** → **Set up a domain** → zadat `cz.paulus.yoga`.
-
-Cloudflare si DNS záznam vytvoří sám, protože doména už je u něj. Záznam bude proxovaný, to je v pořádku, Podia je na jiném hostiteli a tenhle se jí netýká.
-
-Certifikát naběhne do pár minut. Pak stránka běží na `https://cz.paulus.yoga/pribeh`.
-
-Kořen `cz.paulus.yoga` přesměrovává na hlavní web, o to se stará soubor `_redirects`.
-
----
-
-## 4. Kontrola po nasazení
-
-- Otevřít `https://cz.paulus.yoga/pribeh` a projet celou stránku.
-- Spustit obě videa. Když se neotevřou, viz bod 6.
-- Spustit audio manifestu.
-- Zkontrolovat, že se přehrává smyčka v hlavičce.
-- V prohlížeči zobrazit zdroj a ověřit, že `canonical` ukazuje na `https://cz.paulus.yoga/pribeh`.
-
----
-
-## 5. Analytika a vyhledávače
-
-**GTM** je na stránce vložený, kontejner `GTM-W7CCFJW`. GA4, CookieScript a Organization Schema mají spouštěč All Pages, takže naběhnou samy. Nic se v GTM nastavovat nemusí.
-
-**GA4.** Admin → Data Streams → vybrat stream → Configure tag settings → **Configure your domains**. Přidat `paulus.yoga` i `cz.paulus.yoga`. Bez toho se přechod z hlavního webu započítá jako nová návštěva z cizího zdroje.
-
-**Search Console.** Přidat property typu **Doména** pro `paulus.yoga`, ne prefix. Ta pokrývá všechny podredomény, takže uvidíš `cz.paulus.yoga` ve stejném přehledu. Pak vložit `https://cz.paulus.yoga/sitemap.xml`.
-
-**Sitemapa hlavního webu.** Do sitemap Workeru na paulus.yoga přidat odkaz na `https://cz.paulus.yoga/sitemap.xml`.
-
----
-
-## 6. Vimeo
-
-Videa jsou vložená jako plocha, která se rozklikne. Přehrávač se z Vimea stáhne až po kliknutí, takže se před tím nenačítá nic a neřeší se souhlas s cookies.
-
-Vkládání máš ve Vimeu nastavené na Anywhere, takže není potřeba nic měnit.
-
-**Náhledové snímky, nepovinné.** Před kliknutím se zobrazí značková plocha se zlatým tlačítkem. Když chceš místo ní vidět snímek z videa, stáhni ho z Vimea a ulož do složky `pribeh/assets` pod tímto názvem:
+## Co balíček obsahuje
 
 ```
-video-1214647698.jpg   Symbol a sjednocení
-video-1214647697.jpg   Kdo jsme
+mapa-vnitrniho-sveta/
+  index.html            aplikace s doplněnou hlavičkou, 2,3 MB
+  og-image.jpg          náhled odkazu, 1200 × 630
+  favicon-32.png
+  apple-touch-icon.png
+  icon-512.png
+sitemap.xml             přepíše stávající, šest adres beze změny
+robots.txt              přepíše stávající, nově zakazuje indexaci mapy
+_headers                přepíše stávající, doplněná pravidla pro novou složku
+NASAZENI.md             tento soubor
 ```
 
-Stránka si je najde sama. Když tam nebudou, zůstane čistá plocha a nic se nerozbije.
-
-## 7. Prolinkování
-
-Aby to Google i lidé brali jako jednu značku, musí na stránku vést odkaz z hlavního webu.
-
-- V Podii přidat odkaz na Příběh do hlavní navigace nebo do patičky.
-- Na stránce `/onas` přidat odkaz na `https://cz.paulus.yoga/pribeh`.
-
-Zpětné odkazy z Příběhu na hlavní web už na stránce jsou. Logo v hlavičce, tři karty v rozcestníku a patnáct odkazů v patičce.
+**Kořenový `index.html` v balíčku není.** Portálová stránka v repozitáři zůstane
+nedotčená.
 
 ---
 
-## 8. Další stránky
+## Stránka je zatím skrytá
 
-Struktura je připravená na to, aby jich bylo víc. Nová stránka znamená novou složku v kořeni repozitáře.
+Je dostupná přes odkaz, ale vyhledávače ji nebudou indexovat. Zajišťují to tři
+věci najednou, protože jedna sama nestačí.
 
-```
-pribeh/index.html      → cz.paulus.yoga/pribeh
-mapa/index.html        → cz.paulus.yoga/mapa
-manifest/index.html    → cz.paulus.yoga/manifest
-```
+1. `<meta name="robots" content="noindex, nofollow">` v hlavičce stránky
+2. `X-Robots-Tag: noindex` v `_headers`, což platí i pro roboty, kteří meta
+   značku ignorují
+3. `Disallow: /mapa-vnitrniho-sveta` v `robots.txt` a vynechání ze sitemapy
 
-Do `sitemap.xml` přidat další `<url>` blok. Nic jiného se nemění.
+**Až ji budete chtít zveřejnit**, změňte tyto tři věci naráz:
+
+- v `index.html` přepište `noindex, nofollow` na `index, follow, max-image-preview:large`
+- v `_headers` smažte řádek `X-Robots-Tag: noindex`
+- v `robots.txt` smažte řádek `Disallow: /mapa-vnitrniho-sveta`
+- do `sitemap.xml` přidejte záznam s prioritou 0.6
 
 ---
 
-## 9. Každá další úprava
+## Postup nahrání
 
-Změnit soubor v repozitáři a udělat commit. Cloudflare nasadí do zhruba třiceti sekund. U textových oprav to jde přímo v prohlížeči na GitHubu, protože se nic nebuilduje.
+1. V GitHubu otevřete repozitář `DanielBivoj/paulus-cz`, větev `main`.
+2. Add file, Upload files, přetáhněte **obsah** balíčku, tedy složku
+   `mapa-vnitrniho-sveta` a tři soubory z kořene.
+3. Zkontrolujte náhled změn. Má přibýt jedna složka a změnit se tři soubory.
+   **Kořenový `index.html` se měnit nesmí.**
+4. Commit changes.
+5. Cloudflare Pages nasadí do dvou minut.
+
+---
+
+## Kontrola po nasazení
+
+Otevřete `https://cz.paulus.yoga/mapa-vnitrniho-sveta` v anonymním okně a
+projděte:
+
+- [ ] mapa se načte a je vidět všech pět kapitol
+- [ ] klepnutí na kapitolu spustí animaci přesunu obrazu
+- [ ] rozbalí se dvanáct konceptů
+- [ ] z konceptu jde návrat zpět do kapitoly
+- [ ] přepínač Světlý přepne motiv a zpět
+- [ ] tlačítko Zvětšit funguje
+- [ ] logo v liště vede na `www.paulus.yoga`
+- [ ] na mobilu se nedá posouvat do stran
+- [ ] favikona je stejná jako u ostatních stránek
+
+A hlavně ověřte, že se nerozbily ostatní stránky:
+
+- [ ] `cz.paulus.yoga/` portálová stránka vypadá stejně jako předtím
+- [ ] `cz.paulus.yoga/co-je-stin` a `cz.paulus.yoga/co-je-meditace` fungují
+
+---
+
+## Náhled odkazu
+
+Až budete adresu posílat účastníkům, projeďte ji nejdřív přes
+[Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) a
+klikněte na Scrape Again. Facebook si jinak uloží starý nebo prázdný náhled a
+drží ho několik dní.
+
+Pro LinkedIn totéž přes [Post Inspector](https://www.linkedin.com/post-inspector/).
+
+---
+
+## Poznámka k měření
+
+Stránka posílá data do GTM `GTM-W7CCFJW` stejně jako ostatní. Vlastní události
+uvnitř aplikace nastavené nejsou. Až budete chtít vědět, které kapitoly lidé
+otevírají, dá se to doplnit, ale je to zásah do aplikace a chtěl jste do ní
+nesahat.

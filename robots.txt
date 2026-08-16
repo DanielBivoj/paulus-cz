@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /mapa-vnitrniho-sveta
 
 Sitemap: https://cz.paulus.yoga/sitemap.xml
