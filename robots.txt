@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /mapa-vnitrniho-sveta
+Disallow: /kral-rybar
 
 Sitemap: https://cz.paulus.yoga/sitemap.xml

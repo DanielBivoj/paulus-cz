@@ -68,3 +68,12 @@
   Cache-Control: public, max-age=300
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+
+/kral-rybar/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/kral-rybar/*
+  Cache-Control: public, max-age=300
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Robots-Tag: noindex
