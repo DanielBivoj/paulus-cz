@@ -230,7 +230,7 @@ img{max-width:100%;}
 .dozvuk p{max-width:46ch; margin-inline:auto;}
 .rada{display:flex; flex-wrap:wrap; justify-content:center; gap:8px 26px; margin-top:44px; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--tise);}
 .rada b{color:var(--nadpis); font-weight:600;}
-.prameny{font-size:14px; line-height:1.75; color:#A69C90;}
+.prameny{font-size:14px; line-height:1.75; color:var(--tise);}
 .prameny p{margin:0 0 .9em;}
 .prameny em{color:var(--pismo);}
 
@@ -239,12 +239,12 @@ img{max-width:100%;}
 .deska .in.siroke{max-width:1040px;}
 .cesty-uvod{font-family:'Playfair Display',serif; font-size:clamp(19px,2.4vw,24px); line-height:1.45; color:var(--nadpis); max-width:32ch; margin:0 auto 38px;}
 .cesty{display:grid; grid-template-columns:repeat(3,1fr); gap:2px;}
-.deska a.cesta{display:flex; flex-direction:column; gap:10px; padding:30px 26px 26px; background:rgba(255,255,255,.035); border:0; border-top:1px solid rgba(183,132,78,.35); text-decoration:none; color:var(--pismo); transition:background .3s var(--ease);}
-.deska a.cesta:hover{background:rgba(255,255,255,.075); color:var(--pismo);}
-.cesta .co{font-size:11px; letter-spacing:2.6px; text-transform:uppercase; color:var(--zlatasv); font-weight:600;}
+.deska a.cesta{display:flex; flex-direction:column; gap:10px; padding:30px 26px 26px; background:rgba(58,54,47,.045); border:0; border-top:1px solid rgba(154,108,54,.45); text-decoration:none; color:var(--pismo); transition:background .3s var(--ease);}
+.deska a.cesta:hover{background:rgba(58,54,47,.09); color:var(--pismo);}
+.cesta .co{font-size:11px; letter-spacing:2.6px; text-transform:uppercase; color:var(--akcent); font-weight:600;}
 .cesta .nazev{font-family:'Playfair Display',serif; font-size:25px; line-height:1.2; color:var(--nadpis);}
-.cesta .k{font-size:15px; line-height:1.65; color:#B8AFA3;}
-.cesta .sipka{margin-top:auto; padding-top:8px; color:var(--zlatasv); transition:transform .3s var(--ease);}
+.cesta .k{font-size:15px; line-height:1.65; color:#4E4A42;}
+.cesta .sipka{margin-top:auto; padding-top:8px; color:var(--akcent); transition:transform .3s var(--ease);}
 .cesta:hover .sipka{transform:translateX(6px);}
 @media (max-width:760px){ .cesty{grid-template-columns:1fr;} }
 
@@ -643,7 +643,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <!-- KAM DÁL -->
-<section class="deska teal-rezim cesty-deska" id="kam-dal" data-ev="kam_dal">
+<section class="deska papir-rezim cesty-deska" id="kam-dal" data-ev="kam_dal">
+  <div class="papirovka" aria-hidden="true"></div>
   <div class="in siroke">
     <p class="kick stred" data-odkryj>Kam dál</p>
     <p class="cesty-uvod stred" data-odkryj>Kdo se chce ptát dál a nechce na to být sám, u nás najde tři cesty.</p>
@@ -671,7 +672,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- PRAMENY -->
-<section class="deska teal-rezim" id="prameny" style="padding-block:9svh">
+<section class="deska papir2-rezim" id="prameny" style="padding-block:9svh">
   <div class="in prameny">
     <p class="kick">Prameny</p>
     <p>Příběh na této stránce skládá motivy z Chrétienovy a Wolframovy verze. Časový oblouk a výklad čerpají také z Roberta A. Johnsona.</p>
