@@ -616,6 +616,17 @@ p:last-child{margin-bottom:0;}
 .odber-f button:hover{background:#D3A166;border-color:#D3A166}
 .odber-f-p{font-size:12.5px;margin:10px 0 0;opacity:.7}
 .odber-f .cf-turnstile{margin-top:10px}
+
+.pata-mriz{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,330px);gap:28px 64px;align-items:start}
+.pata-mriz .colophon{max-width:none;margin:0}
+.pata-mriz .odber-f{margin:6px 0 0;max-width:none}
+.pata-mriz .odber-f-t{font-size:17px}
+.pata-mriz .odber-f-s{font-size:13.5px;margin-bottom:12px}
+.pata-mriz .odber-f-r{flex-direction:column;gap:8px}
+.pata-mriz .odber-f input[type=email]{flex:none;width:100%;min-height:44px;font-size:15px}
+.pata-mriz .odber-f button{width:100%;min-height:44px}
+.pata-mriz .odber-f-p{font-size:12px}
+@media (max-width:860px){.pata-mriz{grid-template-columns:1fr;gap:26px}}
 </style>
 </head>
 <body>
@@ -917,6 +928,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <footer class="pata">
+  <div class="pata-mriz">
   <div class="colophon">
     <a href="https://www.paulus.yoga/" aria-label="PAULUS, domů"><img class="foot-logo" src="assets/logo.png" alt="PAULUS" width="1040" height="348"></a>
 
@@ -954,7 +966,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="https://www.paulus.yoga/umenimeditace">Umění meditace</a>
     </p>
 
-    <form class="odber-f" method="post" action="https://www.paulus.yoga/email_lists/513374/subscriptions" data-pribeh="co-je-stin" data-misto="paticka">
+        <p class="fsoc">
+      <a href="https://www.facebook.com/paulus.yoga">Facebook</a> ·
+      <a href="https://www.instagram.com/paulus.yoga">Instagram</a> ·
+      <a href="https://www.youtube.com/@paulusyoga">YouTube</a> ·
+      <a href="mailto:info@paulus.yoga">info@paulus.yoga</a>
+    </p>
+
+    <p class="ftirazka">K Hájovně 129/36, 142 00 Praha 12 · IČO 07864833 · DIČ CZ07864833 · Texty a revize Daniel Paulus, červenec 2026</p>
+  </div>
+  <form class="odber-f" method="post" action="https://www.paulus.yoga/email_lists/513374/subscriptions" data-pribeh="co-je-stin" data-misto="paticka">
       <p class="odber-f-t">Příběhy PAULUS e-mailem</p>
       <p class="odber-f-s">Jeden příběh měsíčně, vždy prvního ráno. O týden dřív než na webu.</p>
       <div class="odber-f-r">
@@ -964,18 +985,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <input type="hidden" name="email_signup_form_id" value="eyJfcmFpbHMiOnsibWVzc2FnZSI6Ik56WTROakUzTlE9PSIsImV4cCI6bnVsbCwicHVyIjoiZW1haWxfc2lnbnVwX2Zvcm0vZW1haWxfZm9ybSJ9fQ--7f1ac01c8731e352b0165ce6fb14f7484f7217c44d0dc49c366f489f1ecd5dd3">
       <input type="hidden" name="email_signup_form_token" value="eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDam9WYzNWalkyVnpjMTlpWldoaGRtbHZja2tpREcxbGMzTmhaMlVHT2daRlJqb1VjM1ZqWTJWemMxOXRaWE56WVdkbFNTSWhSTVNiYTNWcVpXMWxMQ0RGdm1VZ2JjT2hkR1VnZXNPaGFtVnRJUVk3QmxRNkdYTjFZMk5sYzNOZmNtVmthWEpsWTNSZmRYSnNTU0lBQmpzR1ZEb2RjM1ZqWTJWemMxOXlaV1JwY21WamRGOXdZV2RsWDJsa2FRUFNYN0U2RldGMVpHbGxibU5sWDNSaFoxOXBaSE5iQm1rREVQZ0siLCJleHAiOm51bGwsInB1ciI6ImZvcm1fc3VibWlzc2lvbiJ9fQ==--f68876c7463cfb412ece0cb67d13023c935e7164">
-      <div class="cf-turnstile" data-sitekey="0x4AAAAAAAJ5kwYW6AH1ybLx" data-appearance="interaction-only" data-theme="dark" data-error-callback="odberChyba"></div>
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAAAJ5kwYW6AH1ybLx" data-appearance="interaction-only" data-theme="dark" data-size="flexible" data-error-callback="odberChyba"></div>
       <p class="odber-f-p">Zdarma. Odhlásit se můžete jedním kliknutím v každém e-mailu.</p>
     </form>
-    <p class="fsoc">
-      <a href="https://www.facebook.com/paulus.yoga">Facebook</a> ·
-      <a href="https://www.instagram.com/paulus.yoga">Instagram</a> ·
-      <a href="https://www.youtube.com/@paulusyoga">YouTube</a> ·
-      <a href="mailto:info@paulus.yoga">info@paulus.yoga</a>
-    </p>
-
-    <p class="ftirazka">K Hájovně 129/36, 142 00 Praha 12 · IČO 07864833 · DIČ CZ07864833 · Texty a revize Daniel Paulus, červenec 2026</p>
-  </div>
+</div>
 </footer>
 
 <script type="application/ld+json">
