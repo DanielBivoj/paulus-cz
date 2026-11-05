@@ -286,9 +286,9 @@ img{max-width:100%;}
 }
 @media (pointer:coarse){ .vol,.dal,.knf{min-height:46px;} }
 @media (prefers-reduced-motion:reduce){
-  .stopa,.stopa--dlouha,.stopa--uvod,.stopa--rok{height:auto;}
-  .jev{position:relative;}
-  .r,[data-odkryj]{opacity:1 !important; transform:none !important;}
+  /* scény i střídání textů zůstávají, jen bez pohybu: jinak by se texty jedné scény překryly */
+  .r,.r.pryc,[data-odkryj]{transform:none !important; transition:opacity .4s linear;}
+  [data-odkryj]{opacity:1;}
   .mlha,.zrno,.dolu i{animation:none;}
   .rok-cara{transform:none;}
 }
@@ -1160,8 +1160,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var stg=tr.querySelector(".stage"); if(stg) umisti(stg, utlum?1:z[0]+(z[1]-z[0])*hl(sp)+0.008*Math.sin(t*0.35));
       tr._p=p;
       tr.querySelectorAll(".r[data-od]").forEach(function(el){
-        el.classList.toggle("je", utlum || p>=+el.dataset.od);
-        if(el.dataset.do) el.classList.toggle("pryc", !utlum && p>=+el.dataset.do);
+        el.classList.toggle("je", p>=+el.dataset.od);
+        if(el.dataset.do) el.classList.toggle("pryc", p>=+el.dataset.do);
         if(el.dataset.skrt) el.classList.toggle("skrt", p>=+el.dataset.skrt);
       });
       if(r.top<=vh*0.5 && r.bottom>vh*0.5) aktivni=sc;
