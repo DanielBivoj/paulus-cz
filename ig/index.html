@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kristýna Paulus · odkazy</title>
+<meta name="description" content="Kristýna Paulus: jóga, zdraví a džjotiš. Kurzy, konzultace a praxe zdarma.">
+<meta name="robots" content="noindex, follow">
+<meta property="og:image" content="https://cz.paulus.yoga/ig/assets/og.jpg">
+<meta property="og:url" content="https://cz.paulus.yoga/ig">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
+j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})
+(window,document,'script','dataLayer','GTM-W7CCFJW');</script>
+<meta name="theme-color" content="#081E27">
+<meta property="og:title" content="Kristýna Paulus · PAULUS">
+<meta property="og:description" content="Ásána & praxe · Život & zdraví · Džjotiš">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --deep:#081E27; --bg:#0B1A20; --gold:#C9985F; --gold-soft:#D9B676; --gold-ink:#B7844E;
+  --cream:#F3E7D6; --muted:rgba(243,231,214,.72); --line:rgba(217,182,118,.28);
+  --glass:rgba(8,30,39,.46); --glass-strong:rgba(8,30,39,.66);
+  --a-praxe:#CC9A62; --a-zdravi:#9DBB8F; --a-dzjotis:#9FB4DA;
+  --display:"Playfair Display",Georgia,"Times New Roman",serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%;background:var(--deep);color:var(--cream);font-family:var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* ---------- pozadí ---------- */
+.stage{position:fixed;inset:0;overflow:hidden;z-index:0;background:var(--deep)}
+.bg{position:absolute;inset:-4%;background-size:cover;background-position:center 30%;opacity:0;
+  transition:opacity 1.6s ease;transform-origin:50% 40%;will-change:transform,opacity}
+.bg.on{opacity:1}
+.bg.on{animation:breathe 10s ease-in-out infinite}
+@keyframes breathe{0%{transform:scale(1)}40%{transform:scale(1.055)}100%{transform:scale(1)}}
+.bg video{width:100%;height:100%;object-fit:cover}
+.veil{position:absolute;inset:0;
+  background:
+    radial-gradient(120% 70% at 50% 0%,rgba(8,30,39,.05) 0%,rgba(8,30,39,.35) 55%,rgba(8,30,39,.86) 100%),
+    linear-gradient(180deg,rgba(8,30,39,.25) 0%,rgba(8,30,39,0) 22%,rgba(8,30,39,.55) 60%,rgba(8,30,39,.92) 100%)}
+.grain{position:absolute;inset:0;opacity:.09;mix-blend-mode:overlay;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+canvas#sky{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.wheel{position:absolute;left:50%;top:38%;width:min(150vw,820px);aspect-ratio:1;transform:translate(-50%,-50%);
+  opacity:0;transition:opacity 1.8s ease;pointer-events:none}
+.wheel svg{width:100%;height:100%;animation:spin 240s linear infinite}
+body[data-mode="dzjotis"] .wheel{opacity:.33}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ---------- obsah ---------- */
+main{position:relative;z-index:1;width:100%;max-width:460px;margin:0 auto;
+  padding:calc(env(safe-area-inset-top) + 34px) 16px calc(env(safe-area-inset-bottom) + 28px)}
+header{text-align:center;padding-top:6vh}
+.ring{position:relative;width:112px;height:112px;margin:0 auto 18px}
+.ring img{position:absolute;inset:8px;width:96px;height:96px;border-radius:50%;object-fit:cover;
+  box-shadow:0 8px 30px rgba(0,0,0,.45)}
+.ring::before,.ring::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid var(--gold-soft)}
+.ring::before{animation:ring 10s ease-in-out infinite}
+.ring::after{inset:-10px;border-color:rgba(217,182,118,.35);animation:ring 10s ease-in-out infinite;animation-delay:.25s}
+@keyframes ring{0%{transform:scale(.94);opacity:.35}40%{transform:scale(1.08);opacity:1}100%{transform:scale(.94);opacity:.35}}
+.breath{height:16px;margin:-6px 0 6px;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-soft);
+  opacity:0;transition:opacity .9s ease}
+body[data-mode="praxe"] .breath{opacity:.9}
+h1{font-family:var(--display);font-weight:500;font-size:34px;letter-spacing:.01em;line-height:1.1;
+  text-shadow:0 2px 24px rgba(0,0,0,.45)}
+.areas{margin-top:10px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.areas span{color:var(--gold-soft);padding:0 .35em}
+
+/* zvýrazněná karta */
+.feature{position:relative;display:block;margin:30px 0 22px;padding:22px 20px 20px;border-radius:22px;overflow:hidden;
+  background:linear-gradient(140deg,rgba(201,152,95,.30),rgba(8,30,39,.55) 55%);
+  border:1px solid rgba(217,182,118,.55);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);
+  box-shadow:0 18px 50px rgba(0,0,0,.35);transition:transform .25s ease}
+.feature:active{transform:scale(.985)}
+.feature::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,240,210,.22),transparent);animation:sheen 7s ease-in-out infinite 2s}
+@keyframes sheen{0%,70%{left:-60%}100%{left:130%}}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft)}
+.kicker i{width:7px;height:7px;border-radius:50%;background:var(--gold-soft);box-shadow:0 0 0 0 rgba(217,182,118,.7);animation:live 2.4s infinite}
+@keyframes live{0%{box-shadow:0 0 0 0 rgba(217,182,118,.6)}80%,100%{box-shadow:0 0 0 10px rgba(217,182,118,0)}}
+.feature h2{margin:10px 0 6px;font-family:var(--display);font-weight:600;font-size:27px;line-height:1.15}
+.feature p{font-size:15.5px;line-height:1.45;color:var(--muted)}
+.feature .note{margin-top:10px;font-size:13.5px;color:var(--gold-soft);font-weight:600}
+.feature .go{margin-top:16px;display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border-radius:999px;
+  background:var(--gold);color:#1B140C;font-weight:700;font-size:15px}
+.feature .go svg{width:16px;height:16px}
+
+/* tři dveře */
+.door{margin-bottom:12px;border-radius:20px;overflow:hidden;border:1px solid var(--line);
+  background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:background .5s ease,border-color .5s ease}
+.door[open]{background:var(--glass-strong);border-color:color-mix(in srgb,var(--accent) 60%,transparent)}
+.door summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:16px 18px;user-select:none}
+.door summary::-webkit-details-marker{display:none}
+.glyph{flex:none;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid color-mix(in srgb,var(--accent) 70%,transparent);color:var(--accent)}
+.glyph svg{width:22px;height:22px}
+.door .t{flex:1;min-width:0}
+.door h3{font-family:var(--display);font-weight:500;font-size:21px;line-height:1.2}
+.door .s{margin-top:2px;font-size:13.5px;color:var(--muted)}
+.chev{flex:none;width:22px;height:22px;color:var(--accent);transition:transform .4s ease}
+.door[open] .chev{transform:rotate(45deg)}
+.links{padding:2px 12px 14px}
+.links a{display:flex;align-items:center;gap:12px;padding:13px 12px;border-radius:14px;transition:background .2s ease}
+.links a:hover,.links a:active{background:rgba(243,231,214,.08)}
+.links a+a{border-top:1px solid rgba(243,231,214,.08)}
+.links .n{flex:1;min-width:0}
+.links b{display:block;font-weight:600;font-size:16px;line-height:1.3}
+.links small{display:block;margin-top:2px;font-size:13.5px;color:var(--muted);line-height:1.35}
+.links .tag{flex:none;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  padding:4px 8px;border-radius:999px;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 55%,transparent)}
+.links .arr{flex:none;width:16px;height:16px;opacity:.55}
+.door[open] .links a{animation:rise .5s ease both}
+.door[open] .links a:nth-child(2){animation-delay:.06s}
+.door[open] .links a:nth-child(3){animation-delay:.12s}
+.door[open] .links a:nth-child(4){animation-delay:.18s}
+.door[open] .links a:nth-child(5){animation-delay:.24s}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.d-praxe{--accent:var(--a-praxe)} .d-zdravi{--accent:var(--a-zdravi)} .d-dzjotis{--accent:var(--a-dzjotis)}
+
+/* živá setkání */
+.live{margin:0 0 22px;padding:18px 14px 8px;border-radius:22px;border:1px solid var(--line);
+  background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.live-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:0 6px 10px}
+.live-head h2{font-family:var(--display);font-weight:500;font-size:22px}
+.live-head span{font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft)}
+.ev{display:flex;align-items:center;gap:14px;padding:12px 6px;border-top:1px solid rgba(243,231,214,.09);border-radius:12px;transition:background .2s ease}
+.ev:hover,.ev:active{background:rgba(243,231,214,.07)}
+.date{flex:none;width:52px;height:56px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  border:1px solid rgba(217,182,118,.5);background:rgba(201,152,95,.12)}
+.date b{font-family:var(--display);font-weight:600;font-size:22px;line-height:1;color:var(--cream)}
+.date small{margin-top:3px;font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
+.ev .n{flex:1;min-width:0}
+.ev .n b{display:block;font-weight:600;font-size:16px;line-height:1.3}
+.ev .n small{display:block;margin-top:2px;font-size:13.5px;color:var(--muted);line-height:1.35}
+.ev .n em{display:block;margin-top:3px;font-style:normal;font-size:13px;font-weight:600;color:var(--gold-soft)}
+.ev .arr{flex:none;width:16px;height:16px;opacity:.55}
+
+.live.cz{background:linear-gradient(150deg,rgba(157,187,143,.16),rgba(8,30,39,.5) 60%)}
+.live.cz .date{border-color:rgba(157,187,143,.55);background:rgba(157,187,143,.12)}
+.live.cz .date small,.live.cz .live-head span{color:#B9D1AC}
+.empty{padding:12px 6px 10px;border-top:1px solid rgba(243,231,214,.09);font-size:14px;color:var(--muted)}
+
+footer{margin-top:28px;text-align:center}
+.foot-links{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--muted)}
+.foot-links a{border-bottom:1px solid rgba(217,182,118,.35);padding-bottom:1px}
+.logo{display:block;width:170px;margin:26px auto 0;opacity:.92}
+.sig{margin-top:8px;font-size:12px;color:rgba(243,231,214,.45);letter-spacing:.06em}
+
+
+/* ---------- kompaktní mobilní verze ---------- */
+main{padding:calc(env(safe-area-inset-top) + 14px) 14px calc(env(safe-area-inset-bottom) + 18px)}
+header{padding-top:2vh}
+.ring{width:84px;height:84px;margin-bottom:10px}
+.ring img{inset:6px;width:72px;height:72px}
+.ring::after{inset:-7px}
+.breath{height:12px;margin:-4px 0 2px;font-size:10px}
+h1{font-size:27px}
+.areas{margin-top:5px;font-size:12px;letter-spacing:.16em}
+.feature{margin:16px 0 12px;padding:15px 16px 15px;border-radius:18px}
+.kicker{font-size:10.5px}
+.feature h2{margin:6px 0 3px;font-size:22px}
+.feature p{font-size:14.5px;line-height:1.4}
+.feature .go{margin-top:11px;padding:9px 15px;font-size:14px}
+.live{margin:0 0 12px;padding:12px 10px 4px;border-radius:18px}
+.live-head{padding:0 6px 6px}
+.live-head h2{font-size:19px}
+.live-head span{font-size:10px}
+.ev{gap:11px;padding:8px 6px}
+.date{width:42px;height:44px;border-radius:10px}
+.date b{font-size:18px}
+.date small{margin-top:2px;font-size:9px}
+.ev .n b{font-size:15px;line-height:1.25}
+.ev .n small{font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ev .n em{margin-top:1px;font-size:12px}
+.empty{padding:8px 6px;font-size:13px}
+.door{margin-bottom:8px;border-radius:16px}
+.door summary{gap:12px;padding:11px 14px}
+.glyph{width:34px;height:34px}
+.glyph svg{width:18px;height:18px}
+.door h3{font-size:18px}
+.door .s{font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chev{width:18px;height:18px}
+.links{padding:0 8px 8px}
+.links a{gap:10px;padding:9px 10px}
+.links b{font-size:15px}
+.links small{font-size:12.5px}
+footer{margin-top:18px}
+.foot-links{font-size:13px}
+.logo{width:130px;margin-top:16px}
+.sig{margin-top:6px;font-size:11px}
+
+
+/* ---------- výraznější barvy a čitelnost ---------- */
+:root{--cream:#FFF6E8;--muted:rgba(255,246,232,.86);--gold:#E0A85F;--gold-soft:#F2C784;
+  --line:rgba(242,199,132,.45);--glass:rgba(6,26,34,.74);--glass-strong:rgba(6,26,34,.84);
+  --a-praxe:#F0B66E;--a-zdravi:#A9D99A;--a-dzjotis:#A9C2F5}
+.veil{background:
+  radial-gradient(120% 70% at 50% 0%,rgba(8,30,39,0) 0%,rgba(8,30,39,.3) 50%,rgba(8,30,39,.88) 100%),
+  linear-gradient(180deg,rgba(8,30,39,.2) 0%,rgba(8,30,39,0) 18%,rgba(8,30,39,.6) 55%,rgba(8,30,39,.94) 100%)}
+.bg{filter:saturate(1.25) contrast(1.06)}
+h1{font-weight:600;text-shadow:0 2px 18px rgba(0,0,0,.7)}
+.areas{color:var(--gold-soft);font-weight:600;text-shadow:0 1px 10px rgba(0,0,0,.7)}
+.areas span{color:var(--cream)}
+.feature{background:linear-gradient(140deg,rgba(224,168,95,.55),rgba(8,30,39,.82) 62%);border-color:rgba(242,199,132,.8)}
+.feature p{color:var(--cream)}
+.feature .go{background:linear-gradient(180deg,#F2C784,#E0A85F);color:#1A1208;box-shadow:0 6px 18px rgba(224,168,95,.35)}
+.live{border-color:rgba(242,199,132,.5)}
+.live-head h2{font-weight:600}
+.date{background:rgba(224,168,95,.24);border-color:rgba(242,199,132,.8)}
+.date b{color:#fff}
+.ev .n b,.links b{color:#fff}
+.ev .n small,.links small,.door .s{font-size:13px;color:var(--muted)}
+.ev .arr,.links .arr{opacity:.85;color:var(--gold-soft)}
+.live.cz{background:linear-gradient(150deg,rgba(169,217,154,.32),rgba(6,26,34,.8) 62%);border-color:rgba(169,217,154,.6)}
+.live.cz .date{border-color:rgba(169,217,154,.85);background:rgba(169,217,154,.22)}
+.live.cz .date small,.live.cz .live-head span{color:#C4EBB6}
+.door{background:linear-gradient(150deg,color-mix(in srgb,var(--accent) 22%,transparent),var(--glass) 55%);border-color:color-mix(in srgb,var(--accent) 55%,transparent)}
+.door h3{font-weight:600}
+.glyph{background:color-mix(in srgb,var(--accent) 16%,transparent);border-color:var(--accent)}
+.links .tag{border-color:var(--accent)}
+.foot-links{color:var(--cream)}
+.sig{color:rgba(255,246,232,.6)}
+
+@media (min-width:700px){ header{padding-top:4vh} }
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body data-mode="home">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7CCFJW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="stage" aria-hidden="true">
+  <div class="bg on" data-bg="home"  style="background-image:url(assets/bg-home.jpg)"></div>
+  <div class="bg"    data-bg="praxe" style="background-image:url(assets/bg-praxe.jpg)"></div>
+  <div class="bg"    data-bg="zdravi" style="background-image:url(assets/bg-zdravi.jpg);background-position:center 45%"></div>
+  <div class="bg"    data-bg="dzjotis" style="background-image:url(assets/bg-dzjotis.jpg);background-position:30% 30%"></div>
+  <div class="wheel">
+    <svg viewBox="-100 -100 200 200" fill="none" stroke="#D9B676" stroke-width=".35">
+      <circle r="96"/><circle r="78"/><circle r="40"/><circle r="38.5" stroke-dasharray=".6 2.2"/>
+      <g id="spokes"></g><g id="ticks"></g>
+      <rect x="-27" y="-27" width="54" height="54"/><rect x="-27" y="-27" width="54" height="54" transform="rotate(45)"/>
+    </svg>
+  </div>
+  <canvas id="sky"></canvas>
+  <div class="veil"></div>
+  <div class="grain"></div>
+</div>
+
+<main>
+  <header>
+    <div class="ring"><img src="assets/avatar.jpg" alt="Kristýna Paulus" width="96" height="96"></div>
+    <div class="breath" id="breath">nádech</div>
+    <h1>Kristýna Paulus</h1>
+    <p class="areas">Jóga<span>·</span>Zdraví<span>·</span>Džjotiš</p>
+  </header>
+
+  <a class="feature" href="https://paulus.yoga/joga-neni-pouze-asana?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=joga_neni_pouze_asana&amp;utm_content=bio_hlavni">
+    <span class="kicker"><i></i>Zdarma · začněte tady</span>
+    <h2>Jóga není (pouze) ásána</h2>
+    <p>Lekce pro začátečníky, meditace, jóga nidra a přednášky.</p>
+    <span class="go">Otevřít kurz zdarma<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </a>
+
+  <section class="live">
+    <div class="live-head"><h2>Brzy začíná</h2><span>Živě online</span></div>
+    <a class="ev" data-until="2026-12-16" href="https://paulus.yoga/architekt-joga-nidra?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=architekt_joga_nidra&amp;utm_content=bio_brzy">
+      <span class="date"><b>16</b><small>pro</small></span>
+      <span class="n"><b>Jóga nidra</b><small>Architekt praxe, 8 setkání</small></span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="ev" data-until="2027-01-19" href="https://paulus.yoga/joga-od-zacatku?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=joga_od_zacatku&amp;utm_content=bio_brzy">
+      <span class="date"><b>19</b><small>led</small></span>
+      <span class="n"><b>Jóga od začátku do konce</b><small>12 týdnů s Danielem</small><em data-until="2026-11-30">Do 30. 11. za 7 900 Kč</em></span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="ev" data-until="2027-02-28" href="https://paulus.yoga/prakticka-ajurveda-2027?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=prakticka_ajurveda&amp;utm_content=bio_brzy">
+      <span class="date"><b>02</b><small>2027</small></span>
+      <span class="n"><b>Praktická ajurvéda</b><small>Živý ročník 2027</small></span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </section>
+
+  <!-- NAŽIVO V ČR: workshopy a pobyty. Nový řádek = zkopírovat <a class="ev">, data-until = poslední den akce -->
+  <section class="live cz">
+    <div class="live-head"><h2>Naživo v ČR</h2><span>Workshopy a pobyty</span></div>
+    <a class="ev" data-until="2027-05-16" href="https://paulus.yoga/tauhaus-2027?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=tauhaus_2027&amp;utm_content=bio_nazivo">
+      <span class="date"><b>13</b><small>kvě</small></span>
+      <span class="n"><b>Jóga v Tauhause</b><small>Čtyři dny praxe, 13. až 16. 5. 2027</small></span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <p class="empty">Další workshopy v Česku vypíšu brzy. Sledujte stories.</p>
+  </section>
+
+  <details class="door d-praxe" data-mode="praxe">
+    <summary>
+      <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><circle cx="12" cy="12" r="3.2"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="10.4" stroke-dasharray="1.2 2.4"/></svg></span>
+      <span class="t"><h3>Jóga</h3><span class="s">Ásánová praxe, kurzy ze záznamu a co je jóga</span></span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+    </summary>
+    <div class="links">
+      <a href="https://paulus.yoga/architekt-jogove-praxe?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=architekt_jogove_praxe&amp;utm_content=bio_praxe"><span class="n"><b>Architekt jógové praxe</b><small>Jak sestavit lekci. Ze záznamu</small></span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="https://paulus.yoga/asana-praxe?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=asana_praxe&amp;utm_content=bio_praxe"><span class="n"><b>Všechny kurzy praxe</b><small>Přehled kurzů ásánové praxe a jóga nidry</small></span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="https://paulus.yoga/joga?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=joga_hub&amp;utm_content=bio_praxe"><span class="n"><b>Co je jóga</b><small>Tělo, dech, mysl a vědomí jako jeden systém</small></span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </details>
+
+  <details class="door d-zdravi" data-mode="zdravi">
+    <summary>
+      <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21C6 17 4.5 12.5 6 8.5 7.4 4.8 11 3.5 12 3c1 .5 4.6 1.8 6 5.5 1.5 4-.1 8.5-6 12.5Z"/><path d="M12 21V8M12 13l-3-2.5M12 16l3.2-2.8"/></svg></span>
+      <span class="t"><h3>Zdraví</h3><span class="s">Ajurvéda, ženské zdraví a životospráva</span></span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+    </summary>
+    <div class="links">
+      <a href="https://paulus.yoga/aju?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=ajurveda_konzultace&amp;utm_content=bio_zdravi"><span class="n"><b>Ajurvédská konzultace</b><small>Osobně online, analýza dóš a doporučení</small></span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="https://paulus.yoga/zivot-zdravi?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=zivot_zdravi&amp;utm_content=bio_zdravi"><span class="n"><b>Život a zdraví ženy</b><small>Od dospívání po menopauzu</small></span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="https://paulus.yoga/ajurveda?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=ajurveda_hub&amp;utm_content=bio_zdravi"><span class="n"><b>Co je ajurvéda</b><small>Dóši, konstituce, trávicí oheň a denní rytmus</small></span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </details>
+
+  <details class="door d-dzjotis" data-mode="dzjotis">
+    <summary>
+      <span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18"/><path d="M3 3l18 18M21 3 3 21M12 3l9 9-9 9-9-9z"/></svg></span>
+      <span class="t"><h3>Džjotiš</h3><span class="s">Védská astrologie vysvětlená přes principy</span></span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+    </summary>
+    <div class="links">
+      <a href="https://paulus.yoga/jyotish?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=dzjotis&amp;utm_content=bio_dzjotis"><span class="n"><b>Konzultace džjotiše</b><small>Interpretace vašeho horoskopu, jedna týdně</small></span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="https://paulus.yoga/dzjotis?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=dzjotis_hub&amp;utm_content=bio_dzjotis"><span class="n"><b>Co je džjotiš</b><small>Planety, domy a nakšatry srozumitelně</small></span><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </details>
+
+  <footer>
+    <nav class="foot-links">
+      <a href="https://paulus.yoga/?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=web&amp;utm_content=bio_footer">paulus.yoga</a>
+      <a href="https://paulus.yoga/onas?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=web&amp;utm_content=bio_footer">Kdo jsme</a>
+      <a href="https://paulus.yoga/kontakt?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=web&amp;utm_content=bio_footer">Kontakt</a>
+    </nav>
+    <img class="logo" src="assets/logo.png" alt="PAULUS · Jóga a vědomí">
+    <p class="sig">Kristýna a Daniel Paulus</p>
+  </footer>
+</main>
+
+<script>
+/* =====================================================================
+   Živá setkání zmizí sama den po datu v data-until (český čas).
+   Pro kontrolu jiného dne: adresa?den=2026-12-05
+   ===================================================================== */
+function todayPrague(){
+  const q = new URLSearchParams(location.search).get('den');
+  if (q && /^\d{4}-\d{2}-\d{2}$/.test(q)) return q;
+  return new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Prague'}).format(new Date());
+}
+const today = todayPrague();
+document.querySelectorAll('[data-until]').forEach(el => { if (today > el.dataset.until) el.remove(); });
+document.querySelectorAll('.live').forEach(s => { const has = s.querySelector('.ev'); const e = s.querySelector('.empty'); if (e && has) e.remove(); if (!has && !e) s.remove(); });
+
+/* ---------- přepínání témat: pozadí a atmosféra ---------- */
+const bgs = [...document.querySelectorAll('.bg')];
+const doors = [...document.querySelectorAll('.door')];
+function setMode(m){
+  document.body.dataset.mode = m;
+  bgs.forEach(b => b.classList.toggle('on', b.dataset.bg === m));
+}
+doors.forEach(d => d.addEventListener('toggle', () => {
+  if (d.open){ doors.forEach(o => { if (o !== d) o.open = false; }); setMode(d.dataset.mode);
+    setTimeout(()=>d.scrollIntoView({behavior:'smooth',block:'nearest'}),120); }
+  else if (!doors.some(o => o.open)) setMode('home');
+}));
+
+/* ---------- dech: nádech 4 s, výdech 6 s (stejný rytmus jako pozadí) ---------- */
+const br = document.getElementById('breath');
+(function cycle(){ br.textContent='nádech'; setTimeout(()=>{ br.textContent='výdech'; setTimeout(cycle,6000); },4000); })();
+
+/* ---------- kolo horoskopu (džjotiš) ---------- */
+(function(){
+  const sp = document.getElementById('spokes'), tk = document.getElementById('ticks'); let s='', t='';
+  for (let i=0;i<12;i++){ const a=i*30*Math.PI/180; s+=`<line x1="${78*Math.cos(a)}" y1="${78*Math.sin(a)}" x2="${96*Math.cos(a)}" y2="${96*Math.sin(a)}"/>`; }
+  for (let i=0;i<27;i++){ const a=i*(360/27)*Math.PI/180; t+=`<circle cx="${87*Math.cos(a)}" cy="${87*Math.sin(a)}" r=".9" fill="#D9B676" stroke="none"/>`; }
+  sp.innerHTML=s; tk.innerHTML=t;
+})();
+
+/* ---------- živá vrstva: pyl a světlo (domů, zdraví), hvězdy (džjotiš), vznášení (praxe) ---------- */
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const c = document.getElementById('sky'), x = c.getContext('2d');
+  let W,H,DPR, P=[], S=[];
+  function size(){ DPR=Math.min(devicePixelRatio||1,2); W=c.width=innerWidth*DPR; H=c.height=innerHeight*DPR; }
+  size(); addEventListener('resize', size);
+  for (let i=0;i<46;i++) P.push({x:Math.random(),y:Math.random(),r:.6+Math.random()*1.8,v:.00012+Math.random()*.00035,ph:Math.random()*6.28});
+  for (let i=0;i<90;i++) S.push({x:Math.random(),y:Math.random()*.75,r:.4+Math.random()*1.2,ph:Math.random()*6.28,sp:.6+Math.random()*1.6});
+  const links=[]; for(let i=0;i<S.length;i++){ for(let j=i+1;j<S.length;j++){ const dx=S[i].x-S[j].x, dy=S[i].y-S[j].y; if(dx*dx+dy*dy<.006 && links.length<34) links.push([i,j]); } }
+  let alphaStars=0, alphaDust=1, t0=performance.now();
+  function frame(now){
+    const t=(now-t0)/1000, m=document.body.dataset.mode;
+    alphaStars += ((m==='dzjotis'?1:0)-alphaStars)*.03;
+    alphaDust  += ((m==='dzjotis'?0:1)-alphaDust)*.03;
+    x.clearRect(0,0,W,H);
+    if (alphaDust>.01){
+      const warm = m==='zdravi' ? 'rgba(236,214,160,' : 'rgba(243,226,190,';
+      P.forEach(p=>{ if(!reduce){ p.y-=p.v*(m==='praxe'?.6:1); p.x+=Math.sin(t*.4+p.ph)*.00025; if(p.y<-.02){p.y=1.02;p.x=Math.random();} }
+        const a=(.25+.35*Math.sin(t*.8+p.ph)**2)*alphaDust;
+        x.beginPath(); x.fillStyle=warm+a+')'; x.arc(p.x*W,p.y*H,p.r*DPR*(m==='zdravi'?1.4:1),0,6.28); x.fill(); });
+    }
+    if (alphaStars>.01){
+      x.strokeStyle=`rgba(217,182,118,${.22*alphaStars})`; x.lineWidth=.6*DPR;
+      links.forEach(([i,j])=>{ x.beginPath(); x.moveTo(S[i].x*W,S[i].y*H); x.lineTo(S[j].x*W,S[j].y*H); x.stroke(); });
+      S.forEach(s=>{ const a=(.35+.65*Math.abs(Math.sin(t*s.sp+s.ph)))*alphaStars;
+        x.beginPath(); x.fillStyle=`rgba(255,244,220,${a})`; x.arc(s.x*W,s.y*H,s.r*DPR,0,6.28); x.fill(); });
+    }
+    if(!reduce) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
