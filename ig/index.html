@@ -2,6 +2,12 @@
 <html lang="cs">
 <head>
 <meta charset="utf-8">
+<script>
+/* Stránka bez cookie lišty: Google i Clarity dostanou výchozí zákaz ukládání. */
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',analytics_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',functionality_storage:'denied',personalization_storage:'denied',security_storage:'granted'});
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kristýna Paulus · odkazy</title>
 <meta name="description" content="Kristýna Paulus: jóga, zdraví a džjotiš. Kurzy, konzultace a praxe zdarma.">
@@ -225,6 +231,13 @@ h1{font-weight:600;text-shadow:0 2px 18px rgba(0,0,0,.7)}
 .foot-links{color:var(--cream)}
 .sig{color:rgba(255,246,232,.6)}
 
+
+/* ---------- horní pás s fotkou ---------- */
+.bg{inset:0;background-size:106% auto!important;background-repeat:no-repeat;background-position:center top!important;transform-origin:50% 20%}
+.veil{background:
+  linear-gradient(180deg,rgba(8,30,39,0) 0%,rgba(8,30,39,0) 30%,rgba(8,30,39,.5) 44%,rgba(8,30,39,.9) 56%,rgba(8,30,39,.96) 100%)!important}
+header{padding-top:min(calc(100vw * 1.5 * .58), 44vh)}
+
 @media (min-width:700px){ header{padding-top:4vh} }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -234,10 +247,10 @@ h1{font-weight:600;text-shadow:0 2px 18px rgba(0,0,0,.7)}
 <body data-mode="home">
 
 <div class="stage" aria-hidden="true">
-  <div class="bg on" data-bg="home"  style="background-image:url(assets/bg-home.jpg)"></div>
-  <div class="bg"    data-bg="praxe" style="background-image:url(assets/bg-praxe.jpg)"></div>
-  <div class="bg"    data-bg="zdravi" style="background-image:url(assets/bg-zdravi.jpg);background-position:center 45%"></div>
-  <div class="bg"    data-bg="dzjotis" style="background-image:url(assets/bg-dzjotis.jpg);background-position:30% 30%"></div>
+  <div class="bg on" data-bg="home"  style="background-image:url(assets/bg-home.jpg?v=2)"></div>
+  <div class="bg"    data-bg="praxe" style="background-image:url(assets/bg-praxe.jpg?v=2)"></div>
+  <div class="bg"    data-bg="zdravi" style="background-image:url(assets/bg-zdravi.jpg?v=2);background-position:center 45%"></div>
+  <div class="bg"    data-bg="dzjotis" style="background-image:url(assets/bg-dzjotis.jpg?v=2);background-position:30% 30%"></div>
   <div class="wheel">
     <svg viewBox="-100 -100 200 200" fill="none" stroke="#D9B676" stroke-width=".35">
       <circle r="96"/><circle r="78"/><circle r="40"/><circle r="38.5" stroke-dasharray=".6 2.2"/>
