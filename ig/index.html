@@ -248,6 +248,27 @@ header{padding-top:min(calc(100vw * 1.5 * .58), 44vh)}
 .un-t{display:block;margin-top:3px;font-family:var(--display);font-weight:600;font-size:18px;color:#fff}
 .un-s{display:block;margin-top:2px;font-size:12.5px;color:rgba(255,246,232,.8)}
 
+
+/* ---------- začněte zdarma: tři témata ---------- */
+.free{margin:16px 0 12px;padding:15px 14px 14px;border-radius:18px;
+  background:linear-gradient(140deg,rgba(224,168,95,.5),rgba(8,30,39,.82) 62%);border:1px solid rgba(242,199,132,.8);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 18px 50px rgba(0,0,0,.35)}
+.free h2{margin:6px 0 2px;font-family:var(--display);font-weight:600;font-size:22px;line-height:1.15}
+.free p{font-size:14px;color:var(--cream)}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.tile{display:flex;flex-direction:column;align-items:center;text-align:center;gap:3px;padding:12px 4px 11px;border-radius:14px;
+  background:rgba(6,26,34,.6);border:1px solid color-mix(in srgb,var(--accent) 60%,transparent);transition:transform .2s ease,background .2s ease}
+.tile:active{transform:scale(.97)}
+.tile:hover{background:rgba(6,26,34,.8)}
+.tile .glyph{width:36px;height:36px;margin-bottom:3px}
+.tile b{font-family:var(--display);font-weight:600;font-size:17px;color:#fff}
+.tile small{font-size:11.5px;color:var(--muted);line-height:1.2}
+.t-praxe{--accent:var(--a-praxe)} .t-zdravi{--accent:var(--a-zdravi)} .t-dzjotis{--accent:var(--a-dzjotis)}
+.un{margin:16px auto 0}
+.live-head h2,.live-head span{white-space:nowrap}
+.door .t{overflow:hidden}
+@media (max-width:350px){.live-head span{font-size:9px;letter-spacing:.1em}}
+
 @media (min-width:700px){ header{padding-top:4vh} }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -281,12 +302,16 @@ header{padding-top:min(calc(100vw * 1.5 * .58), 44vh)}
     <p class="areas">Jóga<span>·</span>Zdraví<span>·</span>Džjotiš</p>
   </header>
 
-  <a class="feature" href="https://paulus.yoga/joga-neni-pouze-asana?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=joga_neni_pouze_asana&amp;utm_content=bio_hlavni">
-    <span class="kicker"><i></i>Zdarma · začněte tady</span>
-    <h2>Jóga není (pouze) ásána</h2>
-    <p>Lekce pro začátečníky, meditace, jóga nidra a přednášky.</p>
-    <span class="go">Otevřít kurz zdarma<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-  </a>
+  <section class="free">
+    <span class="kicker"><i></i>Začněte zdarma</span>
+    <h2>Které téma vás zajímá?</h2>
+    <p>Přednáška zdarma, bez reklam a s praxí navíc.</p>
+    <div class="tiles">
+      <a class="tile t-praxe" href="https://paulus.yoga/joga-cely-system?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=joga_cely_system&amp;utm_content=bio_zdarma"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><circle cx="12" cy="12" r="3.2"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="10.4" stroke-dasharray="1.2 2.4"/></svg></span><b>Jóga</b><small>jako celý systém</small></a>
+      <a class="tile t-zdravi" href="https://paulus.yoga/ajurveda-prednaska?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=ajurveda_prednaska&amp;utm_content=bio_zdarma"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21C6 17 4.5 12.5 6 8.5 7.4 4.8 11 3.5 12 3c1 .5 4.6 1.8 6 5.5 1.5 4-.1 8.5-6 12.5Z"/><path d="M12 21V8M12 13l-3-2.5M12 16l3.2-2.8"/></svg></span><b>Ajurvéda</b><small>péče o tělo</small></a>
+      <a class="tile t-dzjotis" href="https://paulus.yoga/dzjotis-prednaska?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=dzjotis_prednaska&amp;utm_content=bio_zdarma"><span class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18"/><path d="M3 3l18 18M21 3 3 21M12 3l9 9-9 9-9-9z"/></svg></span><b>Džjotiš</b><small>životní období</small></a>
+    </div>
+  </section>
 
   <section class="live">
     <div class="live-head"><h2>Brzy začíná</h2><span>Živě online</span></div>
@@ -354,6 +379,12 @@ header{padding-top:min(calc(100vw * 1.5 * .58), 44vh)}
     </div>
   </details>
 
+  <a class="un" href="https://paulus.yoga/umeni-nesouhlasu?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=umeni_nesouhlasu&amp;utm_content=bio_paticka">
+    <span class="un-k">Nový projekt</span>
+    <span class="un-t">Umění nesouhlasu</span>
+    <span class="un-s">Otevřené rozhovory o tezích, na kterých se lidé neshodnou</span>
+  </a>
+
   <footer>
     <nav class="foot-links">
       <a href="https://paulus.yoga/?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=web&amp;utm_content=bio_footer">paulus.yoga</a>
@@ -364,11 +395,6 @@ header{padding-top:min(calc(100vw * 1.5 * .58), 44vh)}
     <p class="sig">Kristýna a Daniel Paulus</p>
   </footer>
 
-  <a class="un" href="https://paulus.yoga/umeni-nesouhlasu?utm_source=instagram&amp;utm_medium=organic_social&amp;utm_campaign=umeni_nesouhlasu&amp;utm_content=bio_paticka">
-    <span class="un-k">Nový projekt</span>
-    <span class="un-t">Umění nesouhlasu</span>
-    <span class="un-s">Otevřené rozhovory o tezích, na kterých se lidé neshodnou</span>
-  </a>
 </main>
 
 <script>
